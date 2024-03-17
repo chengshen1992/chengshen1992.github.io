@@ -3,25 +3,34 @@ title: "Shen Cheng, Ph.D."
 image: Shen_Cheng.jpg
 resources: Shen_Cheng_CV.pdf
 about: 
-    template: jolla
-    image-shape: rectangle
-    image-width: 15em
-    links:
-      - text: Email
-        icon: envelope
-        href: mailto:cheng423@umn.edu
-      - text: Github
-        icon: github
-        href: https://github.com/chengshen1992
-      - text: CV
-        icon: file-text
-        href: Shen_Cheng_CV.pdf
+  template: jolla
+  image-shape: rectangle
+  image-width: 15em
+  links:
+    - text: Email
+      icon: envelope
+      href: mailto:cheng423@umn.edu
+    - text: Github
+      icon: github
+      href: https://github.com/chengshen1992
+    - text: CV
+      icon: file-text
+      href: Shen_Cheng_CV.pdf
+    - text: Linkedin
+      icon: linkedin
+      href: https://www.linkedin.com/in/shen-cheng/
+  id: intro
 ---
 
-This is a Quarto website.
+:::{#intro}
+I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine. 
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
-```
+<!-- This is a Quarto website. -->
+
+<!-- To learn more about Quarto websites visit <https://quarto.org/docs/websites>. -->
+
+<!-- ```{r} -->
+<!-- 1 + 1 -->
+<!-- ``` -->
