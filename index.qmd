@@ -1,5 +1,21 @@
 ---
 title: "Shen Cheng, Ph.D."
+image: Shen_Cheng.jpg
+resources: Shen_Cheng_CV.pdf
+about: 
+    template: jolla
+    image-shape: rectangle
+    image-width: 15em
+    links:
+      - text: Email
+        icon: envelope
+        href: mailto:cheng423@umn.edu
+      - text: Github
+        icon: github
+        href: https://github.com/chengshen1992
+      - text: CV
+        icon: file-text
+        href: Shen_Cheng_CV.pdf
 ---
 
 This is a Quarto website.
