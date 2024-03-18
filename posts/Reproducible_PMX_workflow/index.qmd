@@ -6,7 +6,7 @@ categories: [workflow, code]
 image: "pic/image.png"
 ---
 
-Pharmacometric (PMx) research usually involves computational expansive modeling and simulation processes. High performance computing (HPC) systems provided by Minnesota Supercomputing Institute ([MSI](https://www.msi.umn.edu/)) serves as a valuable platform to perform PMx research. This blog post illustrates a strategy for constructing a collaborative, reproducible and manageable PMx workflow at MSI, leveraging several open-source tools in `R`.
+Pharmacometric (PMx) research usually involves computationally intensive modeling and simulation processes. High performance computing (HPC) systems provided by Minnesota Supercomputing Institute ([MSI](https://www.msi.umn.edu/)) serves as a valuable platform to perform PMx research. This blog post illustrates a strategy for constructing a collaborative, reproducible and manageable PMx workflow at MSI, leveraging several open-source tools in `R`.
 
 :::: {.columns}
 
@@ -30,13 +30,13 @@ MSI can only be accessed when
 
 -   You are connected to eduroam network on campus.
 
--   You are off campus but connecting to University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting channels for connection, do **NOT** select the channel named "UMN - Departmental Pools".
+-   You are off campus but connecting to the University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting a channel for connection, do **NOT** select the channel named "*UMN - Departmental Pools*".
 
 ![](pic/vpn.png){fig-align="center" width="60%"}
 
 # 2. Access `R` at MSI
 
-[Several ways](https://www.msi.umn.edu/content/connecting-interactive-hpc-resources) are available to access `R` on MSI. This blog post uses [Open OnDemand](https://www.msi.umn.edu/content/using-open-ondemand) as the portal for he purpose of illustration.
+[Several ways](https://www.msi.umn.edu/content/connecting-interactive-hpc-resources) are available to access `R` on MSI. This blog post uses [Open OnDemand](https://www.msi.umn.edu/content/using-open-ondemand) as the portal for the purpose of illustration.
 
 Following the access to Open Ondemand, choose Rstudio Server under Interactive Apps tab. Then specify the settings for the Rstudio Server session. 
 
@@ -55,11 +55,11 @@ Following the access to Open Ondemand, choose Rstudio Server under Interactive A
 
 Please note:
 
--   `NONMEM`, as the primary PMx modeling platform, has only been installed in HPC `mesabi` and `mangi`, not in `agate`. So if you'd like to use `NONMEM`, please avoid using `agate` as the cluster.
+-   `NONMEM`, as the primary PMx modeling platform, has only been installed in HPC `mesabi` and `mangi`, not in `agate`. So if you'd like to use `NONMEM`, please avoid selecting `agate` as the cluster.
 
--   Several `R` versions are available, choose consistent `R` version among collaborators will better ensure the reproducibility of the project.
+-   Several `R` versions are available, keeping a consistent `R` version among collaborators would better ensure the reproducibility of the project.
 
-Rstudio session will start in a few seconds / minutes (depends on settings) after click the "Launch" button.
+Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after click the "Launch" button.
 
 ![](pic/R3.png){fig-align="center" width="80%"}
 
@@ -67,14 +67,14 @@ Rstudio session will start in a few seconds / minutes (depends on settings) afte
 
 `Github` is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to [`GitHub Enterprise`](https://it.umn.edu/services-technologies/github) for all students and employees possessing an active Internet ID. Establishing a `GitHub` repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed `GitHub` tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this [document](https://git-scm.com/doc) for further information. Briefly, 
 
-**Step 1:** Registering / signing in University of Minnesota `GitHub Enterprise`. Initialize a new `GitHub` repository (i.e, `project-abc`) by clicking "New repository". Then, specify the settings (e.g., name, visibility, etc) and create repository.
+**Step 1:** Registering / signing in University of Minnesota `GitHub Enterprise`. Initialize a new `GitHub` repository (i.e, `project-abc`) by clicking "New repository" tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.
 
 ![](pic/Github1.png){fig-align="center" width="90%"}
 
 ![](pic/Github2.png){fig-align="center" width="90%"}
 
 
-**Step 2:** If you have set up your `GitHub` [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) key. Clone the repository into your MSI Rstudio Server session through "terminal" using the SSH option as shown below.
+**Step 2:** If you have already set up your `GitHub` [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) key. Clone the repository into your MSI Rstudio Server session through "terminal" using the SSH option as shown below. Other options such as HTTP and GITHUB CLI are also available but will not be covered in this blog. 
 
 ::::{.columns}
 
@@ -92,20 +92,20 @@ Rstudio session will start in a few seconds / minutes (depends on settings) afte
 
 ::::
 
-**Step 3:** The `GitHub` repository you created should have been successfully cloned in your MSI disk. You can now interact with your `GitHub` repository and replies on this repository to synchronize your work with collaborators.
+**Step 3:** After `git clone`, the `GitHub` repository you created should appear in your MSI disk. You can now interact with your `GitHub` repository and replies on it to synchronize your work with your collaborators.
 
 # 4. Using `renv` for package version control
 
 ![](pic/renv.png){fig-align="center" width="80%"}
 
-[`renv`](https://rstudio.github.io/renv/articles/renv.html) is a useful package to create reproducible environment for each `R` project. Instead of using library of `R` packages installed globally for every project. `renv` allows you to create project-specific library to ensure the package version consistent across a `R` project.
+[`renv`](https://rstudio.github.io/renv/articles/renv.html) is a useful package to create reproducible environment for each `R` project. Instead of using library of `R` packages installed globally for every project. `renv` allows you to create project specific library to ensure the package version consistent across an `R` project.
 
 ::::{.columns}
 :::{.column width=50%}
 
-**Step 1:** Create a `R` project
+**Step 1:** Create an `R` project
 
-To use `renv`, You need to create a `R` project (`.Rproj`) in the cloned `GitHub` repository.
+To use `renv`, You need to create an `R` project (`.Rproj`) in the cloned `GitHub` repository.
 
 ![](pic/renv1.png){fig-align="center" width="100%"}
 
@@ -121,14 +121,17 @@ In your `R` console, type in `renv::init()` to initialize the structure of the `
 :::
 ::::
 
-The structure of the environment includes: 
--   `.Rprofile`: `R` session will automatically run this script every time you open this `R` project (in our case `project-abc.Rproj`), this ensures the automatic activation of `renv`.
--   `renv/library`: the project `R` package library.
+The structure of the environment includes:   
+
+-   `.Rprofile`: `R` session automatically runs this script every time you open this `R` project (i.e., `project-abc.Rproj`), this ensures the automatic activation of `renv`.  
+
+-   `renv/library`: the project specific `R` package library.  
+
 -   `renv.lock`: a record of `R` packages installed, including all the dependencies.
 
 **Step 3:** Install packages
 
-Using `renv`, we can install a `R` package using `renv::install()`. For example:  
+Using `renv`, we can install `R` packages using `renv::install()`. For example:  
 
 - `renv::install("mrgsolve")` will install `mrgsolve` package from [`CRAN`](https://cran.r-project.org/)   
 - `renv::install("metrumresearchgroup/bbr")` will install latest `bbr` package from `GitHub` of [`metrumresearchgroup`](https://github.com/metrumresearchgroup)
@@ -151,13 +154,11 @@ renv::install("mrgsolve",
               "here")
 ```
 
-When asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session.
-
-When the installation finishes, you should see all the requested packages installed in the `renv/library` directory.
+When asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session. When the installation finishes, you should see all the requested packages installed in the `renv/library` directory.
 
 **Step 4:** Create a snapshot of the installed packages
 
-`renv::snapshot()` allows you to create a snapshot of the installed packages, allowing your collaborators to use `renv::restore()` to restore the same `R` package with the same version from the same source in their Rstudio Server session, to ensure the project reproducibility.
+`renv::snapshot()` allows you to create a snapshot of the installed packages, which enables your collaborators to use `renv::restore()` to restore the same `R` packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.
 
 To accomplish this, we need to first create a new R script `library.R` in the project directory. This script does nothing but simply `library` all the packages installed.
 
@@ -172,13 +173,13 @@ library(here)
 
 Subsequently, we can run `renv::snapshot()` in the `R` console. This will update the `renv.lock` file in the project folder.
 
-Using `GitHub` to synchronize your project repository with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using `renv::restore()` according to the `renv.lock` updated by you. Similarly, if they updated `renv.lock` on their end, you can run `renv::restore()` to restore their installation.
+Using `GitHub` to synchronize your `renv.lock` file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using `renv::restore()` according to the updated `renv.lock`. Similarly, if they update `renv.lock` on their end, you could also run `renv::restore()` to restore their installation.
 
 # 5. Run `NONMEM` using `bbi`
 
-Currently, `NONMEM` is the primary PMx model development tool at MSI. Several ways are available to communicate with `NONMEM` for the execution of model fitting. For example, [`PsN`](https://www.msi.umn.edu/sw/nonmem-0) is available at MSI to interact with `NONMEM` for PMx modeling. For this blog post, I'd like to introduce [`bbi`](https://github.com/metrumresearchgroup/bbi) developed by MetrumRG as a modeling platform to interact with `NONMEM`. Using `bbi` makes the result post-processing much easier using [`bbr`](https://metrumresearchgroup.github.io/bbr/articles/getting-started.html) and other [MetrumRG open-source tools](https://www.metrumrg.com/merge-expo/).  
+Currently, `NONMEM` is the primary PMx model development tool at MSI. [`PsN`](https://www.msi.umn.edu/sw/nonmem-0) is available at MSI  to communicate with `NONMEM` for the execution of model fitting. For this blog post, I'd like to introduce [`bbi`](https://github.com/metrumresearchgroup/bbi) developed by MetrumRG as a tool to interact with `NONMEM`. Using `bbi` makes the PMx modeling result post-processing much easier using [`bbr`](https://metrumresearchgroup.github.io/bbr/articles/getting-started.html) and other [open-source tools](https://www.metrumrg.com/merge-expo/) developed by MetrumRG.  
 
-Let's take a model (`106.mod`) from MetrumRG [expo1-nonmem-foce](https://github.com/metrumresearchgroup/expo1-nonmem-foce) as an example.The original analysis data and model were transferred into our project folder (`./data/analysis3.csv` and `./model/106.mod`). The `$DATA` block in `./model/106.mod` was modified accordingly. 
+Let's take a model (`106.mod`) from MetrumRG [expo1-nonmem-foce](https://github.com/metrumresearchgroup/expo1-nonmem-foce) as an example. The original analysis data and model were transferred into our project folder (`./data/analysis3.csv` and `./model/106.mod`). The `$DATA` block in `./model/106.mod` was modified accordingly. 
 
 **Step 1**: `bbi` installation
 
@@ -190,13 +191,13 @@ options(
 )
 ```
 
-Subsequently, restart `R` session to change the `bbr.bbi_exe_path` specified in `.Rprofile`.  `bbi` can be installed via `bbr::use_bbi()` in `R` console according to the `bbr.bbi_exe_path`. The successful installation of `bbi` can be verified by running `bbr::bbi_version()` in R console. If `bbi` installed correctly, it should return a specific version number as shown below. 
+Subsequently, restart `R` session to change the `bbr.bbi_exe_path` specified in `.Rprofile`.  `bbi` can be installed via `bbr::use_bbi()` in `R` console according to the `bbr.bbi_exe_path`. The successful installation of `bbi` can be verified by running `bbr::bbi_version()` in R console. If `bbi` has been installed correctly, it should return a specific version number as shown below. 
 
 ![](pic/bbi1.png){fig-align="center" width="80%"}
 
 **Step 2**: Create a `bbi` configuration file
 
-To submit a `NONMEM` model, you would also need a `bbi` configuration file (`bbi.yaml`), which specified the path and version of `NONMEM`, along with the path of the Message Passing Interface (MPI) for parallel computing. This can be done using the following code: 
+To submit a `NONMEM` model, you would also need a `bbi` configuration file (`bbi.yaml`), which specified the path and version of `NONMEM`, along with the path of the Message Passing Interface (MPI) for parallel computing. This can be done using the following code in `R`: 
 
 ```{{r}}
 # NONMEM model directory
@@ -219,7 +220,7 @@ This will add a `bbi.yaml` file (i.e., `bbi` configuration file) in the `MODEL_D
 
 **Step 3**: Submit `NONMEM` model using `bbi`
 
-MSI uses `slurm` as the queuing system for job submission and scheduling, which makes the `NONMEM` model submission using `bbr::submit_model()` impossible. As alternates, there are two other ways to submit `NONMEM` models at MSI using `bbi`. 
+MSI uses `slurm` as the queuing system for job submission and scheduling, which makes the `NONMEM` model submission using `bbr::submit_model()` become impossible. There are two alternative strategies to submit `NONMEM` models at MSI using `bbi`. 
 
 1) Submit in terminal using a `bash` script. An example `bash` script (`./model/nm_run.sh`) is shown below. 
 
@@ -239,9 +240,9 @@ module load nonmem
 /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local $1.mod --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml
 ```
 
-Most of the commands in this `bash` script has been explained by [MSI](https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm). A few unique ones were selectively explained as shown below:  
+Many of the commands used in this bash script are detailed in the [MSI](https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm). Below, we've provided explanations for a few selected that are not covered extensively in the MSI documentation:  
 
-- `#SBATCH -L nonmem@slurmdb:1` specifies a `NONMEM` license maintained by `MSI`. Currently, two `NONMEM` licenses were maintained by MSI, you can specify either `#SBATCH -L nonmem@slurmdb:1` or `#SBATCH -L nonmem@slurmdb:2`.   
+- `#SBATCH -L nonmem@slurmdb:1` specifies a `NONMEM` license. Currently, two `NONMEM` licenses are available at MSI, you can specify either `#SBATCH -L nonmem@slurmdb:1` or `#SBATCH -L nonmem@slurmdb:2`.   
 
 - `#SBATCH -p amdlarge` specifies partition of the job. Please refer to this [sheet](https://www.msi.umn.edu/partitions) to appropriately select the partition that fits your job.   
 
@@ -251,11 +252,11 @@ Most of the commands in this `bash` script has been explained by [MSI](https://w
 
 - `/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml` specifies the `bbi` configuration file. 
 
-Navigate (`cd`) inside the `MODEL_DIR` in terminal, `NONMEM` model fitting can then be submitted at MSI using command `sbatch nm_run.sh 106`, where 106 substitutes the `$1` in the `bash` script. After submission, you can use `squeue --me` in terminal to check run status.  
+With this `bash` script, navigate (`cd`) inside the `MODEL_DIR` in terminal, `NONMEM` model fitting can then be submitted at MSI using command `sbatch nm_run.sh 106`, where 106 substitutes the `$1` in the `bash` script. After submission, you can use `squeue --me` in terminal to check run status.  
 
-2) Create a `bash` script from a template (`./script/slurm-template.txt`) and then submit it using a `R` function (`./script/function-model.R`) adapted from [`slurmtools`](https://github.com/A2-ai/slurmtools). 
+2) Create a `bash` script from a template (`./script/slurm-template.txt`) and then submit it using an `R` function (`./script/function-model.R`) adapted from [`slurmtools`](https://github.com/A2-ai/slurmtools). 
 
-To use this method for the submission of `NONMEM` model, a few options need to be modified first. 
+To use this method for the submission of `NONMEM` models, a few options need to be specified first. 
 
 ```{{r}}
 # set path for `bbi` configuration file
@@ -268,7 +269,7 @@ options("slurm_job_template_path" = normalizePath("script/slurm-template.txt"))
 options("submission_root" = normalizePath("sub"))
 ```
 
-This will then allow you to submit a `NONMEM` model directly from `R` using a code snippet like:
+This will then allow you to submit a `NONMEM` model at MSI directly from `R` using a code snippet like:
 
 ```{{r}}
 # Read `NONMEM` model using `bbr`
@@ -290,15 +291,15 @@ submit_nonmem_model(.mod = mod,
 # Use `squeue --me` in terminal to check run status
 ```
 
-**Step 4**: Perform `NONMEM` model fitting using `bbi`
+**Step 4**: Check `NONMEM` modeling results using `bbr`
 
-Following the model fitting, you can check the model results using the following code:
+Following the `NONMEM` modeling via `bbi`, you can check the model results using the following code:
 
 ```{{r}}
 mod <- read_model(.path = file.path(MODEL_DIR, runno))
 mod %>% model_summary()
 ```
 
-If model 106 runs successfully, you will see model results similar to this: 
+If model 106 runs successfully, you should see output similar to this: 
 
 ![](pic/bbi2.png){fig-align="center" width="80%"}
