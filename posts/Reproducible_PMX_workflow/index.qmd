@@ -147,7 +147,14 @@ When asked whether you want to proceed, simply answer Y (yes) to proceed to the 
 
 To accomplish this, we need to first create a new R script `library.R` in the project directory. This script does nothing but simply `library` all the packages installed.
 
-Example code for `library.R`: 31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AE8AUQBCAGoAQQBHAEkAQQBOAHcAQQA1AEEARwBVAEEATgBnAEIAagBBAEMAMABBAE8AQQBBADQAQQBEAGcAQQBaAEEAQQB0AEEARABRAEEAWQBRAEEAdwBBAEcAVQBBAEwAUQBBADUAQQBHAE0AQQBPAFEAQgBpAEEAQwAwAEEAWgBnAEIAbQBBAEQAWQBBAE4AdwBCAGoAQQBHAFEAQQBOAEEAQQB3AEEARABRAEEAWgBRAEEAMgBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATgB3AEEAMgBBAEQASQBBAE4AdwBBAD0ACgBwAHIAZQBmAGkAeAA6AAoAcwBvAHUAcgBjAGUAOgBZAEEAQgBnAEEARwBBAEEAZQB3AEIANwBBAEgASQBBAGYAUQBCADkAQQBBAG8AQQBiAEEAQgBwAEEARwBJAEEAYwBnAEIAaABBAEgASQBBAGUAUQBBAG8AQQBHADAAQQBjAGcAQgBuAEEASABNAEEAYgB3AEIAcwBBAEgAWQBBAFoAUQBBAHAAQQBBAG8AQQBiAEEAQgBwAEEARwBJAEEAYwBnAEIAaABBAEgASQBBAGUAUQBBAG8AQQBIAFEAQQBhAFEAQgBrAEEASABrAEEAZABnAEIAbABBAEgASQBBAGMAdwBCAGwAQQBDAGsAQQBDAGcAQgBzAEEARwBrAEEAWQBnAEIAeQBBAEcARQBBAGMAZwBCADUAQQBDAGcAQQBiAGcAQgB0AEEASABJAEEAWgBRAEIAagBBAEMAawBBAEMAZwBCAHMAQQBHAGsAQQBZAGcAQgB5AEEARwBFAEEAYwBnAEIANQBBAEMAZwBBAFkAZwBCAGkAQQBIAEkAQQBLAFEAQQBLAEEARwB3AEEAYQBRAEIAaQBBAEgASQBBAFkAUQBCAHkAQQBIAGsAQQBLAEEAQgBvAEEARwBVAEEAYwBnAEIAbABBAEMAawBBAEMAZwBCAGcAQQBHAEEAQQBZAEEAQQA9AAoAcwB1AGYAZgBpAHgAOgA=:31b8e172-b470-440e-83d8-e6b185028602
+Example code for `library.R`: 
+```{{r}}
+library(mrgsolve)
+library(tidyverse)
+library(nmrec)
+library(bbr)
+library(here)
+```
 
 Subsequently, we can run `renv::snapshot()` in the `R` console. This will update the `renv.lock` file in the project folder.
 
@@ -155,7 +162,7 @@ Using `GitHub` to synchronize your `renv.lock` file with your collaborators, the
 
 # 5. Run `NONMEM` using `bbi`
 
-Currently, `NONMEM` is the primary PMx model development tool at MSI. [`PsN`](https://www.msi.umn.edu/sw/nonmem-0) is available at MSI to communicate with `NONMEM` for the execution of model fitting. For this blog post, I'd like to introduce [`bbi`](https://github.com/metrumresearchgroup/bbi) developed by MetrumRG as a tool to interact with `NONMEM`. Using `bbi` makes the PMx modeling result post-processing much easier using [`bbr`](https://metrumresearchgroup.github.io/bbr/articles/getting-started.html) and other [open-source tools](https://www.metrumrg.com/merge-expo/) developed by MetrumRG.
+Currently, `NONMEM` is the primary PMx model development tool at MSI. While [`PsN`](https://www.msi.umn.edu/sw/nonmem-0) is available at MSI to communicate with `NONMEM` for the execution of model fitting, for this blog post, I'd like to introduce [`bbi`](https://github.com/metrumresearchgroup/bbi) developed by MetrumRG as a tool to interact with `NONMEM`. Using `bbi` makes the PMx modeling result post-processing much easier using [`bbr`](https://metrumresearchgroup.github.io/bbr/articles/getting-started.html) and other [open-source tools](https://www.metrumrg.com/merge-expo/) developed by MetrumRG.
 
 Let's take a model (`106.mod`) from MetrumRG [expo1-nonmem-foce](https://github.com/metrumresearchgroup/expo1-nonmem-foce) as an example. The original analysis data and model were transferred into our project folder (`./data/analysis3.csv` and `./model/106.mod`). The `$DATA` block in `./model/106.mod` was modified accordingly.
 
@@ -280,7 +287,7 @@ mod %>% model_summary()
 
 If model 106 runs successfully, you should see output similar to this:
 
-![](pic/bbi2.png){fig-align="center" width="80%"}
+![](pic/bbi2.png){fig-align="center" width="60%"}
 
 ```{r}
 sessionInfo()
