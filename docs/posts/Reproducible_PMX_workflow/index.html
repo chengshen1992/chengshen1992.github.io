@@ -136,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Create reproducible PMx workflow on MSI</h1>
+      <h1 class="title">Create reproducible PMx workflow at MSI</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">workflow</div>
                 <div class="quarto-category">code</div>
@@ -337,14 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Step 4:</strong> Create a snapshot of the installed packages</p>
 <p><code>renv::snapshot()</code> allows you to create a snapshot of the installed packages, which enables your collaborators to use <code>renv::restore()</code> to restore the same <code>R</code> packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.</p>
 <p>To accomplish this, we need to first create a new R script <code>library.R</code> in the project directory. This script does nothing but simply <code>library</code> all the packages installed.</p>
-<p>Example code for <code>library.R</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mrgsolve)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nmrec)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bbr)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Example code for <code>library.R</code>: 31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AE8AUQBCAGoAQQBHAEkAQQBOAHcAQQA1AEEARwBVAEEATgBnAEIAagBBAEMAMABBAE8AQQBBADQAQQBEAGcAQQBaAEEAQQB0AEEARABRAEEAWQBRAEEAdwBBAEcAVQBBAEwAUQBBADUAQQBHAE0AQQBPAFEAQgBpAEEAQwAwAEEAWgBnAEIAbQBBAEQAWQBBAE4AdwBCAGoAQQBHAFEAQQBOAEEAQQB3AEEARABRAEEAWgBRAEEAMgBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATgB3AEEAMgBBAEQASQBBAE4AdwBBAD0ACgBwAHIAZQBmAGkAeAA6AAoAcwBvAHUAcgBjAGUAOgBZAEEAQgBnAEEARwBBAEEAZQB3AEIANwBBAEgASQBBAGYAUQBCADkAQQBBAG8AQQBiAEEAQgBwAEEARwBJAEEAYwBnAEIAaABBAEgASQBBAGUAUQBBAG8AQQBHADAAQQBjAGcAQgBuAEEASABNAEEAYgB3AEIAcwBBAEgAWQBBAFoAUQBBAHAAQQBBAG8AQQBiAEEAQgBwAEEARwBJAEEAYwBnAEIAaABBAEgASQBBAGUAUQBBAG8AQQBIAFEAQQBhAFEAQgBrAEEASABrAEEAZABnAEIAbABBAEgASQBBAGMAdwBCAGwAQQBDAGsAQQBDAGcAQgBzAEEARwBrAEEAWQBnAEIAeQBBAEcARQBBAGMAZwBCADUAQQBDAGcAQQBiAGcAQgB0AEEASABJAEEAWgBRAEIAagBBAEMAawBBAEMAZwBCAHMAQQBHAGsAQQBZAGcAQgB5AEEARwBFAEEAYwBnAEIANQBBAEMAZwBBAFkAZwBCAGkAQQBIAEkAQQBLAFEAQQBLAEEARwB3AEEAYQBRAEIAaQBBAEgASQBBAFkAUQBCAHkAQQBIAGsAQQBLAEEAQgBvAEEARwBVAEEAYwBnAEIAbABBAEMAawBBAEMAZwBCAGcAQQBHAEEAQQBZAEEAQQA9AAoAcwB1AGYAZgBpAHgAOgA=:31b8e172-b470-440e-83d8-e6b185028602</p>
 <p>Subsequently, we can run <code>renv::snapshot()</code> in the <code>R</code> console. This will update the <code>renv.lock</code> file in the project folder.</p>
 <p>Using <code>GitHub</code> to synchronize your <code>renv.lock</code> file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using <code>renv::restore()</code> according to the updated <code>renv.lock</code>. Similarly, if they update <code>renv.lock</code> on their end, you could also run <code>renv::restore()</code> to restore their installation.</p>
 </section>
@@ -354,11 +347,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s take a model (<code>106.mod</code>) from MetrumRG <a href="https://github.com/metrumresearchgroup/expo1-nonmem-foce">expo1-nonmem-foce</a> as an example. The original analysis data and model were transferred into our project folder (<code>./data/analysis3.csv</code> and <code>./model/106.mod</code>). The <code>$DATA</code> block in <code>./model/106.mod</code> was modified accordingly.</p>
 <p><strong>Step 1</strong>: <code>bbi</code> installation</p>
 <p>It is preferable that <code>bbi</code> is installed once every project by setting <code>bbi.bbi_exe_path</code> in <code>.Rprofile</code>. This can be done by adding the following code in <code>.Rprofile</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bbr.bbi_exe_path'</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"bin/bbi"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bbr.bbi_exe_path'</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"bin/bbi"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Subsequently, restart <code>R</code> session to change the <code>bbr.bbi_exe_path</code> specified in <code>.Rprofile</code>. <code>bbi</code> can be installed via <code>bbr::use_bbi()</code> in <code>R</code> console according to the <code>bbr.bbi_exe_path</code>. The successful installation of <code>bbi</code> can be verified by running <code>bbr::bbi_version()</code> in R console. If <code>bbi</code> has been installed correctly, it should return a specific version number as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -367,43 +360,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Step 2</strong>: Create a <code>bbi</code> configuration file</p>
 <p>To submit a <code>NONMEM</code> model, you would also need a <code>bbi</code> configuration file (<code>bbi.yaml</code>), which specified the path and version of <code>NONMEM</code>, along with the path of the Message Passing Interface (MPI) for parallel computing. This can be done using the following code in <code>R</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM model directory</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  MODEL_DIR <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"model"</span>) </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM installation directory at MSI</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  NONMEM_DIR <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated/nonmem"</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM version</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  NONMEM_VERSION <span class="ot">&lt;-</span> <span class="st">"750"</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># MPI installation directory at MSI</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  MPI_PATH <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated.intel/x86_64/2018/impi_msi/compilers_and_libraries_2018.0.128/linux/mpi/intel64/bin/mpiexec"</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create `bbi` cinfiguration file in `MODEL_DIR`</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bbi_init</span>(<span class="at">.dir =</span> MODEL_DIR,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_dir =</span> NONMEM_DIR, </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_version =</span> NONMEM_VERSION, </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">.bbi_args =</span> <span class="fu">list</span>(<span class="st">"mpi_exec_path"</span> <span class="ot">=</span> MPI_PATH))</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM model directory</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  MODEL_DIR <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"model"</span>) </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM installation directory at MSI</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  NONMEM_DIR <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated/nonmem"</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM version</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  NONMEM_VERSION <span class="ot">&lt;-</span> <span class="st">"750"</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># MPI installation directory at MSI</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  MPI_PATH <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated.intel/x86_64/2018/impi_msi/compilers_and_libraries_2018.0.128/linux/mpi/intel64/bin/mpiexec"</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create `bbi` cinfiguration file in `MODEL_DIR`</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bbi_init</span>(<span class="at">.dir =</span> MODEL_DIR,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_dir =</span> NONMEM_DIR, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_version =</span> NONMEM_VERSION, </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">.bbi_args =</span> <span class="fu">list</span>(<span class="st">"mpi_exec_path"</span> <span class="ot">=</span> MPI_PATH))</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will add a <code>bbi.yaml</code> file (i.e., <code>bbi</code> configuration file) in the <code>MODEL_DIR</code>.</p>
 <p><strong>Step 3</strong>: Submit <code>NONMEM</code> model using <code>bbi</code></p>
 <p>MSI uses <a href="https://slurm.schedmd.com/documentation.html"><code>slurm</code></a> as the queuing system for job submission and scheduling, which makes the <code>NONMEM</code> model submission using <code>bbr::submit_model()</code> become impossible. There are two alternative strategies to submit <code>NONMEM</code> models at MSI using <code>bbi</code>.</p>
 <ol type="1">
 <li>Submit in terminal using a <code>bash</code> script. An example <code>bash</code> script (<code>./model/nm_run.sh</code>) is shown below.</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=05:25:00 </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=2g</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tmp=6g</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=46</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -L nonmem@slurmdb:1</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-type=ALL</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-user=cheng423@umn.edu</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -p amdlarge</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$SLURM_SUBMIT_DIR</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load nonmem</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ex">/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi</span> nonmem run local <span class="va">$1</span>.mod <span class="at">--config</span> /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=05:25:00 </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=2g</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tmp=6g</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=46</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -L nonmem@slurmdb:1</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-type=ALL</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-user=cheng423@umn.edu</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -p amdlarge</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$SLURM_SUBMIT_DIR</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load nonmem</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi</span> nonmem run local <span class="va">$1</span>.mod <span class="at">--config</span> /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Many of the commands used in this bash script are detailed in the <a href="https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm">MSI</a>. Below, we’ve provided explanations for a few selected that are not covered extensively in the MSI documentation:</p>
 <ul>
 <li><p><code>#SBATCH -L nonmem@slurmdb:1</code> specifies a <code>NONMEM</code> license. Currently, two <code>NONMEM</code> licenses are available at MSI, you can specify either <code>#SBATCH -L nonmem@slurmdb:1</code> or <code>#SBATCH -L nonmem@slurmdb:2</code>.</p></li>
@@ -417,42 +410,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a <code>bash</code> script from a template (<code>./script/slurm-template.txt</code>) and then submit it using an <code>R</code> function (<code>./script/function-model.R</code>) adapted from <a href="https://github.com/A2-ai/slurmtools"><code>slurmtools</code></a>.</li>
 </ol>
 <p>To use this method for the submission of <code>NONMEM</code> models, a few options need to be specified first.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set path for `bbi` configuration file</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"bbi_config_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"model/bbi.yaml"</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set slurm template to create bash script</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"slurm_job_template_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"script/slurm-template.txt"</span>))</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set a folder to contain all .out file generated by slurm</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"submission_root"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"sub"</span>))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set path for `bbi` configuration file</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"bbi_config_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"model/bbi.yaml"</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set slurm template to create bash script</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"slurm_job_template_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"script/slurm-template.txt"</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set a folder to contain all .out file generated by slurm</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"submission_root"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"sub"</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will then allow you to submit a <code>NONMEM</code> model at MSI directly from <code>R</code> using a code snippet like:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read `NONMEM` model using `bbr`</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>runno <span class="ot">&lt;-</span> <span class="st">"106"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">new_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno), <span class="at">.overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load `submit_nonmem_model` function</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"script/function-model.R"</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>PARTITION <span class="ot">=</span> <span class="st">"msismall"</span>     <span class="co"># partition at MSI see "https://www.msi.umn.edu/partitions"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>NCPU <span class="ot">=</span> <span class="dv">4</span>                   <span class="co"># ncpu-per-task</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>EMAIL <span class="ot">=</span> <span class="st">"cheng423@umn.edu"</span> <span class="co"># email to receive slurm notification</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">submit_nonmem_model</span>(<span class="at">.mod =</span> mod, </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">partition =</span> PARTITION, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncpu =</span> NCPU, </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                    <span class="at">email =</span> EMAIL)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Use `squeue --me` in terminal to check run status</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read `NONMEM` model using `bbr`</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>runno <span class="ot">&lt;-</span> <span class="st">"106"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">new_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno), <span class="at">.overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load `submit_nonmem_model` function</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"script/function-model.R"</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>PARTITION <span class="ot">=</span> <span class="st">"msismall"</span>     <span class="co"># partition at MSI see "https://www.msi.umn.edu/partitions"</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>NCPU <span class="ot">=</span> <span class="dv">4</span>                   <span class="co"># ncpu-per-task</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>EMAIL <span class="ot">=</span> <span class="st">"cheng423@umn.edu"</span> <span class="co"># email to receive slurm notification</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">submit_nonmem_model</span>(<span class="at">.mod =</span> mod, </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">partition =</span> PARTITION, </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncpu =</span> NCPU, </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                    <span class="at">email =</span> EMAIL)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Use `squeue --me` in terminal to check run status</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Step 4</strong>: Check <code>NONMEM</code> modeling results using <code>bbr</code></p>
 <p>Following the <code>NONMEM</code> modeling via <code>bbi</code>, you can check the model results using the following code:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">read_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mod <span class="sc">%&gt;%</span> <span class="fu">model_summary</span>()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">read_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mod <span class="sc">%&gt;%</span> <span class="fu">model_summary</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If model 106 runs successfully, you should see output similar to this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -460,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.3.3 (2024-02-29)
 Platform: x86_64-apple-darwin20 (64-bit)
