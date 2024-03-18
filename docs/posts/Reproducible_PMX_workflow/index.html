@@ -9,7 +9,7 @@
 <meta name="author" content="Shen Cheng">
 <meta name="dcterms.date" content="2024-03-16">
 
-<title>Shen Cheng’s Personal Website - Create reproducible PMx workflow on MSI</title>
+<title>Cheng Lab - Create reproducible PMx workflow on MSI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Shen Cheng’s Personal Website</span>
+    <span class="navbar-title">Cheng Lab</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -192,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="column" style="width:50%;">
 <section id="acknowledgement" class="level1">
 <h1>Acknowledgement</h1>
-<p>I’d like to thank <a href="https://www.pharmacy.umn.edu/our-faculty-staff/our-faculty/mutaz-jaber"><strong>Mutaz Jaber</strong></a> for several valuable discussions on this topic. I’d like to thank open-source tools developed by <a href="https://github.com/metrumresearchgroup">MetrumRG</a> and <a href="https://github.com/A2-ai">A2-AI</a>.</p>
+<p>I’d like to thank <a href="https://www.pharmacy.umn.edu/our-faculty-staff/our-faculty/mutaz-jaber">Mutaz Jaber</a> for several valuable discussions on this topic. I’d like to thank open-source tools developed by <a href="https://github.com/metrumresearchgroup">MetrumRG</a> and <a href="https://github.com/A2-ai">A2-AI</a>.</p>
 </section>
 </div><div class="column" style="width:50%;">
 <section id="example-workflow" class="level1">
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="vpn.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="pic/vpn.png" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
@@ -222,13 +222,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="R1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="R2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R2.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Rstudio session will start in a few seconds / minutes (depends on settings) after click the “Launch” button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="R3.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R3.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </section>
@@ -249,45 +249,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>3. Build a <code>Github</code> repository</h1>
 <p><code>Github</code> is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to <a href="https://it.umn.edu/services-technologies/github"><code>GitHub Enterprise</code></a> for all students and employees possessing an active Internet ID. Establishing a <code>GitHub</code> repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed <code>GitHub</code> tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this <a href="https://git-scm.com/doc">document</a> for further information. Briefly,</p>
 <p><strong>Step 1:</strong> Registering / signing in University of Minnesota <code>GitHub Enterprise</code>. Initialize a new <code>GitHub</code> repository (i.e, <code>project-abc</code>) by clicking “New repository”. Then, specify the settings (e.g., name, visibility, etc) and create repository.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Github1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/Github1.png" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Github2.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/Github2.png" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 <p><strong>Step 2:</strong> If you have set up your <code>GitHub</code> <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH</a> key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Github3.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/Github3.png" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Github4.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/Github4.png" class="img-fluid figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Step 3:</strong> The <code>GitHub</code> repository you created should have been successfully cloned in your MSI disk. You can now interact with your <code>GitHub</code> repository and replies on this repository to synchronize your work with collaborators.</p>
-<!-- ![](Github5.png){fig-align="center" width="50%"} -->
 </section>
 <section id="using-renv-for-package-version-control" class="level1">
 <h1>4. Using <code>renv</code> for package version control</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="renv.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/renv.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p><a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a> is a useful package to create reproducible environment for each <code>R</code> project. Instead of using library of <code>R</code> packages installed globally for every project. <code>renv</code> allows you to create project-specific library to ensure the package version consistent across a <code>R</code> project.</p>
@@ -297,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To use <code>renv</code>, You need to create a <code>R</code> project (<code>.Rproj</code>) in the cloned <code>GitHub</code> repository.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="renv1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/renv1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -305,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In your <code>R</code> console, type in <code>renv::init()</code> to initialize the structure of the <code>R</code> environment using <code>renv</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="renv2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/renv2.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -364,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Subsequently, restart <code>R</code> session to change the <code>bbr.bbi_exe_path</code> specified in <code>.Rprofile</code>. <code>bbi</code> can be installed via <code>bbr::use_bbi()</code> in <code>R</code> console according to the <code>bbr.bbi_exe_path</code>. The successful installation of <code>bbi</code> can be verified by running <code>bbr::bbi_version()</code> in R console. If <code>bbi</code> installed correctly, it should return a specific version number as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="bbi1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/bbi1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p><strong>Step 2</strong>: Create a <code>bbi</code> configuration file</p>
@@ -414,44 +408,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi</code> specifies the executable path of <code>bbi</code>.</p></li>
 <li><p><code>/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</code> specifies the <code>bbi</code> configuration file.</p></li>
 </ul>
-<p>Navigate (<code>cd</code>) inside the <code>MODEL_DIR</code> in terminal, <code>NONMEM</code> model fitting can then be submitted at MSI using command <code>sbatch nm_run.sh 106</code>, where 106 substitutes the <code>$1</code> in the <code>bash</code> script. 2) Create a <code>bash</code> script from a template (<code>./script/slurm-template.txt</code>) and then submit it using a <code>R</code> function (<code>./script/function-model.R</code>) adapted from <a href="https://github.com/A2-ai/slurmtools"><code>slurmtools</code></a> (Thanks to the help of <a href="https://www.pharmacy.umn.edu/our-faculty-staff/our-faculty/mutaz-jaber"><strong>Mutaz Jaber</strong></a>!).</p>
-<p>To use this method for the submission of <code>NONMEM</code> model. <code>.Rprofile</code> needs to be first modfied by adding a few additional options.</p>
+<p>Navigate (<code>cd</code>) inside the <code>MODEL_DIR</code> in terminal, <code>NONMEM</code> model fitting can then be submitted at MSI using command <code>sbatch nm_run.sh 106</code>, where 106 substitutes the <code>$1</code> in the <code>bash</code> script. After submission, you can use <code>squeue --me</code> in terminal to check run status.</p>
+<ol start="2" type="1">
+<li>Create a <code>bash</code> script from a template (<code>./script/slurm-template.txt</code>) and then submit it using a <code>R</code> function (<code>./script/function-model.R</code>) adapted from <a href="https://github.com/A2-ai/slurmtools"><code>slurmtools</code></a>.</li>
+</ol>
+<p>To use this method for the submission of <code>NONMEM</code> model, a few options need to be modified first.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set slurm template to create `bash` script</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"slurm_job_template_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"script/slurm-template.txt"</span>), </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set a folder to contain all .out file generated by slurm</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"submission_root"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"sub"</span>), </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set path for `bbi` configuration file</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"bbi_config_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"model/bbi.yaml"</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set path for `bbi` configuration file</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"bbi_config_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"model/bbi.yaml"</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set slurm template to create bash script</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"slurm_job_template_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"script/slurm-template.txt"</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set a folder to contain all .out file generated by slurm</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"submission_root"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"sub"</span>))</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will then allow you to submit a <code>NONMEM</code> model directly from <code>R</code> using a code snippet like:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>runno <span class="ot">&lt;-</span> <span class="st">"106"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read `NONMEM` model using `bbr`</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>runno <span class="ot">&lt;-</span> <span class="st">"106"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">new_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno), <span class="at">.overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Submit model using Mutaz's function</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load `submit_nonmem_model` function</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"script/function-model.R"</span>))</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>PARTITION <span class="ot">=</span> <span class="st">"msismall"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>NCPU <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">submit_nonmem_model</span>(<span class="at">.mod =</span> mod, </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">partition =</span> PARTITION, </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncpu =</span> NCPU)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>PARTITION <span class="ot">=</span> <span class="st">"msismall"</span>     <span class="co"># partition at MSI see "https://www.msi.umn.edu/partitions"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>NCPU <span class="ot">=</span> <span class="dv">4</span>                   <span class="co"># ncpu-per-task</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>EMAIL <span class="ot">=</span> <span class="st">"cheng423@umn.edu"</span> <span class="co"># email to receive slurm notification</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">submit_nonmem_model</span>(<span class="at">.mod =</span> mod, </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">partition =</span> PARTITION, </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncpu =</span> NCPU, </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                    <span class="at">email =</span> EMAIL)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Use `squeue --me` in terminal to check run status</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Step 4</strong>: Perform <code>NONMEM</code> model fitting using <code>bbi</code></p>
 <p>Following the model fitting, you can check the model results using the following code:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">read_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno), <span class="at">.overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">read_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mod <span class="sc">%&gt;%</span> <span class="fu">model_summary</span>()</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If model 106 runs successfully, you will see model results similar to this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="bbi2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/bbi2.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 
