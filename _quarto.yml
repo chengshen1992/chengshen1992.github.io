@@ -5,6 +5,7 @@ project:
 website:
   title: "Cheng Lab"
   navbar:
+    background: "#7A0019"
     left:
       - href: index.qmd
         text: Home
@@ -12,7 +13,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: yeti
+    mainfont: arial
+    monofont: courier new
     css: styles.css
     toc: true
 
