@@ -225,7 +225,7 @@ module load nonmem
 /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local $1.mod --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml
 ```
 
-Many of the commands used in this bash script are detailed in the [MSI](https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm). Below, we've provided explanations for a few selected that are not covered extensively in the MSI documentation:
+Many of the commands used in this bash script are detailed in the [MSI](https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm). Below, we've provided explanations for a few selected commands that are not covered extensively in the MSI documentation:
 
 -   `#SBATCH -L nonmem@slurmdb:1` specifies a `NONMEM` license. Currently, two `NONMEM` licenses are available at MSI, you can specify either `#SBATCH -L nonmem@slurmdb:1` or `#SBATCH -L nonmem@slurmdb:2`.
 
