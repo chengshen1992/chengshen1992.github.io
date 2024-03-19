@@ -19,18 +19,12 @@ about:
     - text: Linkedin
       icon: linkedin
       href: https://www.linkedin.com/in/shen-cheng/
+    - text: Twitter
+      icon: twitter
+      href: https://twitter.com/ShenCheng20
   id: intro
 ---
 
 :::{#intro}
 I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine. 
 :::
-
-
-<!-- This is a Quarto website. -->
-
-<!-- To learn more about Quarto websites visit <https://quarto.org/docs/websites>. -->
-
-<!-- ```{r} -->
-<!-- 1 + 1 -->
-<!-- ``` -->
