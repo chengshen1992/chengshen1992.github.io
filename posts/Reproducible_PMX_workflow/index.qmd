@@ -1,9 +1,16 @@
 ---
 title: "Create reproducible PMx workflow at MSI"
 author: "Shen Cheng"
-date: "2024-03-16"
+date: last-modified
 categories: [workflow, code]
 image: "pic/image.png"
+format:
+  html: 
+    grid:
+      sidebar-width: 0px
+      body-width: 1200px
+      margin-width: 300px
+      gutter-width: 1.5rem
 ---
 
 Pharmacometric (PMx) research usually involves computationally intensive modeling and simulation processes. High performance computing (HPC) systems provided by Minnesota Supercomputing Institute ([MSI](https://www.msi.umn.edu/)) serves as a valuable platform to perform PMx research. This blog post illustrates a strategy for constructing a collaborative, reproducible and manageable PMx workflow at MSI, leveraging several open-source tools in `R`.
@@ -44,21 +51,90 @@ Following the access to Open Ondemand, choose Rstudio Server under Interactive A
 :::
 
 ::: {.column width="50%"}
-![](pic/R2.png){fig-align="center" width="80%"}
+![](pic/R2_Agate.png){fig-align="center" width="80%"}
 :::
 :::
 
 Please note:
 
--   `NONMEM`, as the primary PMx modeling platform, has only been installed in HPC `mesabi` and `mangi`, not in `agate`. So if you'd like to use `NONMEM`, please avoid selecting `agate` as the cluster.
+<!-- -   `NONMEM`, as the primary PMx modeling platform, has only been installed in HPC `mesabi` and `mangi`, not in `agate`. So if you'd like to use `NONMEM`, please avoid selecting `agate` as the cluster. -->
+
+-   As the retirement of `mesabi` in June 2024, `agate` is currently the primary HPC at MSI for running `NONMEM`. 
 
 -   Several `R` versions are available, keeping a consistent `R` version among collaborators would better ensure the reproducibility of the project.
 
-Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after click the "Launch" button.
+-   `NONMEM` was installed at MSI HPC `agate` as a module. In "Custom Environment", typing in `module load nonmem/750-rocky8` will load the `NONMEM` module in HPC `agate`
 
-![](pic/R3.png){fig-align="center" width="80%"}
+Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after clicking the "Launch" button.
 
-# 3. Build a `Github` repository
+![](pic/R3_Agate.png){fig-align="center" width="80%"}
+  
+  
+# 3. Build a project directory
+
+We'd like to introduce two ways to build a project directory:   
+
+1. [Use `project-abc` as a template](#sec-projdir1)  
+
+2. [Build a project directory from scratch](#sec-projdir2)
+
+## 3.1 Use `project-abc` as a template{#sec-projdir1}
+
+**Step 1:** Navigate to template project workflow ([project-abc](https://github.umn.edu/cheng423/project-abc)). Click `Use this template`, and then create a project directory with an appropriate owner and user-defined project name.
+
+::: columns
+::: {.column width="50%"}
+![](pic/temp1.png){fig-align="center" width="80%"}
+:::
+
+::: {.column width="50%"}
+![](pic/temp2.png){fig-align="center" width="80%"}
+:::
+:::
+
+**Step 2:** `git clone` the repository into MSI Rstudio server. To do this:  
+
+1. Copy the string for repository cloning as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).
+  
+![](pic/gitclone.png){fig-align="center" width="80%"}
+  
+  
+  
+2. Go back to your workflow, navigate to the desired directory in the terminal. 
+3. Clone the repository using the copied string (e.g., `git clone git@github.umn.edu:cheng423/project-xyz.git`) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.
+
+```{{bash}}
+Cloning into 'project-xyz'...
+remote: Enumerating objects: 52, done.
+remote: Counting objects: 100% (52/52), done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 52 (delta 4), reused 34 (delta 2), pack-reused 0
+Receiving objects: 100% (52/52), 2.92 MiB | 15.24 MiB/s, done.
+Resolving deltas: 100% (4/4), done.
+Updating files: 100% (43/43), done.
+```
+
+**Step 3:** navigate inside the newly cloned github repository, then rename the `.Rproj` file to make it consistent with the repository name. After renaming, open the `.Rproj` file. This will restart your `R` session and initialize the desired `R` project.  
+
+::: columns
+::: {.column width="75%"}
+
+![](pic/rename.png){fig-align="center" width="80%"}
+:::
+
+::: {.column width="25%"}
+
+![](pic/rproj.png){fig-align="center" width="80%"}
+:::
+:::
+
+**Step 4:** install `R` packages. The `R` packages in the template project is managed by `renv`. Run `renv::restore()` in the `R` console to restore all the package installations according to `renv.lock`. The package installation might take a few minutes to finish. 
+
+You can directly jump to section [4. Run `NONMEM` using `bbi`](#sec-nonmem) to explore how to operate `NONMEM` at MSI following this step. 
+
+## 3.2 Build a project directory from scratch{#sec-projdir2}
+
+### 3.2.1. Build a `Github` repository
 
 `Github` is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to [`GitHub Enterprise`](https://it.umn.edu/services-technologies/github) for all students and employees possessing an active Internet ID. Establishing a `GitHub` repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed `GitHub` tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this [document](https://git-scm.com/doc) for further information. Briefly,
 
@@ -68,7 +144,7 @@ Rstudio session will start in a few seconds / minutes (depends on your Rstudio S
 
 ![](pic/Github2.png){fig-align="center" width="90%"}
 
-**Step 2:** If you have already set up your `GitHub` [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) key. Clone the repository into your MSI Rstudio Server session through "terminal" using the SSH option as shown below. Other options such as HTTP and GITHUB CLI are also available but will not be covered in this blog.
+**Step 2:** If you have already set up your `GitHub` [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) key. Clone the repository into your MSI Rstudio Server session through "terminal" using the SSH option as shown below. Other options such as HTTPS and GITHUB CLI are also available but will not be covered in this blog.
 
 ::: columns
 ::: {.column width="50%"}
@@ -82,11 +158,11 @@ Rstudio session will start in a few seconds / minutes (depends on your Rstudio S
 
 **Step 3:** After `git clone`, the `GitHub` repository you created should appear in your MSI disk. You can now interact with your `GitHub` repository and replies on it to synchronize your work with your collaborators.
 
-# 4. Using `renv` for package version control
+### 3.2.2. Using `renv` for package version control
 
 ![](pic/renv.png){fig-align="center" width="80%"}
 
-[`renv`](https://rstudio.github.io/renv/articles/renv.html) is a useful package to create reproducible environment for each `R` project. Instead of using library of `R` packages installed globally for every project. `renv` allows you to create project specific library to ensure the package version consistent across an `R` project.
+[`renv`](https://rstudio.github.io/renv/articles/renv.html) is a useful package to create reproducible environment for each `R` project. Instead of using library of `R` packages installed globally for every project. `renv` allows you to create project specific library to ensure the package version consistent across the duration of an `R` project.
 
 ::: columns
 ::: {.column width="50%"}
@@ -160,7 +236,7 @@ Subsequently, we can run `renv::snapshot()` in the `R` console. This will update
 
 Using `GitHub` to synchronize your `renv.lock` file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using `renv::restore()` according to the updated `renv.lock`. Similarly, if they update `renv.lock` on their end, you could also run `renv::restore()` to restore their installation.
 
-# 5. Run `NONMEM` using `bbi`
+# 4. Run `NONMEM` using `bbi` {#sec-nonmem}
 
 Currently, `NONMEM` is the primary PMx model development tool at MSI. While [`PsN`](https://www.msi.umn.edu/sw/nonmem-0) is available at MSI to communicate with `NONMEM` for the execution of model fitting, for this blog post, I'd like to introduce [`bbi`](https://github.com/metrumresearchgroup/bbi) developed by MetrumRG as a tool to interact with `NONMEM`. Using `bbi` makes the PMx modeling result post-processing much easier using [`bbr`](https://metrumresearchgroup.github.io/bbr/articles/getting-started.html) and other [open-source tools](https://www.metrumrg.com/merge-expo/) developed by MetrumRG.
 
@@ -188,11 +264,11 @@ To submit a `NONMEM` model, you would also need a `bbi` configuration file (`bbi
 # NONMEM model directory
   MODEL_DIR <- here("model") 
 # NONMEM installation directory at MSI
-  NONMEM_DIR <- "/common/software/install/migrated/nonmem" 
+  NONMEM_DIR <- Sys.getenv("NM_ROOT") 
 # NONMEM version
   NONMEM_VERSION <- "750" 
 # MPI installation directory at MSI
-  MPI_PATH <- "/common/software/install/migrated.intel/x86_64/2018/impi_msi/compilers_and_libraries_2018.0.128/linux/mpi/intel64/bin/mpiexec" 
+  MPI_PATH <- Sys.getenv("NM_MPIEXEC") 
 
 # Create `bbi` cinfiguration file in `MODEL_DIR`
 bbi_init(.dir = MODEL_DIR,
@@ -207,7 +283,7 @@ This will add a `bbi.yaml` file (i.e., `bbi` configuration file) in the `MODEL_D
 
 MSI uses [`slurm`](https://slurm.schedmd.com/documentation.html) as the queuing system for job submission and scheduling, which makes the `NONMEM` model submission using `bbr::submit_model()` become impossible. There are two alternative strategies to submit `NONMEM` models at MSI using `bbi`.
 
-1)  Submit in terminal using a `bash` script. An example `bash` script (`./model/nm_run.sh`) is shown below.
+**Method 1**  Submit in terminal using a `bash` script. An example `bash` script (`./model/nm_run.sh`) is shown below.
 
 ```{{bash}}
 #!/bin/bash -l
@@ -219,9 +295,9 @@ MSI uses [`slurm`](https://slurm.schedmd.com/documentation.html) as the queuing 
 #SBATCH -L nonmem@slurmdb:1
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=cheng423@umn.edu
-#SBATCH -p amdlarge
+#SBATCH -p msismall
 cd $SLURM_SUBMIT_DIR
-module load nonmem
+module load nonmem/750-rocky8
 /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local $1.mod --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml
 ```
 
@@ -229,9 +305,9 @@ Many of the commands used in this bash script are detailed in the [MSI](https://
 
 -   `#SBATCH -L nonmem@slurmdb:1` specifies a `NONMEM` license. Currently, two `NONMEM` licenses are available at MSI, you can specify either `#SBATCH -L nonmem@slurmdb:1` or `#SBATCH -L nonmem@slurmdb:2`.
 
--   `#SBATCH -p amdlarge` specifies partition of the job. Please refer to this [sheet](https://www.msi.umn.edu/partitions) to appropriately select the partition that fits your job.
+-   `#SBATCH -p msismall` specifies partition of the job. Please refer to this [sheet](https://www.msi.umn.edu/partitions) to appropriately select the partition that fits your job.
 
--   `module load nonmem` loads `NONMEM` program at MSI.
+-   `module load nonmem/750-rocky8` loads the `NONMEM` program module at MSI HPC `agate`.
 
 -   `/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi` specifies the executable path of `bbi`.
 
@@ -239,7 +315,7 @@ Many of the commands used in this bash script are detailed in the [MSI](https://
 
 With this `bash` script, navigate (`cd`) inside the `MODEL_DIR` in terminal, `NONMEM` model fitting can then be submitted at MSI using command `sbatch nm_run.sh 106`, where 106 substitutes the `$1` in the `bash` script. After submission, you can use `squeue --me` in terminal to check run status.
 
-2)  Create a `bash` script from a template (`./script/slurm-template.txt`) and then submit it using an `R` function (`./script/function-model.R`) adapted from [`slurmtools`](https://github.com/A2-ai/slurmtools).
+**Method 2**  Create a `bash` script from a template (`./script/slurm-template.txt`) and then submit it using an `R` function (`./script/function-model.R`) adapted from [`slurmtools`](https://github.com/A2-ai/slurmtools).
 
 To use this method for the submission of `NONMEM` models, a few options need to be specified first.
 
@@ -274,6 +350,27 @@ submit_nonmem_model(.mod = mod,
                     email = EMAIL)
 
 # Use `squeue --me` in terminal to check run status
+```
+
+This code snippet helps you create a `bash` script as shown below using `script/slurm-template.txt`. 
+
+```{{bash}}
+#!/bin/bash -l
+#SBATCH --time=12:00:00
+#SBATCH --mem=10g
+#SBATCH --tmp=10g
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH -L nonmem@slurmdb:1
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=cheng423@umn.edu
+#SBATCH -p msismall
+
+ulimit -l unlimited
+
+module load nonmem/750-rocky8
+
+/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/106.mod --parallel --threads=4 --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml
 ```
 
 **Step 4**: Check `NONMEM` modeling results using `bbr`

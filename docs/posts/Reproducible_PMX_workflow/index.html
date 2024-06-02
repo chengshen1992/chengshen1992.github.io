@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Shen Cheng">
-<meta name="dcterms.date" content="2024-03-16">
+<meta name="dcterms.date" content="2024-06-02">
 
 <title>Cheng Lab - Create reproducible PMx workflow at MSI</title>
 <style>
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -103,10 +110,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Cheng Lab</span>
     </a>
@@ -118,17 +125,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blogs.html" rel="" target="">
- <span class="menu-text">Blogs</span></a>
+    <a class="nav-link" href="../../blogs.html"> 
+<span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -157,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 16, 2024</p>
+        <p class="date">June 2, 2024</p>
       </div>
     </div>
     
@@ -175,14 +182,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#connect-to-vpn" id="toc-connect-to-vpn" class="nav-link active" data-scroll-target="#connect-to-vpn">1. Connect to VPN</a></li>
   <li><a href="#access-r-at-msi" id="toc-access-r-at-msi" class="nav-link" data-scroll-target="#access-r-at-msi">2. Access <code>R</code> at MSI</a></li>
-  <li><a href="#build-a-github-repository" id="toc-build-a-github-repository" class="nav-link" data-scroll-target="#build-a-github-repository">3. Build a <code>Github</code> repository</a></li>
-  <li><a href="#using-renv-for-package-version-control" id="toc-using-renv-for-package-version-control" class="nav-link" data-scroll-target="#using-renv-for-package-version-control">4. Using <code>renv</code> for package version control</a></li>
-  <li><a href="#run-nonmem-using-bbi" id="toc-run-nonmem-using-bbi" class="nav-link" data-scroll-target="#run-nonmem-using-bbi">5. Run <code>NONMEM</code> using <code>bbi</code></a></li>
+  <li><a href="#build-a-project-directory" id="toc-build-a-project-directory" class="nav-link" data-scroll-target="#build-a-project-directory">3. Build a project directory</a>
+  <ul class="collapse">
+  <li><a href="#sec-projdir1" id="toc-sec-projdir1" class="nav-link" data-scroll-target="#sec-projdir1">3.1 Use <code>project-abc</code> as a template</a></li>
+  <li><a href="#sec-projdir2" id="toc-sec-projdir2" class="nav-link" data-scroll-target="#sec-projdir2">3.2 Build a project directory from scratch</a>
+  <ul class="collapse">
+  <li><a href="#build-a-github-repository" id="toc-build-a-github-repository" class="nav-link" data-scroll-target="#build-a-github-repository">3.2.1. Build a <code>Github</code> repository</a></li>
+  <li><a href="#using-renv-for-package-version-control" id="toc-using-renv-for-package-version-control" class="nav-link" data-scroll-target="#using-renv-for-package-version-control">3.2.2. Using <code>renv</code> for package version control</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-nonmem" id="toc-sec-nonmem" class="nav-link" data-scroll-target="#sec-nonmem">4. Run <code>NONMEM</code> using <code>bbi</code></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -210,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/vpn.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="pic/vpn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
@@ -222,76 +237,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/R1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/R2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R2_Agate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Please note:</p>
+<!-- -   `NONMEM`, as the primary PMx modeling platform, has only been installed in HPC `mesabi` and `mangi`, not in `agate`. So if you'd like to use `NONMEM`, please avoid selecting `agate` as the cluster. -->
 <ul>
-<li><p><code>NONMEM</code>, as the primary PMx modeling platform, has only been installed in HPC <code>mesabi</code> and <code>mangi</code>, not in <code>agate</code>. So if you’d like to use <code>NONMEM</code>, please avoid selecting <code>agate</code> as the cluster.</p></li>
+<li><p>As the retirement of <code>mesabi</code> in June 2024, <code>agate</code> is currently the primary HPC at MSI for running <code>NONMEM</code>.</p></li>
 <li><p>Several <code>R</code> versions are available, keeping a consistent <code>R</code> version among collaborators would better ensure the reproducibility of the project.</p></li>
+<li><p><code>NONMEM</code> was installed at MSI HPC <code>agate</code> as a module. In “Custom Environment”, typing in <code>module load nonmem/750-rocky8</code> will load the <code>NONMEM</code> module in HPC <code>agate</code></p></li>
 </ul>
-<p>Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after click the “Launch” button.</p>
+<p>Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after clicking the “Launch” button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/R3.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/R3_Agate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </section>
-<section id="build-a-github-repository" class="level1">
-<h1>3. Build a <code>Github</code> repository</h1>
-<p><code>Github</code> is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to <a href="https://it.umn.edu/services-technologies/github"><code>GitHub Enterprise</code></a> for all students and employees possessing an active Internet ID. Establishing a <code>GitHub</code> repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed <code>GitHub</code> tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this <a href="https://git-scm.com/doc">document</a> for further information. Briefly,</p>
-<p><strong>Step 1:</strong> Registering / signing in University of Minnesota <code>GitHub Enterprise</code>. Initialize a new <code>GitHub</code> repository (i.e, <code>project-abc</code>) by clicking “New repository” tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pic/Github1.png" class="img-fluid figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pic/Github2.png" class="img-fluid figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-<p><strong>Step 2:</strong> If you have already set up your <code>GitHub</code> <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH</a> key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below. Other options such as HTTP and GITHUB CLI are also available but will not be covered in this blog.</p>
+<section id="build-a-project-directory" class="level1">
+<h1>3. Build a project directory</h1>
+<p>We’d like to introduce two ways to build a project directory:</p>
+<ol type="1">
+<li><p><a href="#sec-projdir1">Use <code>project-abc</code> as a template</a></p></li>
+<li><p><a href="#sec-projdir2">Build a project directory from scratch</a></p></li>
+</ol>
+<section id="sec-projdir1" class="level2">
+<h2 class="anchored" data-anchor-id="sec-projdir1">3.1 Use <code>project-abc</code> as a template</h2>
+<p><strong>Step 1:</strong> Navigate to template project workflow (<a href="https://github.umn.edu/cheng423/project-abc">project-abc</a>). Click <code>Use this template</code>, and then create a project directory with an appropriate owner and user-defined project name.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/Github3.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/temp1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/Github4.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="pic/temp2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Step 2:</strong> <code>git clone</code> the repository into MSI Rstudio server. To do this:</p>
+<ol type="1">
+<li>Copy the string for repository cloning as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/gitclone.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Go back to your workflow, navigate to the desired directory in the terminal.</li>
+<li>Clone the repository using the copied string (e.g., <code>git clone git@github.umn.edu:cheng423/project-xyz.git</code>) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">Cloning into 'project-xyz'...</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">remote: Enumerating objects: 52, done.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">remote: Counting objects: 100% (52/52), done.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">remote: Compressing objects: 100% (43/43), done.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">remote: Total 52 (delta 4), reused 34 (delta 2), pack-reused 0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">Receiving objects: 100% (52/52), 2.92 MiB | 15.24 MiB/s, done.</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">Resolving deltas: 100% (4/4), done.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">Updating files: 100% (43/43), done.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 3:</strong> navigate inside the newly cloned github repository, then rename the <code>.Rproj</code> file to make it consistent with the repository name. After renaming, open the <code>.Rproj</code> file. This will restart your <code>R</code> session and initialize the desired <code>R</code> project.</p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/rename.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/rproj.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Step 4:</strong> install <code>R</code> packages. The <code>R</code> packages in the template project is managed by <code>renv</code>. Run <code>renv::restore()</code> in the <code>R</code> console to restore all the package installations according to <code>renv.lock</code>. The package installation might take a few minutes to finish.</p>
+<p>You can directly jump to section <a href="#sec-nonmem">4. Run <code>NONMEM</code> using <code>bbi</code></a> to explore how to operate <code>NONMEM</code> at MSI following this step.</p>
+</section>
+<section id="sec-projdir2" class="level2">
+<h2 class="anchored" data-anchor-id="sec-projdir2">3.2 Build a project directory from scratch</h2>
+<section id="build-a-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="build-a-github-repository">3.2.1. Build a <code>Github</code> repository</h3>
+<p><code>Github</code> is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to <a href="https://it.umn.edu/services-technologies/github"><code>GitHub Enterprise</code></a> for all students and employees possessing an active Internet ID. Establishing a <code>GitHub</code> repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed <code>GitHub</code> tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this <a href="https://git-scm.com/doc">document</a> for further information. Briefly,</p>
+<p><strong>Step 1:</strong> Registering / signing in University of Minnesota <code>GitHub Enterprise</code>. Initialize a new <code>GitHub</code> repository (i.e, <code>project-abc</code>) by clicking “New repository” tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/Github1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/Github2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p><strong>Step 2:</strong> If you have already set up your <code>GitHub</code> <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH</a> key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below. Other options such as HTTPS and GITHUB CLI are also available but will not be covered in this blog.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/Github3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/Github4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Step 3:</strong> After <code>git clone</code>, the <code>GitHub</code> repository you created should appear in your MSI disk. You can now interact with your <code>GitHub</code> repository and replies on it to synchronize your work with your collaborators.</p>
 </section>
-<section id="using-renv-for-package-version-control" class="level1">
-<h1>4. Using <code>renv</code> for package version control</h1>
+<section id="using-renv-for-package-version-control" class="level3">
+<h3 class="anchored" data-anchor-id="using-renv-for-package-version-control">3.2.2. Using <code>renv</code> for package version control</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/renv.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/renv.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
-<p><a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a> is a useful package to create reproducible environment for each <code>R</code> project. Instead of using library of <code>R</code> packages installed globally for every project. <code>renv</code> allows you to create project specific library to ensure the package version consistent across an <code>R</code> project.</p>
+<p><a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a> is a useful package to create reproducible environment for each <code>R</code> project. Instead of using library of <code>R</code> packages installed globally for every project. <code>renv</code> allows you to create project specific library to ensure the package version consistent across the duration of an <code>R</code> project.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Step 1:</strong> Create an <code>R</code> project</p>
 <p>To use <code>renv</code>, You need to create an <code>R</code> project (<code>.Rproj</code>) in the cloned <code>GitHub</code> repository.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/renv1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/renv1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -299,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In your <code>R</code> console, type in <code>renv::init()</code> to initialize the structure of the <code>R</code> environment using <code>renv</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/renv2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="pic/renv2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -326,145 +412,162 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>here</code> from <code>CRAN</code>.</li>
 </ul>
 <p>I can install them by running:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"mrgsolve"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"tidyverse"</span>, </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"metrumresearchgroup/nmrec"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"metrumresearchgroup/bbr"</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"here"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">renv::install("mrgsolve", </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">              "tidyverse", </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">              "metrumresearchgroup/nmrec",</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">              "metrumresearchgroup/bbr", </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="in">              "here")</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session. When the installation finishes, you should see all the requested packages installed in the <code>renv/library</code> directory.</p>
 <p><strong>Step 4:</strong> Create a snapshot of the installed packages</p>
 <p><code>renv::snapshot()</code> allows you to create a snapshot of the installed packages, which enables your collaborators to use <code>renv::restore()</code> to restore the same <code>R</code> packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.</p>
 <p>To accomplish this, we need to first create a new R script <code>library.R</code> in the project directory. This script does nothing but simply <code>library</code> all the packages installed.</p>
 <p>Example code for <code>library.R</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mrgsolve)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nmrec)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bbr)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(mrgsolve)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">library(nmrec)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">library(bbr)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">library(here)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Subsequently, we can run <code>renv::snapshot()</code> in the <code>R</code> console. This will update the <code>renv.lock</code> file in the project folder.</p>
 <p>Using <code>GitHub</code> to synchronize your <code>renv.lock</code> file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using <code>renv::restore()</code> according to the updated <code>renv.lock</code>. Similarly, if they update <code>renv.lock</code> on their end, you could also run <code>renv::restore()</code> to restore their installation.</p>
 </section>
-<section id="run-nonmem-using-bbi" class="level1">
-<h1>5. Run <code>NONMEM</code> using <code>bbi</code></h1>
+</section>
+</section>
+<section id="sec-nonmem" class="level1">
+<h1>4. Run <code>NONMEM</code> using <code>bbi</code></h1>
 <p>Currently, <code>NONMEM</code> is the primary PMx model development tool at MSI. While <a href="https://www.msi.umn.edu/sw/nonmem-0"><code>PsN</code></a> is available at MSI to communicate with <code>NONMEM</code> for the execution of model fitting, for this blog post, I’d like to introduce <a href="https://github.com/metrumresearchgroup/bbi"><code>bbi</code></a> developed by MetrumRG as a tool to interact with <code>NONMEM</code>. Using <code>bbi</code> makes the PMx modeling result post-processing much easier using <a href="https://metrumresearchgroup.github.io/bbr/articles/getting-started.html"><code>bbr</code></a> and other <a href="https://www.metrumrg.com/merge-expo/">open-source tools</a> developed by MetrumRG.</p>
 <p>Let’s take a model (<code>106.mod</code>) from MetrumRG <a href="https://github.com/metrumresearchgroup/expo1-nonmem-foce">expo1-nonmem-foce</a> as an example. The original analysis data and model were transferred into our project folder (<code>./data/analysis3.csv</code> and <code>./model/106.mod</code>). The <code>$DATA</code> block in <code>./model/106.mod</code> was modified accordingly.</p>
 <p><strong>Step 1</strong>: <code>bbi</code> installation</p>
 <p>It is preferable that <code>bbi</code> is installed once every project by setting <code>bbi.bbi_exe_path</code> in <code>.Rprofile</code>. This can be done by adding the following code in <code>.Rprofile</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bbr.bbi_exe_path'</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"bin/bbi"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">options(</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">  'bbr.bbi_exe_path' = normalizePath("bin/bbi")</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Subsequently, restart <code>R</code> session to change the <code>bbr.bbi_exe_path</code> specified in <code>.Rprofile</code>. <code>bbi</code> can be installed via <code>bbr::use_bbi()</code> in <code>R</code> console according to the <code>bbr.bbi_exe_path</code>. The successful installation of <code>bbi</code> can be verified by running <code>bbr::bbi_version()</code> in R console. If <code>bbi</code> has been installed correctly, it should return a specific version number as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/bbi1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="pic/bbi1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p><strong>Step 2</strong>: Create a <code>bbi</code> configuration file</p>
 <p>To submit a <code>NONMEM</code> model, you would also need a <code>bbi</code> configuration file (<code>bbi.yaml</code>), which specified the path and version of <code>NONMEM</code>, along with the path of the Message Passing Interface (MPI) for parallel computing. This can be done using the following code in <code>R</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM model directory</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  MODEL_DIR <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"model"</span>) </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM installation directory at MSI</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  NONMEM_DIR <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated/nonmem"</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># NONMEM version</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  NONMEM_VERSION <span class="ot">&lt;-</span> <span class="st">"750"</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># MPI installation directory at MSI</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  MPI_PATH <span class="ot">&lt;-</span> <span class="st">"/common/software/install/migrated.intel/x86_64/2018/impi_msi/compilers_and_libraries_2018.0.128/linux/mpi/intel64/bin/mpiexec"</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create `bbi` cinfiguration file in `MODEL_DIR`</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bbi_init</span>(<span class="at">.dir =</span> MODEL_DIR,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_dir =</span> NONMEM_DIR, </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">.nonmem_version =</span> NONMEM_VERSION, </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">.bbi_args =</span> <span class="fu">list</span>(<span class="st">"mpi_exec_path"</span> <span class="ot">=</span> MPI_PATH))</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in"># NONMEM model directory</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">  MODEL_DIR &lt;- here("model") </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in"># NONMEM installation directory at MSI</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">  NONMEM_DIR &lt;- Sys.getenv("NM_ROOT") </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in"># NONMEM version</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">  NONMEM_VERSION &lt;- "750" </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in"># MPI installation directory at MSI</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">  MPI_PATH &lt;- Sys.getenv("NM_MPIEXEC") </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in"># Create `bbi` cinfiguration file in `MODEL_DIR`</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">bbi_init(.dir = MODEL_DIR,</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="in">         .nonmem_dir = NONMEM_DIR, </span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">         .nonmem_version = NONMEM_VERSION, </span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">         .bbi_args = list("mpi_exec_path" = MPI_PATH))</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will add a <code>bbi.yaml</code> file (i.e., <code>bbi</code> configuration file) in the <code>MODEL_DIR</code>.</p>
 <p><strong>Step 3</strong>: Submit <code>NONMEM</code> model using <code>bbi</code></p>
 <p>MSI uses <a href="https://slurm.schedmd.com/documentation.html"><code>slurm</code></a> as the queuing system for job submission and scheduling, which makes the <code>NONMEM</code> model submission using <code>bbr::submit_model()</code> become impossible. There are two alternative strategies to submit <code>NONMEM</code> models at MSI using <code>bbi</code>.</p>
-<ol type="1">
-<li>Submit in terminal using a <code>bash</code> script. An example <code>bash</code> script (<code>./model/nm_run.sh</code>) is shown below.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=05:25:00 </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=2g</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --tmp=6g</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks=1</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=46</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -L nonmem@slurmdb:1</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-type=ALL</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-user=cheng423@umn.edu</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -p amdlarge</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$SLURM_SUBMIT_DIR</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load nonmem</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ex">/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi</span> nonmem run local <span class="va">$1</span>.mod <span class="at">--config</span> /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Method 1</strong> Submit in terminal using a <code>bash</code> script. An example <code>bash</code> script (<code>./model/nm_run.sh</code>) is shown below.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">#!/bin/bash -l</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --time=05:25:00 </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mem=2g</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --tmp=6g</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --ntasks=1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --cpus-per-task=46</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH -L nonmem@slurmdb:1</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mail-type=ALL</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mail-user=cheng423@umn.edu</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH -p msismall</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="in">cd $SLURM_SUBMIT_DIR</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="in">module load nonmem/750-rocky8</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local $1.mod --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Many of the commands used in this bash script are detailed in the <a href="https://www.msi.umn.edu/content/job-submission-and-scheduling-slurm">MSI</a>. Below, we’ve provided explanations for a few selected commands that are not covered extensively in the MSI documentation:</p>
 <ul>
 <li><p><code>#SBATCH -L nonmem@slurmdb:1</code> specifies a <code>NONMEM</code> license. Currently, two <code>NONMEM</code> licenses are available at MSI, you can specify either <code>#SBATCH -L nonmem@slurmdb:1</code> or <code>#SBATCH -L nonmem@slurmdb:2</code>.</p></li>
-<li><p><code>#SBATCH -p amdlarge</code> specifies partition of the job. Please refer to this <a href="https://www.msi.umn.edu/partitions">sheet</a> to appropriately select the partition that fits your job.</p></li>
-<li><p><code>module load nonmem</code> loads <code>NONMEM</code> program at MSI.</p></li>
+<li><p><code>#SBATCH -p msismall</code> specifies partition of the job. Please refer to this <a href="https://www.msi.umn.edu/partitions">sheet</a> to appropriately select the partition that fits your job.</p></li>
+<li><p><code>module load nonmem/750-rocky8</code> loads the <code>NONMEM</code> program module at MSI HPC <code>agate</code>.</p></li>
 <li><p><code>/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi</code> specifies the executable path of <code>bbi</code>.</p></li>
 <li><p><code>/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</code> specifies the <code>bbi</code> configuration file.</p></li>
 </ul>
 <p>With this <code>bash</code> script, navigate (<code>cd</code>) inside the <code>MODEL_DIR</code> in terminal, <code>NONMEM</code> model fitting can then be submitted at MSI using command <code>sbatch nm_run.sh 106</code>, where 106 substitutes the <code>$1</code> in the <code>bash</code> script. After submission, you can use <code>squeue --me</code> in terminal to check run status.</p>
-<ol start="2" type="1">
-<li>Create a <code>bash</code> script from a template (<code>./script/slurm-template.txt</code>) and then submit it using an <code>R</code> function (<code>./script/function-model.R</code>) adapted from <a href="https://github.com/A2-ai/slurmtools"><code>slurmtools</code></a>.</li>
-</ol>
+<p><strong>Method 2</strong> Create a <code>bash</code> script from a template (<code>./script/slurm-template.txt</code>) and then submit it using an <code>R</code> function (<code>./script/function-model.R</code>) adapted from <a href="https://github.com/A2-ai/slurmtools"><code>slurmtools</code></a>.</p>
 <p>To use this method for the submission of <code>NONMEM</code> models, a few options need to be specified first.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set path for `bbi` configuration file</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"bbi_config_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"model/bbi.yaml"</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set slurm template to create bash script</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"slurm_job_template_path"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"script/slurm-template.txt"</span>))</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set a folder to contain all .out file generated by slurm</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"submission_root"</span> <span class="ot">=</span> <span class="fu">normalizePath</span>(<span class="st">"sub"</span>))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will then allow you to submit a <code>NONMEM</code> model at MSI directly from <code>R</code> using a code snippet like:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read `NONMEM` model using `bbr`</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>runno <span class="ot">&lt;-</span> <span class="st">"106"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">new_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno), <span class="at">.overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load `submit_nonmem_model` function</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"script/function-model.R"</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>PARTITION <span class="ot">=</span> <span class="st">"msismall"</span>     <span class="co"># partition at MSI see "https://www.msi.umn.edu/partitions"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>NCPU <span class="ot">=</span> <span class="dv">4</span>                   <span class="co"># ncpu-per-task</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>EMAIL <span class="ot">=</span> <span class="st">"cheng423@umn.edu"</span> <span class="co"># email to receive slurm notification</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">submit_nonmem_model</span>(<span class="at">.mod =</span> mod, </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">partition =</span> PARTITION, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncpu =</span> NCPU, </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                    <span class="at">email =</span> EMAIL)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Use `squeue --me` in terminal to check run status</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in"># set path for `bbi` configuration file</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">options("bbi_config_path" = normalizePath("model/bbi.yaml"))</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in"># set slurm template to create bash script</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">options("slurm_job_template_path" = normalizePath("script/slurm-template.txt"))</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in"># set a folder to contain all .out file generated by slurm</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">options("submission_root" = normalizePath("sub"))</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will then allow you to submit a <code>NONMEM</code> model at MSI directly from <code>R</code> using a code snippet like:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in"># Read `NONMEM` model using `bbr`</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">runno &lt;- "106"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">mod &lt;- new_model(.path = file.path(MODEL_DIR, runno), .overwrite=TRUE)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Load `submit_nonmem_model` function</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">source(here("script/function-model.R"))</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">PARTITION = "msismall"     # partition at MSI see "https://www.msi.umn.edu/partitions"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">NCPU = 4                   # ncpu-per-task</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="in">EMAIL = "cheng423@umn.edu" # email to receive slurm notification</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="in">submit_nonmem_model(.mod = mod, </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in">                    partition = PARTITION, </span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="in">                    ncpu = NCPU, </span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="in">                    email = EMAIL)</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="in"># Use `squeue --me` in terminal to check run status</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code snippet helps you create a <code>bash</code> script as shown below using <code>script/slurm-template.txt</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">#!/bin/bash -l</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --time=12:00:00</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mem=10g</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --tmp=10g</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --ntasks=1</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --cpus-per-task=4</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH -L nonmem@slurmdb:1</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mail-type=ALL</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH --mail-user=cheng423@umn.edu</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="in">#SBATCH -p msismall</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="in">ulimit -l unlimited</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="in">module load nonmem/750-rocky8</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="in">/panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/bin/bbi nonmem run local /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/106.mod --parallel --threads=4 --config /panfs/jay/groups/35/cheng423/cheng423/learning/project-abc/model/bbi.yaml</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Step 4</strong>: Check <code>NONMEM</code> modeling results using <code>bbr</code></p>
 <p>Following the <code>NONMEM</code> modeling via <code>bbi</code>, you can check the model results using the following code:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">read_model</span>(<span class="at">.path =</span> <span class="fu">file.path</span>(MODEL_DIR, runno))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mod <span class="sc">%&gt;%</span> <span class="fu">model_summary</span>()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="in">mod &lt;- read_model(.path = file.path(MODEL_DIR, runno))</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in">mod %&gt;% model_summary()</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If model 106 runs successfully, you should see output similar to this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pic/bbi2.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="pic/bbi2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.3.3 (2024-02-29)
 Platform: x86_64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.3.1
+Running under: macOS Sonoma 14.4.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
@@ -570,10 +673,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -583,8 +703,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -596,7 +725,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -640,6 +892,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -665,6 +918,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -725,6 +1004,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
