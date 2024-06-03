@@ -2,6 +2,7 @@
   {
     "listing": "/blogs.html",
     "items": [
+      "/posts/vscode_ssh/index.html",
       "/posts/Reproducible_PMX_workflow/index.html"
     ]
   }
