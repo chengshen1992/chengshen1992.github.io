@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Shen Cheng">
-<meta name="dcterms.date" content="2024-06-02">
+<meta name="dcterms.date" content="2024-06-15">
 
 <title>Cheng Lab - Connect MSI with Visual Studio Code over SSH</title>
 <style>
@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2024</p>
+        <p class="date">June 15, 2024</p>
       </div>
     </div>
     
@@ -182,7 +182,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up-ssh-key-for-the-remote-communication-with-msi" id="toc-set-up-ssh-key-for-the-remote-communication-with-msi" class="nav-link active" data-scroll-target="#set-up-ssh-key-for-the-remote-communication-with-msi">1. Set up SSH key for the remote communication with MSI</a></li>
   <li><a href="#create-.sshconfig-in-the-local-machine" id="toc-create-.sshconfig-in-the-local-machine" class="nav-link" data-scroll-target="#create-.sshconfig-in-the-local-machine">2. Create <code>~/.ssh/config</code> in the local machine</a></li>
   <li><a href="#add-msi-front-end-server-as-a-new-ssh-host" id="toc-add-msi-front-end-server-as-a-new-ssh-host" class="nav-link" data-scroll-target="#add-msi-front-end-server-as-a-new-ssh-host">3. Add MSI front-end server as a new SSH host</a></li>
-  <li><a href="#connect-vscode-with-msi" id="toc-connect-vscode-with-msi" class="nav-link" data-scroll-target="#connect-vscode-with-msi">4. Connect VScode with MSI</a></li>
+  <li><a href="#connect-to-vpn" id="toc-connect-to-vpn" class="nav-link" data-scroll-target="#connect-to-vpn">4. Connect to VPN</a></li>
+  <li><a href="#connect-vscode-with-msi" id="toc-connect-vscode-with-msi" class="nav-link" data-scroll-target="#connect-vscode-with-msi">5. Connect VScode with MSI</a></li>
   </ul>
 </nav>
     </div>
@@ -221,8 +222,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">IdentityFile ~/.ssh/id_rsa</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="connect-to-vpn" class="level1">
+<h1>4. Connect to VPN</h1>
+<p>MSI can only be accessed when</p>
+<ul>
+<li><p>You are connected to eduroam network on campus.</p></li>
+<li><p>You are off campus but connecting to the University’s Virtual Private Network (<a href="https://it.umn.edu/services-technologies/virtual-private-network-vpn">VPN</a>). Please make sure when selecting a channel for connection, do <strong>NOT</strong> select the channel named “<em>UMN - Departmental Pools</em>”.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/vpn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
 <section id="connect-vscode-with-msi" class="level1">
-<h1>4. Connect VScode with MSI</h1>
+<h1>5. Connect VScode with MSI</h1>
 <ul>
 <li>Under tab “Extension”, install extension “remote-ssh”</li>
 </ul>
@@ -245,6 +259,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="pic/vscode3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Entering your passphrase (set up in the SSH key in Step 1)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/credential1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Going through the two-factor authentication as instructed.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/credential2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <ul>

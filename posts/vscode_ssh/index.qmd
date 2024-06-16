@@ -17,21 +17,20 @@ Visual Studio Code (VScode) is a useful source code editor to interact with Minn
 
 # 1. Set up SSH key for the remote communication with MSI
 
-Follow the [tutorial](https://msi.umn.edu/our-resources/knowledge-base/interactive-connections-faqs/how-do-i-setup-ssh-keys) specified by MSI to setup SSH key in your local computer.  
-
+Follow the [tutorial](https://msi.umn.edu/our-resources/knowledge-base/interactive-connections-faqs/how-do-i-setup-ssh-keys) specified by MSI to setup SSH key in your local computer.
 
 # 2. Create `~/.ssh/config` in the local machine
 
-Run this in terminal, 
+Run this in terminal,
 
 ```{{bash}}
 cd ~/.ssh
 ls
 ```
 
-If you can see file `config` in the output, then it means `config` has already been created in your local machine.   
+If you can see file `config` in the output, then it means `config` has already been created in your local machine.
 
-If you cannot see `config` in the output, run this in terminal, 
+If you cannot see `config` in the output, run this in terminal,
 
 ```{{bash}}
 touch ~/.ssh/config
@@ -39,7 +38,7 @@ touch ~/.ssh/config
 
 # 3. Add MSI front-end server as a new SSH host
 
-Open `config`, copy and paste the following scripts. Replace `your.msi.username` with your X500 and save it. 
+Open `config`, copy and paste the following scripts. Replace `your.msi.username` with your X500 and save it.
 
 ```{{bash}}
 Host agate.msi.umn.edu
@@ -48,24 +47,43 @@ User your.msi.username
 IdentityFile ~/.ssh/id_rsa
 ```
 
-# 4. Connect VScode with MSI
+# 4. Connect to VPN
 
--  Under tab "Extension", install extension "remote-ssh"
+MSI can only be accessed when
+
+-   You are connected to eduroam network on campus.
+
+-   You are off campus but connecting to the University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting a channel for connection, do **NOT** select the channel named "*UMN - Departmental Pools*".
+
+![](pic/vpn.png){fig-align="center" width="60%"}
+
+# 5. Connect VScode with MSI
+
+-   Under tab "Extension", install extension "remote-ssh"
 
 ![](pic/vscode1.png){fig-align="center" width="50%"}
 
--  Once installed, you will be able to see this icon on the very bottom left corner of your VScode window. 
+-   Once installed, you will be able to see this icon on the very bottom left corner of your VScode window.
 
 ![](pic/vscode2.png){fig-align="center" width="30%"}
 
--  Click the icon, select "connect current window to host". You should be able to see the `agate.msi.umn.edu` if MSI SSH was correctly added to the `~/.ssh/config` file. Select `agate.msi.umn.edu` and wait for a few seconds. 
+-   Click the icon, select "connect current window to host". You should be able to see the `agate.msi.umn.edu` if MSI SSH was correctly added to the `~/.ssh/config` file. Select `agate.msi.umn.edu` and wait for a few seconds.
 
 ![](pic/vscode3.png){fig-align="center" width="60%"}
 
--  Once connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname. 
+-   Entering your passphrase (set up in the SSH key in Step 1)
+
+![](pic/credential1.png){fig-align="center" width="60%"}
+  
+  
+-   Going through the two-factor authentication as instructed.
+
+![](pic/credential2.png){fig-align="center" width="60%"}
+
+-   Once connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname.
 
 ![](pic/vscode4.png){fig-align="center" width="30%"}
 
-- You can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing `nonmem` syntax highlighter through VScode can more efficiently visualize a `NONMEM` script. 
+-   You can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing `nonmem` syntax highlighter through VScode can more efficiently visualize a `NONMEM` script.
 
 ![](pic/vscode5.png){fig-align="center" width="200%"}
