@@ -15,7 +15,7 @@ about:
       href: https://github.com/chengshen1992
     - text: CV
       icon: file-text
-      href: Shen_Cheng_CV.pdf
+      href: shen-cheng-cv-qmd.pdf
     - text: Linkedin
       icon: linkedin
       href: https://www.linkedin.com/in/shen-cheng/

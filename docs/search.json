@@ -18,7 +18,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Connect MSI with Visual Studio Code over SSH\n\n\n\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nJun 2, 2024\n\n\nShen Cheng\n\n\n\n\n\n\nNo matching items"
+    "text": "Use Finch Studio on MSI\n\n\n\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nNov 25, 2024\n\n\nMohamed Ismail and Shen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nNov 25, 2024\n\n\nMutaz Jaber and Shen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Reproducible_PMX_workflow/index.html",
@@ -61,5 +61,40 @@
     "title": "Connect MSI with Visual Studio Code over SSH",
     "section": "",
     "text": "Visual Studio Code (VScode) is a useful source code editor to interact with Minnesota Supercomputing Institute (MSI). This blog illustrate you how to connect VScode with MSI through Remote-SSH.\n\n1. Set up SSH key for the remote communication with MSI\nFollow the tutorial specified by MSI to setup SSH key in your local computer.\n\n\n2. Create ~/.ssh/config in the local machine\nRun this in terminal,\n```{bash}\ncd ~/.ssh\nls\n```\nIf you can see file config in the output, then it means config has already been created in your local machine.\nIf you cannot see config in the output, run this in terminal,\n```{bash}\ntouch ~/.ssh/config\n```\n\n\n3. Add MSI front-end server as a new SSH host\nOpen config, copy and paste the following scripts. Replace your.msi.username with your X500 and save it.\n```{bash}\nHost agate.msi.umn.edu\nHostName agate.msi.umn.edu\nUser your.msi.username\nIdentityFile ~/.ssh/id_rsa\n```\n\n\n4. Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”.\n\n\n\n\n\n\n\n\n5. Connect VScode with MSI\n\nUnder tab “Extension”, install extension “remote-ssh”\n\n\n\n\n\n\n\nOnce installed, you will be able to see this icon on the very bottom left corner of your VScode window.\n\n\n\n\n\n\n\nClick the icon, select “connect current window to host”. You should be able to see the agate.msi.umn.edu if MSI SSH was correctly added to the ~/.ssh/config file. Select agate.msi.umn.edu and wait for a few seconds.\n\n\n\n\n\n\n\nEntering your passphrase (set up in the SSH key in Step 1)\n\n\n\n\n\n\n\nGoing through the two-factor authentication as instructed.\n\n\n\n\n\n\n\nOnce connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname.\n\n\n\n\n\n\n\nYou can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing nonmem syntax highlighter through VScode can more efficiently visualize a NONMEM script."
+  },
+  {
+    "objectID": "posts/FinchStudio_msi/index.html",
+    "href": "posts/FinchStudio_msi/index.html",
+    "title": "Use Finch Studio on MSI",
+    "section": "",
+    "text": "Finch Studio is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with Mohamed Ismail from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI)."
+  },
+  {
+    "objectID": "posts/FinchStudio_msi/index.html#set-up-ssh-key-for-the-remote-communication-with-msi",
+    "href": "posts/FinchStudio_msi/index.html#set-up-ssh-key-for-the-remote-communication-with-msi",
+    "title": "Use Finch Studio on MSI",
+    "section": "1.1 Set up SSH key for the remote communication with MSI",
+    "text": "1.1 Set up SSH key for the remote communication with MSI\nFollow the tutorial specified by MSI to setup SSH key in your local computer."
+  },
+  {
+    "objectID": "posts/FinchStudio_msi/index.html#create-.sshconfig-in-the-local-machine",
+    "href": "posts/FinchStudio_msi/index.html#create-.sshconfig-in-the-local-machine",
+    "title": "Use Finch Studio on MSI",
+    "section": "1.2 Create ~/.ssh/config in the local machine",
+    "text": "1.2 Create ~/.ssh/config in the local machine\nRun this in terminal,\n```{bash}\ncd ~/.ssh\nls\n```\nIf you can see file config in the output, then it means config has already been created in your local machine.\nIf you cannot see config in the output, run this in terminal,\n```{bash}\ntouch ~/.ssh/config\n```"
+  },
+  {
+    "objectID": "posts/FinchStudio_msi/index.html#add-msi-front-end-server-as-a-new-ssh-host",
+    "href": "posts/FinchStudio_msi/index.html#add-msi-front-end-server-as-a-new-ssh-host",
+    "title": "Use Finch Studio on MSI",
+    "section": "1.3 Add MSI front-end server as a new SSH host",
+    "text": "1.3 Add MSI front-end server as a new SSH host\nOpen config, copy and paste the following scripts. Replace your.msi.username with your X500 and save it.\n```{bash}\nHost agate.msi.umn.edu\nHostName agate.msi.umn.edu\nUser your.msi.username\nIdentityFile ~/.ssh/id_rsa\n```"
+  },
+  {
+    "objectID": "posts/FinchStudio_msi/index.html#connect-to-vpn",
+    "href": "posts/FinchStudio_msi/index.html#connect-to-vpn",
+    "title": "Use Finch Studio on MSI",
+    "section": "1.4 Connect to VPN",
+    "text": "1.4 Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”."
   }
 ]

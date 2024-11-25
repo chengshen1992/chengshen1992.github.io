@@ -1,6 +1,6 @@
 ---
 title: "Create reproducible PMx workflow at MSI"
-author: "Shen Cheng"
+author: "Mutaz Jaber and Shen Cheng"
 date: last-modified
 categories: [workflow, code]
 image: "pic/image.png"
