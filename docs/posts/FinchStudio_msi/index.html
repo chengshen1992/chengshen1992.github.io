@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mohamed Ismail and Shen Cheng">
-<meta name="dcterms.date" content="2024-11-25">
+<meta name="author" content="Shen Cheng and Mohamed Ismail">
+<meta name="dcterms.date" content="2024-11-26">
 
 <title>Use Finch Studio on MSI – Cheng Lab</title>
 <style>
@@ -157,14 +157,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Mohamed Ismail and Shen Cheng </p>
+               <p>Shen Cheng and Mohamed Ismail </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 25, 2024</p>
+        <p class="date">November 26, 2024</p>
       </div>
     </div>
     
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><a href="https://finchstudio.io/">Finch Studio</a> is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with <a href="https://www.epd-llc.com/epd-team">Mohamed Ismail</a> from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI).</p>
+<p><a href="https://finchstudio.io/">Finch Studio</a> is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with <a href="https://www.epd-llc.com/epd-team">Mohamed Ismail</a> from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI). The example project used for this blog tutorial has been shared in a UMN GHE <a href="https://github.umn.edu/cheng423/finch-studio-example-project/tree/main">repository</a>.</p>
 <section id="configure-msi-ssh-settings" class="level1">
 <h1>1. Configure MSI SSH settings</h1>
 <section id="set-up-ssh-key-for-the-remote-communication-with-msi" class="level2">
@@ -286,6 +286,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="pic/fs3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
+<ul>
+<li><p>The configuration of local and remote mount points is illustrated as shown below.</p>
+<ul>
+<li>Local project path: <span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #C5407EFF;">X:/User/SmithJ</span><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #FDCB26FF;">/documents/project1</span>
+<ul>
+<li><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #C5407EFF;">Local mount point</span></li>
+<li><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #FDCB26FF;">Common project path</span></li>
+</ul></li>
+<li>Remote project path: <span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #E76E5BFF;">/usr/1/jsmith/</span><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #FDCB26FF;">documents/project1</span>
+<ul>
+<li><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #E76E5BFF;">Remote mount point</span></li>
+<li><span style="border-radius: 0.2rem; padding: 0 0.2rem 0 0.2rem;background-color: #FDCB26FF;">Common project path</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- ![](pic/mount-path.png){fig-align="center" width="50%" style="border: 2px solid grey;"} -->
 <ul>
 <li>Once the connection has been configured, click <strong>Save and Connect</strong>. You should receive a pop-up window for the two-factor authentication.</li>
 </ul>
@@ -380,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>A run command window should pop-up, here’re a few things to set up:</p>
 <ul>
 <li>We’d like to change run command from default to <code>sbatch test.sh</code> to execute the bash script.</li>
-<li>Enable <code>Execute on Remote Server</code> and <code>Copy File(s) Before Execution</code> options.</li>
+<li>Enable <strong>Execute on Remote Server</strong> and <strong>Copy File(s) Before Execution</strong> options.</li>
 <li>We’d like to <code>add file</code> to in <code>File(s) to Copy</code>:
 <ul>
 <li><ol type="1">
@@ -392,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Make sure to click <strong>SAVE PROFILE</strong> on top to reuse the run command next time.<br>
 </li>
-<li>Click <code>Execute</code> button to execute the run.</li>
+<li>Click <strong>Execute</strong> button to execute the run.</li>
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -409,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <ul>
-<li>To visualize the results via Finch Studio, you would want to download (select and drag from right to left) everything from remote to local. Afterwards, the modeling results can be visualized using the Finch Studio toolkit (e.g., parameter estimations using <code>.xml</code> files; model diagnostics using <code>sdtab</code>, etc).</li>
+<li>To visualize the results via Finch Studio, you would want to download (select and drag from right to left) everything from remote to local. Afterwards, the modeling results can be visualized using the Finch Studio toolkit.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -419,6 +435,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="pic/fs14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Finch Studio requires different <code>NONMEM</code> output files for different purposes as shown in the table below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/file-table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </section>
@@ -441,6 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>6. Summary</h1>
 <ul>
 <li><p>Theoretically, when executing jobs on MSI, Finch Studio can be used together with a variety of command line tools for model executions (<code>nmfe</code>, <code>bbi</code>) and evaluations (<code>vpc</code> and <code>bootstrap</code> in PsN) given the appropriate configurations of each bash script.</p></li>
+<li><p>Please not that a few Finch Studio functionalities would also require the installation of licensed <code>NONMEM</code> locally. For example, the <a href="https://docs.finchstudio.io/code-editor/#error-checking">Finch Code Editor</a> for error checking. If <code>NONMEM</code> is not installed locally with license, these functionalities cannot be used.</p></li>
 <li><p>This blog aims to illustrate how Finch Studio can be integrated with MSI. Please note that this blog is NOT a thorough review of Finch Studio functionalities. For a comprehensive understanding of Finch Studio functionalities, please refer to Finch Studio <a href="https://finchstudio.io/blog">tutorials</a>.</p></li>
 </ul>
 

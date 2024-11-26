@@ -1,9 +1,11 @@
 ---
 title: "Use Finch Studio on MSI"
-author: "Mohamed Ismail and Shen Cheng"
+author: "Shen Cheng and Mohamed Ismail"
 date: last-modified
 categories: [workflow, code]
 image: "pic/image.png"
+filters:
+  - highlight-text
 format:
   html: 
     grid:
@@ -13,7 +15,7 @@ format:
       gutter-width: 1.5rem
 ---
 
-[Finch Studio](https://finchstudio.io/) is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with [Mohamed Ismail](https://www.epd-llc.com/epd-team) from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI).
+[Finch Studio](https://finchstudio.io/) is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with [Mohamed Ismail](https://www.epd-llc.com/epd-team) from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI). The example project used for this blog tutorial has been shared in a UMN GHE [repository](https://github.umn.edu/cheng423/finch-studio-example-project/tree/main). 
 
 # 1. Configure MSI SSH settings
 
@@ -86,6 +88,17 @@ For detailed Finch Studio installation, please follow the Finch Studio [tutorial
     
 ![](pic/fs3.png){fig-align="center" width="100%"}
 
+-   The configuration of local and remote mount points is illustrated as shown below.
+
+    *   Local project path: [X:/User/SmithJ]{bg-colour="#C5407EFF"}[/documents/project1]{bg-colour="#FDCB26FF"}
+        *   [Local mount point]{bg-colour="#C5407EFF"}
+        *   [Common project path]{bg-colour="#FDCB26FF"}
+    *   Remote project path: [/usr/1/jsmith/]{bg-colour="#E76E5BFF"}[documents/project1]{bg-colour="#FDCB26FF"}
+        *   [Remote mount point]{bg-colour="#E76E5BFF"}
+        *   [Common project path]{bg-colour="#FDCB26FF"}
+
+<!-- ![](pic/mount-path.png){fig-align="center" width="50%" style="border: 2px solid grey;"} -->
+
 -   Once the connection has been configured, click **Save and Connect**. You should receive a pop-up window for the two-factor authentication. 
 
 ![](pic/fs4.png){fig-align="center" width="100%"}
@@ -156,12 +169,12 @@ execute mod1.ctl -nm_output=xml,ext
 -   A run command window should pop-up, here're a few things to set up: 
     
     *   We'd like to change run command from default to `sbatch test.sh` to execute the bash script. 
-    *   Enable `Execute on Remote Server` and `Copy File(s) Before Execution` options.
+    *   Enable **Execute on Remote Server** and **Copy File(s) Before Execution** options.
     *   We'd like to `add file` to in `File(s) to Copy`: 
         *   (1) The whole project directory from `.` to `..` 
         *   (2) The bash script from `../test.sh` to `.`
     *   Make sure to click **SAVE PROFILE** on top to reuse the run command next time.  
-    *   Click `Execute` button to execute the run. 
+    *   Click **Execute** button to execute the run. 
 
 
 ![](pic/fs11.png){fig-align="center" width="100%"}
@@ -170,11 +183,15 @@ execute mod1.ctl -nm_output=xml,ext
 
 ![](pic/fs12.png){fig-align="center" width="100%"}
 
--   To visualize the results via Finch Studio, you would want to download (select and drag from right to left) everything from remote to local. Afterwards, the modeling results can be visualized using the Finch Studio toolkit (e.g., parameter estimations using `.xml` files; model diagnostics using `sdtab`, etc).
+-   To visualize the results via Finch Studio, you would want to download (select and drag from right to left) everything from remote to local. Afterwards, the modeling results can be visualized using the Finch Studio toolkit.
 
 ![](pic/fs13.png){fig-align="center" width="100%"}
 
 ![](pic/fs14.png){fig-align="center" width="100%"}
+
+-   Finch Studio requires different `NONMEM` output files for different purposes as shown in the table below: 
+
+![](pic/file-table.png){fig-align="center" width="70%"}
 
 # 5. Cluster job monitoring
 
@@ -189,6 +206,8 @@ Once opened up, you can search your MSI username and filter the jobs related to 
 # 6. Summary
 
 -   Theoretically, when executing jobs on MSI, Finch Studio can be used together with a variety of command line tools for model executions (`nmfe`, `bbi`) and evaluations (`vpc` and `bootstrap` in PsN) given the appropriate configurations of each bash script. 
+
+-   Please not that a few Finch Studio functionalities would also require the installation of licensed `NONMEM` locally. For example, the [Finch Code Editor](https://docs.finchstudio.io/code-editor/#error-checking) for error checking. If `NONMEM` is not installed locally with license, these functionalities cannot be used. 
 
 -   This blog aims to illustrate how Finch Studio can be integrated with MSI. Please note that this blog is NOT a thorough review of Finch Studio functionalities. For a comprehensive understanding of Finch Studio functionalities, please refer to Finch Studio [tutorials](https://finchstudio.io/blog). 
 

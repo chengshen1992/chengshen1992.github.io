@@ -18,7 +18,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Use Finch Studio on MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nNov 25, 2024\n\n\nMohamed Ismail and Shen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nNov 25, 2024\n\n\nMutaz Jaber and Shen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\n\nNo matching items"
+    "text": "Use Finch Studio on MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mohamed Ismail\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\n\n\n\nworkflow\n\n\ncode\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mutaz Jaber\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Reproducible_PMX_workflow/index.html",
@@ -67,7 +67,7 @@
     "href": "posts/FinchStudio_msi/index.html",
     "title": "Use Finch Studio on MSI",
     "section": "",
-    "text": "Finch Studio is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with Mohamed Ismail from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI)."
+    "text": "Finch Studio is an innovative modeling workbench to perform pharmacometric analyses. Constructing together with Mohamed Ismail from Enhanced Pharmacodynamics (ePD), this blog is illustating how to use Finch Studio on Minnesota Supercomputing Institute (MSI). The example project used for this blog tutorial has been shared in a UMN GHE repository."
   },
   {
     "objectID": "posts/FinchStudio_msi/index.html#set-up-ssh-key-for-the-remote-communication-with-msi",
