@@ -1,0 +1,16 @@
+---
+title: "Research"
+toc: true
+---
+
+Our research adopts advanced pharmacometric and statistical modeling and simulation techniques to investigate the dose-exposure-response relationship of therapeutics. We develop, evaluate and implement pharmacokinetics-pharmacodynamics (PK-PD) and exposure-response models across a range of clinical and translational topics. These efforts support various purposes, such as enabling precise dosing of medicines (i.e., Model-Informed Precision Dosing, MIPD) and facilitating efficient drug development (i.e., Model-Informed Drug Development, MIDD). Additionally, we are interested in developing innovative methodologies that enhance the efficiency of future pharmacometric analyses and address the limitations of existing approaches. 
+
+## Clinical and Translational Research
+
+**Cortisol PK-PD and exposure-response in pediatric patients with congenital adrenal hyperplasia (CAH):** CAH is a rare endocrine disorder characterized by impaired cortisol synthesis. Hydrocortisone is commonly prescribed for managing CAH in pediatric patients. Collaborating with clinicians, we are actively developing integrated pharmacometric models to characterize the dispositions of hydrocortisone and associated biomarkers. These models are subsequently used as tools to explore the exposure-response relationships using clinically relevant endpoints. Ultimately, this research aims to tailor hydrocortisone dosing to the individual needs of pediatric patients, enhancing clinical outcomes.
+
+**Model-based approaches to identify and quantify the impact of pharmacogenomics and pharmacomicrobiomes on drug exposures and drug-drug interactions (DDIs):** Genomics and microbiome are crucial sources of variability in pharmacokinetics and pharmacodynamics. We aim to elucidate and quantify their effects under pharmacometric modeling frameworks, facilitating the clinical implementation of these biomarkers to guide precision therapeutics. We are also interested in exploiting disparate sources of real world data (e.g., electronic health records) to empower our analyses. In collaboration with several clinical pharmacologists, our ongoing projects focus on transplantation and infectious diseases. 
+
+## Methdological Research
+
+**Evaluate and develop methodologies to incorporate high-dimensional covariates in pharmacometric analysis:** The variability of drug exposure and response is hardly attributable to a single source, such as the presence of a single genetic mutant or a single type of bacteria. The complex nature of genomics and microbiome data (e.g., high-dimensionality) presents significant challenges for effective integration into pharmacometric analyses. In line with our clinical research interests in the field of pharmacogenomics and pharmacomicrobiome, our lab is interested in evaluating existing methodologies and developing new methodologies for the incorporation of high-dimensional data into pharmacometric frameworks. 

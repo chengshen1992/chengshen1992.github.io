@@ -1,0 +1,22 @@
+---
+title: "Diqin Yan"
+sortby: "Yan, Diqin"
+subtitle: "PhD Student"
+image: dy.jpg
+toc: false
+started: "Fall 2024"
+ended: "Current"
+about:
+  id: person-profile
+  template: jolla
+  image-shape: round
+  image-width: 15em
+---
+
+:::{#person-profile}
+
+## Bio
+Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master's and Bachelor's degrees in
+Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use. 
+
+:::

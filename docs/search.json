@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Shen Cheng, Ph.D.",
+    "title": "Quantitative Pharmacology and Pharmacometrics Research Lab",
     "section": "",
-    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine.\n \n  \n   \n  \n    \n     Email\n  \n  \n    \n     Github\n  \n  \n    \n     CV\n  \n  \n    \n     Linkedin\n  \n  \n    \n     Twitter"
+    "text": "Our research interest is in the field of pharmacometrics. Our aim is to use quantitative pharmacology methods to enhance precision therapeutics and facilitate efficient drug development. More specifically, we take advantage of modeling and simulation approaches to:\n\nElucidate the dose-exposure-response relationships of therapeutics, identifying and quantifying the sources of variability in pharmacokinetics and pharmacodynamics (PK/PD).\n\nUnderstand disease progression and mechanism of drug actions.\n\nStrategically guide the design of future studies that assess drug safety and efficacy, thereby facilitating more efficient drug development.\n\nOur lab is part of the Department of Experimental and Clinical Pharmacology (ECP) at the University of Minnesota College of Pharmacy.\n \n  \n   \n  \n    \n     Graduate Program\n  \n  \n    \n     Location\n  \n  \n    \n     Email"
   },
   {
     "objectID": "about.html",
@@ -96,5 +96,138 @@
     "title": "Use Finch Studio on MSI",
     "section": "1.4 Connect to VPN",
     "text": "1.4 Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”."
+  },
+  {
+    "objectID": "people/gras/diqin_yan.html",
+    "href": "people/gras/diqin_yan.html",
+    "title": "Diqin Yan",
+    "section": "",
+    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+  },
+  {
+    "objectID": "people/gras/diqin_yan.html#biography",
+    "href": "people/gras/diqin_yan.html#biography",
+    "title": "Diqin Yan",
+    "section": "",
+    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
+    "section": "",
+    "text": "Principal Invesigator\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#graduate-students",
+    "href": "people.html#graduate-students",
+    "title": "People",
+    "section": "Graduate Students",
+    "text": "Graduate Students\n\n\n\n\n\n\n\n\n\n\nDiqin Yan\n\n\nPhD Student\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people/pi/shen_cheng.html",
+    "href": "people/pi/shen_cheng.html",
+    "title": "Shen Cheng, Ph.D.",
+    "section": "",
+    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine.\n\n\n\n\nPh.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)\n\n\n \n  \n   \n  \n    \n     Email\n  \n  \n    \n     Github\n  \n  \n    \n     CV\n  \n  \n    \n     Linkedin\n  \n  \n    \n     Twitter"
+  },
+  {
+    "objectID": "people.html#principal-investigator",
+    "href": "people.html#principal-investigator",
+    "title": "People",
+    "section": "",
+    "text": "Principal Invesigator\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people/gras/diqin_yan.html#bio",
+    "href": "people/gras/diqin_yan.html#bio",
+    "title": "Diqin Yan",
+    "section": "",
+    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+  },
+  {
+    "objectID": "people/pi/shen_cheng.html#bio",
+    "href": "people/pi/shen_cheng.html#bio",
+    "title": "Shen Cheng, Ph.D.",
+    "section": "",
+    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine."
+  },
+  {
+    "objectID": "people/pi/shen_cheng.html#education",
+    "href": "people/pi/shen_cheng.html#education",
+    "title": "Shen Cheng, Ph.D.",
+    "section": "",
+    "text": "Ph.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)"
+  },
+  {
+    "objectID": "teaching/ecp8506.html",
+    "href": "teaching/ecp8506.html",
+    "title": "ECP8506 Clinical Trial Simulations",
+    "section": "",
+    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine.\nExtensively diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
+  },
+  {
+    "objectID": "teaching/ecp8506.html#course-overview",
+    "href": "teaching/ecp8506.html#course-overview",
+    "title": "ECP8506 Clinical Trial Simulations",
+    "section": "",
+    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine.\nExtensively diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Course Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\nMaterials\n\n2024 Fall"
+  },
+  {
+    "objectID": "teaching.html#ecp8506-clinical-trial-simulations",
+    "href": "teaching.html#ecp8506-clinical-trial-simulations",
+    "title": "Teaching",
+    "section": "",
+    "text": "Course Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\nMaterials\n\n2024 Fall"
+  },
+  {
+    "objectID": "teaching.html#course-overview",
+    "href": "teaching.html#course-overview",
+    "title": "Teaching",
+    "section": "",
+    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
+  },
+  {
+    "objectID": "teaching.html#github-repository",
+    "href": "teaching.html#github-repository",
+    "title": "Teaching",
+    "section": "",
+    "text": "2024 Fall"
+  },
+  {
+    "objectID": "research.html#methdological",
+    "href": "research.html#methdological",
+    "title": "Research",
+    "section": "Methdological",
+    "text": "Methdological"
+  },
+  {
+    "objectID": "research.html#methdological-research",
+    "href": "research.html#methdological-research",
+    "title": "Research",
+    "section": "Methdological Research",
+    "text": "Methdological Research\nEvaluate and develop methodologies to incorporate high-dimensional covariates in pharmacometric analysis: The variability of drug exposure and response is hardly attributable to a single source, such as the presence of a single genetic mutant or a single type of bacteria. The complex nature of genomics and microbiome data (e.g., high-dimensionality) presents significant challenges for effective integration into pharmacometric analyses. In line with our clinical research interests in the field of pharmacogenomics and pharmacomicrobiome, our lab is interested in evaluating existing methodologies and developing new methodologies for the incorporation of high-dimensional data into pharmacometric frameworks."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Our research adopts advanced pharmacometric and statistical modeling and simulation techniques to investigate the dose-exposure-response relationship of therapeutics. We develop, evaluate and implement pharmacokinetics-pharmacodynamics (PK-PD) and exposure-response models across a range of clinical and translational topics. These efforts support various purposes, such as enabling precise dosing of medicines (i.e., Model-Informed Precision Dosing, MIPD) and facilitating efficient drug development (i.e., Model-Informed Drug Development, MIDD). Additionally, we are interested in developing innovative methodologies that enhance the efficiency of future pharmacometric analyses and address the limitations of existing approaches."
+  },
+  {
+    "objectID": "research.html#clinical-and-translational-research",
+    "href": "research.html#clinical-and-translational-research",
+    "title": "Research",
+    "section": "Clinical and Translational Research",
+    "text": "Clinical and Translational Research\nCortisol PK-PD and exposure-response in pediatric patients with congenital adrenal hyperplasia (CAH): CAH is a rare endocrine disorder characterized by impaired cortisol synthesis. Hydrocortisone is commonly prescribed for managing CAH in pediatric patients. Collaborating with clinicians, we are actively developing integrated pharmacometric models to characterize the dispositions of hydrocortisone and associated biomarkers. These models are subsequently used as tools to explore the exposure-response relationships using clinically relevant endpoints. Ultimately, this research aims to tailor hydrocortisone dosing to the individual needs of pediatric patients, enhancing clinical outcomes.\nModel-based approaches to identify and quantify the impact of pharmacogenomics and pharmacomicrobiomes on drug exposures and drug-drug interactions (DDIs): Genomics and microbiome are crucial sources of variability in pharmacokinetics and pharmacodynamics. We aim to elucidate and quantify their effects under pharmacometric modeling frameworks, facilitating the clinical implementation of these biomarkers to guide precision therapeutics. We are also interested in exploiting disparate sources of real world data (e.g., electronic health records) to empower our analyses. In collaboration with several clinical pharmacologists, our ongoing projects focus on transplantation and infectious diseases."
   }
 ]

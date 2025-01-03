@@ -1,0 +1,16 @@
+---
+title: "Teaching"
+toc: false
+---
+
+## ECP8506 Clinical Trial Simulations 
+
+**Course Overview**
+
+Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. 
+
+<!-- Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD). -->
+
+**Materials**
+
+-   [2024 Fall](https://github.com/UMN-ECP-PMX/ecp8506)

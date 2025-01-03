@@ -1,30 +1,31 @@
 ---
-title: "Shen Cheng, Ph.D."
-image: Shen_Cheng.jpg
-resources: Shen_Cheng_CV.pdf
+title: "Quantitative Pharmacology and Pharmacometrics Research Lab"
+image: pics/IMG.JPG
 about: 
   template: jolla
   image-shape: rectangle
-  image-width: 15em
+  image-width: 50em
   links:
+    - text: Graduate Program
+      icon: house
+      href: https://www.pharmacy.umn.edu/experimental-clinical-pharmacology/graduate-program/about-experimental-and-clinical-pharmacology
+    - text: Location
+      icon: map
+      href: https://campusmaps.umn.edu/717-delaware-street-se
     - text: Email
       icon: envelope
       href: mailto:cheng423@umn.edu
-    - text: Github
-      icon: github
-      href: https://github.com/chengshen1992
-    - text: CV
-      icon: file-text
-      href: shen-cheng-cv-qmd.pdf
-    - text: Linkedin
-      icon: linkedin
-      href: https://www.linkedin.com/in/shen-cheng/
-    - text: Twitter
-      icon: twitter
-      href: https://twitter.com/ShenCheng20
   id: intro
 ---
 
 :::{#intro}
-I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine. 
+
+Our research interest is in the field of pharmacometrics. Our aim is to use quantitative pharmacology methods to enhance precision therapeutics and facilitate efficient drug development. More specifically, we take advantage of modeling and simulation approaches to:  
+
+* Elucidate the dose-exposure-response relationships of therapeutics, identifying and quantifying the sources of variability in pharmacokinetics and pharmacodynamics (PK/PD).   
+* Understand disease progression and mechanism of drug actions.  
+* Strategically guide the design of future studies that assess drug safety and efficacy, thereby facilitating more efficient drug development.
+
+Our lab is part of the [Department of Experimental and Clinical Pharmacology (ECP)](https://www.pharmacy.umn.edu/experimental-and-clinical-pharmacology) at [the University of Minnesota College of Pharmacy](https://www.pharmacy.umn.edu/). 
+  
 :::

@@ -1,0 +1,45 @@
+---
+title: "Shen Cheng, Ph.D."
+subtitle: "Principal Invesigator"
+image: Shen_Cheng.jpg
+toc: false
+resources: shen-cheng-cv-qmd.pdf
+about: 
+  id: person-profile
+  template: jolla
+  image-shape: round
+  image-width: 15em
+  links:
+    - text: Email
+      icon: envelope
+      href: mailto:cheng423@umn.edu
+    - text: Github
+      icon: github
+      href: https://github.com/chengshen1992
+    - text: CV
+      icon: file-text
+      href: shen-cheng-cv-qmd.pdf
+    - text: Linkedin
+      icon: linkedin
+      href: https://www.linkedin.com/in/shen-cheng/
+    - text: Twitter
+      icon: twitter
+      href: https://twitter.com/ShenCheng20
+---
+
+:::{#person-profile}
+
+## Bio
+
+I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine. 
+
+## Education
+
+* Ph.D. in Experimental and Clinical Pharmacology (minor in Biostatistics)<br />
+  University of Minnesota, MN (2017-2021) 
+* M.S. in Pharmacology<br /> 
+  University of Michigan, MI (2015-2017)
+* B.S. in Biology<br /> 
+  Soochow University, China (2010-2014)
+
+:::

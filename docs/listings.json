@@ -6,5 +6,18 @@
       "/posts/Reproducible_PMX_workflow/index.html",
       "/posts/vscode_ssh/index.html"
     ]
+  },
+  {
+    "listing": "/people.html",
+    "items": [
+      "/people/pi/shen_cheng.html",
+      "/people/gras/diqin_yan.html"
+    ]
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/teaching/ecp8506.html"
+    ]
   }
 ]

@@ -3,12 +3,15 @@ project:
   output-dir: docs
 
 website:
-  title: "Cheng Lab"
+  title: "Research Lab of Shen Cheng, Ph.D."
   navbar:
     background: "#7A0019"
     left:
       - href: index.qmd
         text: Home
+      - people.qmd
+      - research.qmd
+      - teaching.qmd
       - blogs.qmd
 
 format:
