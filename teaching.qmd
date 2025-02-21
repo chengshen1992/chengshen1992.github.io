@@ -14,3 +14,28 @@ Precision medicine is an emerging field aiming to customize the patients’ trea
 **Materials**
 
 -   [2024 Fall](https://github.com/UMN-ECP-PMX/ecp8506)
+
+
+## Pharmacometrics Coffee Break
+
+**Overview**
+
+An informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (<cheng423@umn.edu>). 
+
+**Topic list**
+
+::: {.callout-note collapse="true"}
+## 2025
+
+| Date       | Topic            | Moderator |
+| --------   | -------          | -------   |
+| 03/14/2025 | Topic discussion | Shen      |
+| 03/28/2025 | PK               | xxx       |
+| 04/11/2025 | PD               | yyy       |
+:::
+
+::: {.callout-note collapse="true"}
+## 2026
+
+<!-- This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default. -->
+:::
