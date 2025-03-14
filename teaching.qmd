@@ -25,17 +25,21 @@ An informal pharmacometric discussion group involving a diverse group of moderat
 **Topic list**
 
 ::: {.callout-note collapse="true"}
-## 2025
+## 2025 Spring
 
-| Date       | Topic            | Moderator |
-| --------   | -------          | -------   |
-| 03/14/2025 | Topic discussion | Shen      |
-| 03/28/2025 | PK               | xxx       |
-| 04/11/2025 | PD               | yyy       |
+| Date       | Topic                           | Moderator     |
+| --------   | -------                         | -------       |
+| 03/14/2025 | Bateman equation                | Shen          |
+| 03/28/2025 | Bispecific T cell engagers QSP  | Yuhan         |
+| 04/11/2025 | Stochastic simulations          | Shen          |
+| 04/25/2025 | Dose Titration                  | Shen/Kyle     |
+| 05/09/2025 | PBPK modeling and software      | Angela/Silvia |
 :::
 
 ::: {.callout-note collapse="true"}
-## 2026
+## 2025 Fall
+
+Coming soon.
 
 <!-- This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default. -->
 :::
