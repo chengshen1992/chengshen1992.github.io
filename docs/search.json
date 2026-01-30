@@ -116,14 +116,14 @@
     "href": "people.html",
     "title": "People",
     "section": "",
-    "text": "Principal Invesigator\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "people.html#graduate-students",
     "href": "people.html#graduate-students",
     "title": "People",
     "section": "Graduate Students",
-    "text": "Graduate Students\n\n\n\n\n\n\n\n\n\n\nDiqin Yan\n\n\nPhD Student\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Graduate Students\n\n\n\n\n\n\n\n\n\n\nDiqin Yan\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "people/pi/shen_cheng.html",
@@ -137,7 +137,7 @@
     "href": "people.html#principal-investigator",
     "title": "People",
     "section": "",
-    "text": "Principal Invesigator\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "people/gras/diqin_yan.html#bio",
@@ -179,14 +179,14 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "Course Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\nMaterials\n\n2024 Fall"
+    "text": "Course Overview\nThis course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis.\nMaterials\n\n2026 Spring"
   },
   {
     "objectID": "teaching.html#ecp8506-clinical-trial-simulations",
     "href": "teaching.html#ecp8506-clinical-trial-simulations",
     "title": "Teaching",
-    "section": "",
-    "text": "Course Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\nMaterials\n\n2024 Fall"
+    "section": "ECP8506 Clinical Trial Simulations",
+    "text": "ECP8506 Clinical Trial Simulations\nCourse Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\nMaterials\n\n2024 Fall"
   },
   {
     "objectID": "teaching.html#course-overview",
@@ -235,7 +235,7 @@
     "href": "teaching.html#pharmacometrics-coffee-break",
     "title": "Teaching",
     "section": "Pharmacometrics Coffee Break",
-    "text": "Pharmacometrics Coffee Break\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu).\nTopic list\n\n\n\n\n\n\n2025 Spring\n\n\n\n\n\n\n\n\nDate\nTopic\nModerator\n\n\n\n\n03/14/2025\nBateman equation\nShen\n\n\n03/28/2025\nBispecific T cell engagers QSP\nYuhan\n\n\n04/11/2025\nStochastic simulations\nShen\n\n\n04/25/2025\nDose Titration\nMutaz/Kyle\n\n\n05/09/2025\nPBPK modeling and software\nAngela/Silvia\n\n\n\n\n\n\n\n\n\n\n\n\n2025 Fall\n\n\n\n\n\nComing soon."
+    "text": "Pharmacometrics Coffee Break\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu).\nTopic list\n\n\n\n\n\n\nNote2025 Spring\n\n\n\n\n\n\n\n\nDate\nTopic\nModerator\n\n\n\n\n03/14/2025\nBateman equation\nShen\n\n\n03/28/2025\nBispecific T cell engagers QSP\nYuhan\n\n\n04/11/2025\nStochastic simulations\nShen\n\n\n04/25/2025\nDose Titration\nMutaz/Kyle\n\n\n05/09/2025\nPBPK modeling and software\nAngela/Silvia\n\n\n\n\n\n\n\n\n\n\n\n\nNote2025 Fall\n\n\n\n\n\nComing soon."
   },
   {
     "objectID": "posts/basic_vpc/index.html",
@@ -411,5 +411,40 @@
     "title": "A few basics of visual predictive checks (VPCs)",
     "section": "7.5 Plotting VPCs using reference-corrected observed and simulated values derived in Step 7.4",
     "text": "7.5 Plotting VPCs using reference-corrected observed and simulated values derived in Step 7.4\n\nobs_v &lt;- fobs %&gt;% filter(BLQ==0) \n\nrcvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=obs_v, aes(x=TIME, y=RCDV_HAT, color=DOSE))+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"rcVPC\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\"), \n      legend.position = \"bottom\"\n    )\nrcvpc\n\n\n\n\n\n\n\n\nCompare VPC, pcVPC and rcVPC side by side. We can see reference-corrected VPCs have a more natural appearance similar to the shape of the original PK profiles despite the presence of multiple dose groups with different sampling schemes.\n\nrcvpc &lt;- rcvpc + scale_y_log10(limits=c(0.01, 200))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\ngrid.arrange(vpc, pcvpc, rcvpc, ncol=3)"
+  },
+  {
+    "objectID": "people/postdoc/nikolaos_memmos.html",
+    "href": "people/postdoc/nikolaos_memmos.html",
+    "title": "Nikolaos Memmos",
+    "section": "",
+    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+  },
+  {
+    "objectID": "people/postdoc/nikolaos_memmos.html#bio",
+    "href": "people/postdoc/nikolaos_memmos.html#bio",
+    "title": "Nikolaos Memmos",
+    "section": "",
+    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+  },
+  {
+    "objectID": "people.html#postdoctoral-researcher",
+    "href": "people.html#postdoctoral-researcher",
+    "title": "People",
+    "section": "Postdoctoral Researcher",
+    "text": "Postdoctoral Researcher\n\n\n\n\n\n\n\n\n\n\nNikolaos Memmos\n\n\nPostdoc Researcher\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching.html#ecp8503-intermediate-poppkpd",
+    "href": "teaching.html#ecp8503-intermediate-poppkpd",
+    "title": "Teaching",
+    "section": "",
+    "text": "Course Overview\nThis course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis.\nMaterials\n\n2026 Spring"
+  },
+  {
+    "objectID": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
+    "href": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
+    "title": "Teaching",
+    "section": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)",
+    "text": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu). This course opens in the following semesters:\n\n2025 Spring\n2025 Fall\n2027 Spring (upcoming in January 2027)"
   }
 ]
