@@ -1,0 +1,21 @@
+---
+title: "Nikolaos Memmos"
+sortby: "Memmos, Nikolaos"
+subtitle: "Postdoc Researcher"
+image: nm.jpg
+toc: false
+started: "Spring 2026"
+ended: "Current"
+about:
+  id: person-profile
+  template: jolla
+  image-shape: round
+  image-width: 15em
+---
+
+:::{#person-profile}
+
+## Bio
+Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing.
+
+:::
