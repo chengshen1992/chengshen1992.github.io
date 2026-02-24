@@ -1,1 +1,41 @@
 /* css styles */
+
+/* ---- Accessibility fixes: contrast + link distinguishability ---- */
+
+/* Darker default text */
+body {
+  color: #1a1a1a;
+}
+
+/* Bootstrap “muted” text is often too light */
+.text-muted, .quarto-title-meta, .nav-footer, footer {
+  color: #4a4a4a !important;
+}
+
+/* Make links identifiable without color alone + improve contrast */
+a {
+  color: #004a99;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover, a:focus {
+  color: #002f66;
+  text-decoration: underline;
+}
+
+/* Optional: improve keyboard focus visibility */
+a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Ensure navbar links are readable on dark background */
+.navbar, .navbar a, .navbar-brand {
+  color: #ffffff !important;
+}
+.navbar a:hover, .navbar a:focus {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+

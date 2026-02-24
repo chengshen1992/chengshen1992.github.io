@@ -1,14 +1,15 @@
 ---
 title: "Create reproducible PMx workflow at MSI"
 author: "Shen Cheng and Mutaz Jaber"
-date: last-modified
+date: 2024-11-26
 categories: [workflow, code]
 image: "pic/image.png"
+image-alt: "PMx workflow at MSI"
 format:
   html: 
     grid:
-      sidebar-width: 0px
-      body-width: 1200px
+      sidebar-width: 300px
+      body-width: 900px
       margin-width: 300px
       gutter-width: 1.5rem
 ---
@@ -37,7 +38,7 @@ MSI can only be accessed when
 
 -   You are off campus but connecting to the University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting a channel for connection, do **NOT** select the channel named "*UMN - Departmental Pools*".
 
-![](pic/vpn.png){fig-align="center" width="60%"}
+![](pic/vpn.png){fig-align="center" width="60%" fig-alt="VPN"}
 
 # 2. Access `R` at MSI
 
@@ -47,11 +48,11 @@ Following the access to Open Ondemand, choose Rstudio Server under Interactive A
 
 ::::: columns
 ::: {.column width="50%"}
-![](pic/R1.png){fig-align="center" width="80%"}
+![](pic/R1.png){fig-align="center" width="80%" fig-alt="R on MSI"}
 :::
 
 ::: {.column width="50%"}
-![](pic/R2_Agate.png){fig-align="center" width="80%"}
+![](pic/R2_Agate.png){fig-align="center" width="80%" fig-alt="R on MSI 2"}
 :::
 :::::
 
@@ -67,7 +68,7 @@ Please note:
 
 Rstudio session will start in a few seconds / minutes (depends on your Rstudio Server settings) after clicking the "Launch" button.
 
-![](pic/R3_Agate.png){fig-align="center" width="80%"}
+![](pic/R3_Agate.png){fig-align="center" width="80%" fig-alt="R on MSI 3"}
 
 # 3. Build a project directory
 
@@ -83,11 +84,11 @@ We'd like to introduce two ways to build a project directory:
 
 ::::: columns
 ::: {.column width="50%"}
-![](pic/temp1.png){fig-align="center" width="80%"}
+![](pic/temp1.png){fig-align="center" width="80%" fig-alt="Project template"}
 :::
 
 ::: {.column width="50%"}
-![](pic/temp2.png){fig-align="center" width="80%"}
+![](pic/temp2.png){fig-align="center" width="80%" fig-alt="Project template 2"}
 :::
 :::::
 
@@ -95,7 +96,7 @@ We'd like to introduce two ways to build a project directory:
 
 1.  Copy the string for repository cloning as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).
 
-![](pic/gitclone.png){fig-align="center" width="80%"}
+![](pic/gitclone.png){fig-align="center" width="80%" fig-alt="Git clone"}
 
 2.  Go back to your workflow, navigate to the desired directory in the terminal.
 3.  Clone the repository using the copied string (e.g., `git clone git@github.umn.edu:cheng423/project-xyz.git`) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.
@@ -115,11 +116,11 @@ Updating files: 100% (43/43), done.
 
 ::::: columns
 ::: {.column width="75%"}
-![](pic/rename.png){fig-align="center" width="80%"}
+![](pic/rename.png){fig-align="center" width="80%" fig-alt="Rename rproj"}
 :::
 
 ::: {.column width="25%"}
-![](pic/rproj.png){fig-align="center" width="80%"}
+![](pic/rproj.png){fig-align="center" width="80%" fig-alt="Rename rproj 2"}
 :::
 :::::
 
@@ -135,19 +136,19 @@ You can directly jump to section [4. Run `NONMEM` using `bbi`](#sec-nonmem) to e
 
 **Step 1:** Registering / signing in University of Minnesota `GitHub Enterprise`. Initialize a new `GitHub` repository (i.e, `project-abc`) by clicking "New repository" tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.
 
-![](pic/Github1.png){fig-align="center" width="90%"}
+![](pic/Github1.png){fig-align="center" width="90%" fig-alt="Git repo"}
 
-![](pic/Github2.png){fig-align="center" width="90%"}
+![](pic/Github2.png){fig-align="center" width="90%" fig-alt="Git repo 2"}
 
 **Step 2:** If you have already set up your `GitHub` [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) key. Clone the repository into your MSI Rstudio Server session through "terminal" using the SSH option as shown below. Other options such as HTTPS and GITHUB CLI are also available but will not be covered in this blog.
 
 ::::: columns
 ::: {.column width="50%"}
-![](pic/Github3.png){fig-align="center" width="90%"}
+![](pic/Github3.png){fig-align="center" width="90%" fig-alt="Git repo 3"}
 :::
 
 ::: {.column width="50%"}
-![](pic/Github4.png){fig-align="center" width="90%"}
+![](pic/Github4.png){fig-align="center" width="90%" fig-alt="Git repo 4"}
 :::
 :::::
 
@@ -155,7 +156,7 @@ You can directly jump to section [4. Run `NONMEM` using `bbi`](#sec-nonmem) to e
 
 ### 3.2.2. Using `renv` for package version control
 
-![](pic/renv.png){fig-align="center" width="80%"}
+![](pic/renv.png){fig-align="center" width="80%" fig-alt="renv"}
 
 [`renv`](https://rstudio.github.io/renv/articles/renv.html) is a useful package to create reproducible environment for each `R` project. Instead of using library of `R` packages installed globally for every project. `renv` allows you to create project specific library to ensure the package version consistent across the duration of an `R` project.
 
@@ -165,7 +166,7 @@ You can directly jump to section [4. Run `NONMEM` using `bbi`](#sec-nonmem) to e
 
 To use `renv`, You need to create an `R` project (`.Rproj`) in the cloned `GitHub` repository.
 
-![](pic/renv1.png){fig-align="center" width="100%"}
+![](pic/renv1.png){fig-align="center" width="100%" fig-alt="renv 2"}
 :::
 
 ::: {.column width="50%"}
@@ -173,7 +174,7 @@ To use `renv`, You need to create an `R` project (`.Rproj`) in the cloned `GitHu
 
 In your `R` console, type in `renv::init()` to initialize the structure of the `R` environment using `renv`.
 
-![](pic/renv2.png){fig-align="center" width="100%"}
+![](pic/renv2.png){fig-align="center" width="100%" fig-alt="renv 3"}
 :::
 :::::
 
@@ -218,7 +219,15 @@ When asked whether you want to proceed, simply answer Y (yes) to proceed to the 
 
 To accomplish this, we need to first create a new R script `library.R` in the project directory. This script does nothing but simply `library` all the packages installed.
 
-Example code for `library.R`: 31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AE8AUQBCAGoAQQBHAEkAQQBOAHcAQQA1AEEARwBVAEEATgBnAEIAagBBAEMAMABBAE8AQQBBADQAQQBEAGcAQQBaAEEAQQB0AEEARABRAEEAWQBRAEEAdwBBAEcAVQBBAEwAUQBBADUAQQBHAE0AQQBPAFEAQgBpAEEAQwAwAEEAWgBnAEIAbQBBAEQAWQBBAE4AdwBCAGoAQQBHAFEAQQBOAEEAQQB3AEEARABRAEEAWgBRAEEAMgBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQBRAEEAdwBBAEQAWQBBAE4AdwBBADQAQQBBAD0APQAKAHAAcgBlAGYAaQB4ADoACgBzAG8AdQByAGMAZQA6AFkAQQBCAGcAQQBHAEEAQQBlAHcAQgA3AEEASABJAEEAZgBRAEIAOQBBAEEAbwBBAGIAQQBCAHAAQQBHAEkAQQBjAGcAQgBoAEEASABJAEEAZQBRAEEAbwBBAEcAMABBAGMAZwBCAG4AQQBIAE0AQQBiAHcAQgBzAEEASABZAEEAWgBRAEEAcABBAEEAbwBBAGIAQQBCAHAAQQBHAEkAQQBjAGcAQgBoAEEASABJAEEAZQBRAEEAbwBBAEgAUQBBAGEAUQBCAGsAQQBIAGsAQQBkAGcAQgBsAEEASABJAEEAYwB3AEIAbABBAEMAawBBAEMAZwBCAHMAQQBHAGsAQQBZAGcAQgB5AEEARwBFAEEAYwBnAEIANQBBAEMAZwBBAGIAZwBCAHQAQQBIAEkAQQBaAFEAQgBqAEEAQwBrAEEAQwBnAEIAcwBBAEcAawBBAFkAZwBCAHkAQQBHAEUAQQBjAGcAQgA1AEEAQwBnAEEAWQBnAEIAaQBBAEgASQBBAEsAUQBBAEsAQQBHAHcAQQBhAFEAQgBpAEEASABJAEEAWQBRAEIAeQBBAEgAawBBAEsAQQBCAG8AQQBHAFUAQQBjAGcAQgBsAEEAQwBrAEEAQwBnAEIAZwBBAEcAQQBBAFkAQQBBAD0ACgBzAHUAZgBmAGkAeAA6AA==:31b8e172-b470-440e-83d8-e6b185028602
+Example code for `library.R`: 
+
+```{{r}}
+library(mrgsolve)
+library(tidyverse)
+library(nmrec)
+library(bbr)
+library(here)
+```
 
 Subsequently, we can run `renv::snapshot()` in the `R` console. This will update the `renv.lock` file in the project folder.
 
@@ -242,7 +251,7 @@ options(
 
 Subsequently, restart `R` session to change the `bbr.bbi_exe_path` specified in `.Rprofile`. `bbi` can be installed via `bbr::use_bbi()` in `R` console according to the `bbr.bbi_exe_path`. The successful installation of `bbi` can be verified by running `bbr::bbi_version()` in R console. If `bbi` has been installed correctly, it should return a specific version number as shown below.
 
-![](pic/bbi1.png){fig-align="center" width="80%"}
+![](pic/bbi1.png){fig-align="center" width="80%" fig-alt="bbi"}
 
 **Step 2**: Create a `bbi` configuration file
 
@@ -372,7 +381,7 @@ mod %>% model_summary()
 
 If model 106 runs successfully, you should see output similar to this:
 
-![](pic/bbi2.png){fig-align="center" width="60%"}
+![](pic/bbi2.png){fig-align="center" width="60%" fig-alt="bbi2"}
 
 ```{r}
 sessionInfo()

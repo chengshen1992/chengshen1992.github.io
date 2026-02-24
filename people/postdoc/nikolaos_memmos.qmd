@@ -3,6 +3,7 @@ title: "Nikolaos Memmos"
 sortby: "Memmos, Nikolaos"
 subtitle: "Postdoc Researcher"
 image: nm.jpg
+image-alt: "Nikolaos Memmos portrait"
 toc: false
 started: "Spring 2026"
 ended: "Current"

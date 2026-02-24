@@ -3,6 +3,7 @@ title: "Diqin Yan"
 sortby: "Yan, Diqin"
 subtitle: "PhD Student"
 image: dy.jpg
+image-alt: "Diqin Yan portrait"
 toc: false
 started: "Fall 2024"
 ended: "Current"

@@ -1,9 +1,10 @@
 ---
 title: "A few basics of visual predictive checks (VPCs)"
 author: "Shen Cheng"
-date: last-modified
+date: 2026-01-02
 categories: [tool, code]
 image: "pic/image.png"
+image-alt: "Example VPC"
 format:
   html: 
     grid:
@@ -33,6 +34,7 @@ library(mrgsolve)
 library(gridExtra)
 
 theme_set(theme_bw())
+options(warn = -1)
 ```
 
 A few helper functions were created to save some repetitive codes.
@@ -1450,6 +1452,8 @@ data <- structure(list(C = c(".", ".", ".", ".", ".", ".", ".", ".",
     188, 158.2, 158.2, 158.2, 158.2, 176.9, 176.9, 176.9, 155, 
     155, 155, 155, 169.3, 169.3, 169.3, 179.2, 179.2, 179.2, 
     179.2)), class = "data.frame", row.names = c(NA, -651L))
+
+# data <- mutate(data, RATE=ifelse(EVID==1, -2, 0))
 ```
 
 
@@ -1462,6 +1466,7 @@ head(data)
 Let's take a look at the observed concentration-time profiles.
 
 ```{r plot_data, echo=TRUE}
+#| fig-alt: "plot_data"
 
 filter(data, EVID==0) %>% 
   ggplot(aes(x=NTIME, y=DV, group=ID))+
@@ -1499,6 +1504,7 @@ withr::with_seed(
 Compare simulation with observations?
 
 ```{r compare_obs_sim1, echo=TRUE, warning=FALSE, message=FALSE}
+#| fig-alt: "compare_obs_sim1"
 obs <- data_200 %>% filter(EVID==0)
 
 p1 <- raw_pk_plot(obs)+ggtitle("Observed")+scale_y_log10(limits = c(0.0001, 1000))
@@ -1509,6 +1515,7 @@ grid.arrange(p1, p2, ncol=2)
 Are the simulated and observed PK profiles look similar enough? Maybe not so easy to tell? Let's look at it in another way...
 
 ```{r compare_obs_sim2, echo=TRUE, warning=FALSE}
+#| fig-alt: "compare_obs_sim2"
 # Another way to compare
 p3 <- sim %>% group_by(NTIME, DOSE) %>% 
     summarise(
@@ -1532,6 +1539,7 @@ rm(p1,p2,p3) # Remove figure outputs to save RAM
 Or more commonly...
 
 ```{r compare_obs_sim3, echo=TRUE, warning=FALSE}
+#| fig-alt: "compare_obs_sim3"
 #' the codes to generate the above plots have been wrapped in `summ_pk_plot()` function
 p1 <- summ_pk_plot(sim, .y=Y, show_obs=TRUE)
 p1
@@ -1540,6 +1548,7 @@ p1
 However, we may not reply on one stochastic simulation to evaluate the model performance. If we simulate using the same settings for a second time, it will look different compared to the first simulation.
 
 ```{r compare_obs_sim4, echo=TRUE, warning=FALSE}
+#| fig-alt: "compare_obs_sim4"
 withr::with_seed(
   seed=321, 
   sim2 <- mrgsim_df(mod, data_200, obsonly=TRUE, recover="DV,NTIME,DOSE")
@@ -1565,6 +1574,7 @@ withr::with_seed(seed=1314,
 ...But then how we should effectively visualize it?
 
 ```{r compare_obs_sim6, echo=TRUE, warning=FALSE}
+#| fig-alt: "compare_obs_sim6"
 p1 <- sim %>% filter(IREP<10) %>% 
   summ_pk_plot(., .y=Y, show_obs=TRUE)+
   facet_wrap(~IREP)
@@ -1653,6 +1663,7 @@ head(sim)
 Then we can visualize it in a constructive way, via overlaying observed percentiles against the correspondingly simulated percentiles.
 
 ```{r vpc_plot_example1, echo=TRUE}
+#| fig-alt: "vpc_plot_example1"
 vpc <- ggplot()+
     geom_line(data=summ_obs, aes(x=NTIME, y=lo), linetype=2)+
     geom_line(data=summ_obs, aes(x=NTIME, y=mi), linetype=1)+
@@ -1671,12 +1682,14 @@ vpc
 We frequently see VPCs with observed concentrations shown as dots, but this is not something required for diagnostic purposes.
 
 ```{r vpc_plot_example2, echo=TRUE}
+#| fig-alt: "vpc_plot_example2"
 vpc + geom_point(data=filter(obs, BLQ==0), aes(x=NTIME, y=DV))
 ```
 
 From now on, I will use `vpcplot()` helper function for the generation of VPCs to prevent repetitive coding.
 
 ```{r vpc_plot_example3, echo=TRUE}
+#| fig-alt: "vpc_plot_example3"
 vpcplot(obs_df=filter(obs, BLQ==0), 
         sim_df=filter(sim, Y>unique(obs$LLOQ)), 
         show_obs = TRUE, .xlab = "Time", .ylab = "Concentrations")
@@ -1687,6 +1700,7 @@ On a separate note, we can also construct VPCs for proportion of observations be
 ```{r vpc_plot_example4, echo=TRUE}
 #| code-fold: true
 #| code-summary: "Show the code"
+#| fig-alt: "vpc_plot_example4"
 
 # Summarise observed percentiles
 summ_obs2 <- obs %>% 
@@ -1726,6 +1740,7 @@ If you have worked on creating VPCs before, an tedious (or somewhat annoying) is
 -   This makes the summarization of the percentiles across time become challenging.
 
 ```{r binning1, echo=TRUE}
+#| fig-alt: "binning1"
 p1  <- raw_pk_plot(obs, .x=NTIME)+ggtitle("Nominal time")
 p2  <- raw_pk_plot(obs, .x=TIME)+ggtitle("Actual time")
 p3 <- vpcplot(obs_df=filter(obs, BLQ==0), 
@@ -1805,6 +1820,7 @@ summ_sim <- summ_sim %>% group_by(.x_plot, DOSE) %>%
 ## 5.3 Plot VPCs the usual way
 
 ```{r vpc_plot, echo=TRUE}
+#| fig-alt: "vpc_plot"
 vpc <- ggplot()+
     geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+
     geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+
@@ -1835,6 +1851,7 @@ vpc
 Again, the above process can be wrapped in the helper function to save some codings.
 
 ```{r, vpc_plot2, echo=TRUE}
+#| fig-alt: "vpc_plot2"
 vpcplot(obs_df=filter(obs, BLQ==0), 
         sim_df=filter(sim, Y>unique(obs$LLOQ)), 
         .x=TIME, show_obs = TRUE, 
@@ -1851,6 +1868,7 @@ In the presence of influential covariates (e.g., doses), prediction-corrected VP
 To illustate this, instead of simulate and evaluate model performance in 200 mg dose group only, let's simulate and evaluate across multiple dose groups (i.e., 200-400 mg) with diverse sampling scheme (i.e., intensive vs sparse).
 
 ```{r vpc_plot3, echo=TRUE}
+#| fig-alt: "vpc_plot3"
 rep <- 100
 withr::with_seed(seed=4231,
                  sim <- purrr::map(1:rep, function(.irep){
@@ -1874,6 +1892,7 @@ vpc
 VPCs created via binning across influential covariates (e.g., dose) may compromise the diagnostic values ([M. Bergstrand, et al., *AAPS J* 2011](https://www.ncbi.nlm.nih.gov/pubmed/21302010). One way to overcome this is to stratify by the covariates or create VPCs using transformed observations(e.g., dose normalized observations).
 
 ```{r vpc_plot4, echo=TRUE}
+#| fig-alt: "vpc_plot4"
 # Multiple doses
 vpcplot(obs_df=filter(obs, BLQ==0), 
         sim_df=filter(sim, Y>unique(obs$LLOQ)), 
@@ -1981,6 +2000,7 @@ summ_sim <- summ_sim %>% group_by(.x_plot) %>%
 ## 6.3 Plotting VPCs using prediction-corrected observed and simulated values derived in Step 6.2
 
 ```{r pcvpc_plot, echo=TRUE}
+#| fig-alt: "pcvpc_plot"
 obs_v <- fobs %>% filter(BLQ==0) %>%
       mutate(.yobs = DV/PRED) %>% 
       group_by(.bin, .x_plot) %>% 
@@ -2017,6 +2037,7 @@ pcvpc
 Compare VPC and pcVPC side by side.
 
 ```{r compare_vpc_pcvpc, echo=TRUE, message=FALSE, warning=FALSE}
+#| fig-alt: "compare_vpc_pcvpc"
 vpc   <- vpc+scale_y_log10(limits=c(0.01, 200))
 pcvpc <- pcvpc+scale_y_log10(limits=c(0.01, 200))
 
@@ -2177,6 +2198,7 @@ summ_sim <- summ_sim %>% group_by(.x_plot) %>%
 ## 7.5 Plotting VPCs using reference-corrected observed and simulated values derived in Step 7.4
 
 ```{r rcvpc_plot, echo=TRUE}
+#| fig-alt: "rcvpc_plot"
 obs_v <- fobs %>% filter(BLQ==0) 
 
 rcvpc <- ggplot()+
@@ -2209,6 +2231,7 @@ rcvpc
 Compare VPC, pcVPC and rcVPC side by side. We can see reference-corrected VPCs have a more natural appearance similar to the shape of the original PK profiles despite the presence of multiple dose groups with different sampling schemes.
 
 ```{r compare_vpc_pcvpc_rcvpc, echo=TRUE, fig.width=12}
+#| fig-alt: "compare_vpc_pcvpc_rcvpc"
 rcvpc <- rcvpc + scale_y_log10(limits=c(0.01, 200))
 
 grid.arrange(vpc, pcvpc, rcvpc, ncol=3)

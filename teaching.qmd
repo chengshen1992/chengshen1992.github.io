@@ -9,9 +9,11 @@ toc: false
 
 This course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis. 
 
-**Materials**
+- 2026 Spring 
 
--   [2026 Spring](https://github.com/UMN-ECP-PMX/ecp8503)
+<!-- **Materials** -->
+
+<!-- -   [2026 Spring](https://github.com/UMN-ECP-PMX/ecp8503) -->
 
 ## ECP8506 Clinical Trial Simulations 
 
@@ -21,9 +23,11 @@ Precision medicine is an emerging field aiming to customize the patients’ trea
 
 <!-- Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD). -->
 
-**Materials**
+- 2024 Fall
 
--   [2024 Fall](https://github.com/UMN-ECP-PMX/ecp8506)
+<!-- **Materials** -->
+
+<!-- -   [2024 Fall](https://github.com/UMN-ECP-PMX/ecp8506) -->
 
 
 ## ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)

@@ -2,6 +2,7 @@
 title: "Shen Cheng, Ph.D."
 subtitle: "Principal Invesigator"
 image: Shen_Cheng.jpg
+image-alt: "Shen Cheng portrait"
 toc: false
 resources: shen-cheng-cv-qmd.pdf
 about: 

@@ -1,9 +1,10 @@
 ---
 title: "Connect MSI with Visual Studio Code over SSH"
 author: "Shen Cheng"
-date: last-modified
+date: 2024-06-15
 categories: [workflow]
 image: "pic/image.png"
+image-alt: "Visual Studio and MSI"
 format:
   html: 
     grid:
@@ -55,35 +56,35 @@ MSI can only be accessed when
 
 -   You are off campus but connecting to the University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting a channel for connection, do **NOT** select the channel named "*UMN - Departmental Pools*".
 
-![](pic/vpn.png){fig-align="center" width="60%"}
+![](pic/vpn.png){fig-align="center" width="60%" fig-alt="VPN"}
 
 # 5. Connect VScode with MSI
 
 -   Under tab "Extension", install extension "remote-ssh"
 
-![](pic/vscode1.png){fig-align="center" width="50%"}
+![](pic/vscode1.png){fig-align="center" width="50%" fig-alt="Connect with MSI"}
 
 -   Once installed, you will be able to see this icon on the very bottom left corner of your VScode window.
 
-![](pic/vscode2.png){fig-align="center" width="30%"}
+![](pic/vscode2.png){fig-align="center" width="30%" fig-alt="Connect with MSI 2"}
 
 -   Click the icon, select "connect current window to host". You should be able to see the `agate.msi.umn.edu` if MSI SSH was correctly added to the `~/.ssh/config` file. Select `agate.msi.umn.edu` and wait for a few seconds.
 
-![](pic/vscode3.png){fig-align="center" width="60%"}
+![](pic/vscode3.png){fig-align="center" width="60%" fig-alt="Connect with MSI 3"}
 
 -   Entering your passphrase (set up in the SSH key in Step 1)
 
-![](pic/credential1.png){fig-align="center" width="60%"}
+![](pic/credential1.png){fig-align="center" width="60%" fig-alt="Connect with MSI 4"}
   
   
 -   Going through the two-factor authentication as instructed.
 
-![](pic/credential2.png){fig-align="center" width="60%"}
+![](pic/credential2.png){fig-align="center" width="60%" fig-alt="Connect with MSI 5"}
 
 -   Once connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname.
 
-![](pic/vscode4.png){fig-align="center" width="30%"}
+![](pic/vscode4.png){fig-align="center" width="30%" fig-alt="Connect with MSI 6"}
 
 -   You can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing `nonmem` syntax highlighter through VScode can more efficiently visualize a `NONMEM` script.
 
-![](pic/vscode5.png){fig-align="center" width="200%"}
+![](pic/vscode5.png){fig-align="center" width="200%" fig-alt="Connect with MSI 7"}

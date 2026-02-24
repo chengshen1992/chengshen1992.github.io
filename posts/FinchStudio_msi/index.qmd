@@ -1,9 +1,10 @@
 ---
 title: "Use Finch Studio on MSI"
 author: "Shen Cheng and Mohamed Ismail"
-date: last-modified
+date: 2024-11-28
 categories: [workflow, code]
 image: "pic/image.png"
+image-alt: "Finch Studio and MSI"
 filters:
   - highlight-text
 format:
@@ -59,7 +60,7 @@ MSI can only be accessed when
 
 -   You are off campus but connecting to the University's Virtual Private Network ([VPN](https://it.umn.edu/services-technologies/virtual-private-network-vpn)). Please make sure when selecting a channel for connection, do **NOT** select the channel named "*UMN - Departmental Pools*".
 
-![](pic/vpn.png){fig-align="center" width="60%"}
+![](pic/vpn.png){fig-align="center" width="60%" fig-alt="VPN"}
 
 # 2. Install Finch Studio
 
@@ -69,11 +70,11 @@ For detailed Finch Studio installation, please follow the Finch Studio [tutorial
 
 -   Open Finch Studio, select **CONSOLE** tab and click **Remote** option. Click **Open SSH/SFTP Remote Connection** tab.
 
-![](pic/fs1.png){fig-align="center" width="100%"}
+![](pic/fs1.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI"}
 
 -   A connection setting window will pop-up. 
 
-![](pic/fs2.png){fig-align="center" width="100%"}
+![](pic/fs2.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 2"}
 
 -   You may notice that I have a connection that has been set up already. If this is the first time you set up SSH connection on Finch Studio, this window will be empty. In that case, just click **+ New Connection** button on the top right. Fill in the blanks as shown in the picture below. This is a one-time configuration, once set up appropriately, it can be reused later. 
 
@@ -86,7 +87,7 @@ For detailed Finch Studio installation, please follow the Finch Studio [tutorial
     *   **Private key**: if you have gone through step 1.1 correctly, this should be the private key in `~/.ssh/id_rsa`. Just copy and paste it in here. 
     *   **Passphrase** is recommended in step 1.1 percedure. If you have configured a SSH passohrase, enabling the passphrase option as shown below and enter your passphrase at the bottom. 
     
-![](pic/fs3.png){fig-align="center" width="100%"}
+![](pic/fs3.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 3"}
 
 -   The configuration of local and remote mount points is illustrated as shown below.
 
@@ -101,15 +102,15 @@ For detailed Finch Studio installation, please follow the Finch Studio [tutorial
 
 -   Once the connection has been configured, click **Save and Connect**. You should receive a pop-up window for the two-factor authentication. 
 
-![](pic/fs4.png){fig-align="center" width="100%"}
+![](pic/fs4.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 4"}
 
 -   After authenticated through a preferred option, connection with MSI should be established. A window similar to below indicates a successful connection. 
 
-![](pic/fs5.png){fig-align="center" width="100%"}
+![](pic/fs5.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 5"}
 
 -   If you configured your local and remote mount points appropriately, you should also be able to see them under **File** tab (Left pane: local; Right pane: remote). You can drag files between your local and remote mount points to upload and download files. The purpose of connecting Finch Studio to MSI is that we'd like to perform model fittings on MSI and visualize the results locally. So when we want to run a model on MSI, we will upload it to remote, and when we want to visualize the model fitting results, we will download it locally. 
 
-![](pic/fs6.png){fig-align="center" width="100%"}
+![](pic/fs6.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 6"}
 
 # 4. Run `NONMEM` through Finch Studio on MSI
 
@@ -117,15 +118,15 @@ Let's use an example Finch-`NONMEM` project `Drug-1` to illustrate how to perfor
 
 -   First, we'd like to open the model directory (e.g., `/Users/shencheng/Documents/FinchStudio-local/Drug-1`) and select the project (e.g., `Study-F1003-Asian-PK`) to open. 
 
-![](pic/fs7.png){fig-align="center" width="100%"}
+![](pic/fs7.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 7"}
 
 -   Then we can drag to copy the whole project directory from local to remote mount point.
 
-![](pic/fs8.png){fig-align="center" width="100%"}
+![](pic/fs8.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 8"}
 
 -   In **Remote** option under **CONSOLE** tab, make sure you enter the model directory that you'd like to execute first. 
 
-![](pic/fs9.png){fig-align="center" width="100%"}
+![](pic/fs9.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 9"}
 
 -   Here, because MSI utilizes [`slurm`](https://slurm.schedmd.com/documentation.html) for job submission and scheduling, we need to have a bash script set up in advance to interact with slurm (in my case, it is in `/Users/shencheng/Documents/FinchStudio-local/Drug-1/Study-F1003-Asian-PK/models/test.sh`). Here'an example bash script: 
 
@@ -163,7 +164,7 @@ execute mod1.ctl -nm_output=xml,ext
 
 -   To execute a model fitting, on the **Models** pane, right click the model that you'd like to execute, select **Run (Advance)**. 
 
-![](pic/fs10.png){fig-align="center" width="100%"}
+![](pic/fs10.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 10"}
 
 
 -   A run command window should pop-up, here're a few things to set up: 
@@ -177,31 +178,31 @@ execute mod1.ctl -nm_output=xml,ext
     *   Click **Execute** button to execute the run. 
 
 
-![](pic/fs11.png){fig-align="center" width="100%"}
+![](pic/fs11.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 11"}
 
 -   While the model fitting is executing, you can check `NONMEM.log` generated to monitor the progress. Following a successful execution, you should see model outputs on remote pane as shown below. 
 
-![](pic/fs12.png){fig-align="center" width="100%"}
+![](pic/fs12.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 12"}
 
 -   To visualize the results via Finch Studio, you would want to download (select and drag from right to left) everything from remote to local. Afterwards, the modeling results can be visualized using the Finch Studio toolkit.
 
-![](pic/fs13.png){fig-align="center" width="100%"}
+![](pic/fs13.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 13"}
 
-![](pic/fs14.png){fig-align="center" width="100%"}
+![](pic/fs14.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 14"}
 
 -   Finch Studio requires different `NONMEM` output files for different purposes as shown in the table below: 
 
-![](pic/file-table.png){fig-align="center" width="70%"}
+![](pic/file-table.png){fig-align="center" width="70%" fig-alt="File table"}
 
 # 5. Cluster job monitoring
 
 Finch Studio also has a well-designed cluster job monitor to monitor/kill job execution in real time. To access it, select the job monitor tab on the left and click **Open Cluster Job Monitor**. 
 
-![](pic/fs15.png){fig-align="center" width="100%"}
+![](pic/fs15.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 15"}
 
 Once opened up, you can search your MSI username and filter the jobs related to it. You can also check the `info` or `kill` the jobs as needed. 
 
-![](pic/fs16.png){fig-align="center" width="100%"}
+![](pic/fs16.png){fig-align="center" width="100%" fig-alt="Connect FS with MSI 16"}
 
 # 6. Summary
 
