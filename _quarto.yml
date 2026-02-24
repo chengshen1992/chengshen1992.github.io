@@ -3,6 +3,8 @@ project:
   output-dir: docs
 
 website:
+  search:
+    location: navbar
   title: "Research Lab of Shen Cheng, Ph.D."
   navbar:
     background: "#7A0019"

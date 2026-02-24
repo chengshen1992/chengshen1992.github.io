@@ -39,3 +39,51 @@ a:focus {
   text-decoration: underline;
 }
 
+/* ---- Fix low-contrast right-side TOC links ---- */
+
+/* The TOC container in Quarto pages */
+#TOC a,
+.toc a,
+.sidebar nav[role="doc-toc"] a {
+  color: #1a1a1a !important;         /* darker text */
+  text-decoration: underline;         /* distinguishable without color */
+  text-underline-offset: 0.15em;
+}
+
+/* Hover/focus/active states */
+#TOC a:hover,
+#TOC a:focus,
+.toc a:hover,
+.toc a:focus,
+.sidebar nav[role="doc-toc"] a:hover,
+.sidebar nav[role="doc-toc"] a:focus {
+  color: #000000 !important;
+}
+
+/* The “active” section link in the TOC */
+#TOC a.active,
+.toc a.active,
+.sidebar nav[role="doc-toc"] a.active {
+  font-weight: 600;
+  color: #000000 !important;
+}
+
+/* Optional: make keyboard focus obvious */
+#TOC a:focus,
+.toc a:focus,
+.sidebar nav[role="doc-toc"] a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Ensure search button has accessible name */
+.quarto-search-button {
+  position: relative;
+}
+.quarto-search-button::after {
+  content: "Search";
+  position: absolute;
+  left: -9999px;
+}
+
+
