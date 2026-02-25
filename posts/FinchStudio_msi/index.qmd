@@ -91,8 +91,8 @@ For detailed Finch Studio installation, please follow the Finch Studio [tutorial
 
 -   The configuration of local and remote mount points is illustrated as shown below.
 
-    *   Local project path: [X:/User/SmithJ]{bg-colour="#C5407EFF"}[/documents/project1]{bg-colour="#FDCB26FF"}
-        *   [Local mount point]{bg-colour="#C5407EFF"}
+    *   Local project path: [X:/User/SmithJ]{bg-colour="#E76E5BFF"}[/documents/project1]{bg-colour="#FDCB26FF"}
+        *   [Local mount point]{bg-colour="#E76E5BFF"}
         *   [Common project path]{bg-colour="#FDCB26FF"}
     *   Remote project path: [/usr/1/jsmith/]{bg-colour="#E76E5BFF"}[documents/project1]{bg-colour="#FDCB26FF"}
         *   [Remote mount point]{bg-colour="#E76E5BFF"}

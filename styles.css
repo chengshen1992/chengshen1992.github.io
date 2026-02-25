@@ -86,4 +86,17 @@ a:focus {
   left: -9999px;
 }
 
+/* Hide heading anchor links in navbar */
+.navbar .anchor,
+.navbar .header-anchor,
+.navbar a.anchor-link {
+  display: none !important;
+}
+
+/* Hide any accidental anchor icons */
+a.anchor-link,
+.anchor-link {
+  display: none !important;
+}
+
 
