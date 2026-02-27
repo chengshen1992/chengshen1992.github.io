@@ -343,6 +343,17 @@ Shen Cheng
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a.navbar-brand.navbar-brand-logo")
+    .forEach(function (el) {
+      if (!el.textContent.trim() && !el.getAttribute("aria-label")) {
+        el.setAttribute("aria-label", "Home");
+        el.setAttribute("title", "Home");
+      }
+    });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

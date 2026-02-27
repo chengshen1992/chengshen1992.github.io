@@ -23,6 +23,7 @@ format:
     monofont: courier new
     css: styles.css
     toc: true
+    include-after-body: after-body.html
 
 
 

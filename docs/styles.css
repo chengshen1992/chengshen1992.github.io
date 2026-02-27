@@ -1,18 +1,12 @@
 /* css styles */
 
 /* ---- Accessibility fixes: contrast + link distinguishability ---- */
+body { color: #1a1a1a; }
 
-/* Darker default text */
-body {
-  color: #1a1a1a;
-}
-
-/* Bootstrap “muted” text is often too light */
 .text-muted, .quarto-title-meta, .nav-footer, footer {
   color: #4a4a4a !important;
 }
 
-/* Make links identifiable without color alone + improve contrast */
 a {
   color: #004a99;
   text-decoration: underline;
@@ -24,7 +18,6 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-/* Optional: improve keyboard focus visibility */
 a:focus {
   outline: 2px solid currentColor;
   outline-offset: 2px;
@@ -40,27 +33,21 @@ a:focus {
 }
 
 /* ---- Fix low-contrast right-side TOC links ---- */
-
-/* The TOC container in Quarto pages */
 #TOC a,
 .toc a,
 .sidebar nav[role="doc-toc"] a {
-  color: #1a1a1a !important;         /* darker text */
-  text-decoration: underline;         /* distinguishable without color */
+  color: #1a1a1a !important;
+  text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
-/* Hover/focus/active states */
-#TOC a:hover,
-#TOC a:focus,
-.toc a:hover,
-.toc a:focus,
+#TOC a:hover, #TOC a:focus,
+.toc a:hover, .toc a:focus,
 .sidebar nav[role="doc-toc"] a:hover,
 .sidebar nav[role="doc-toc"] a:focus {
   color: #000000 !important;
 }
 
-/* The “active” section link in the TOC */
 #TOC a.active,
 .toc a.active,
 .sidebar nav[role="doc-toc"] a.active {
@@ -68,7 +55,6 @@ a:focus {
   color: #000000 !important;
 }
 
-/* Optional: make keyboard focus obvious */
 #TOC a:focus,
 .toc a:focus,
 .sidebar nav[role="doc-toc"] a:focus {
@@ -76,26 +62,17 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Ensure search button has accessible name */
-.quarto-search-button {
-  position: relative;
-}
-.quarto-search-button::after {
-  content: "Search";
-  position: absolute;
-  left: -9999px;
+/* ---- Fix PopeTech/WAVE "Empty link" in navbar ---- */
+
+/* Hide the unused empty brand-logo link that Quarto generates */
+a.navbar-brand.navbar-brand-logo {
+  display: none !important;
 }
 
-/* Hide heading anchor links in navbar */
-.navbar .anchor,
+/* Hide common anchor-link icons if they render without label */
+.navbar a.anchor-link,
+.navbar .anchor-link,
 .navbar .header-anchor,
-.navbar a.anchor-link {
+.navbar .anchor {
   display: none !important;
 }
-
-/* Hide any accidental anchor icons */
-a.anchor-link,
-.anchor-link {
-  display: none !important;
-}
-

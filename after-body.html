@@ -1,0 +1,11 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a.navbar-brand.navbar-brand-logo")
+    .forEach(function (el) {
+      if (!el.textContent.trim() && !el.getAttribute("aria-label")) {
+        el.setAttribute("aria-label", "Home");
+        el.setAttribute("title", "Home");
+      }
+    });
+});
+</script>
