@@ -1,11 +1,32 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* --------------------------------------------------
+     1) Fix empty navbar logo link
+  -------------------------------------------------- */
   document.querySelectorAll("a.navbar-brand.navbar-brand-logo")
     .forEach(function (el) {
-      if (!el.textContent.trim() && !el.getAttribute("aria-label")) {
+
+      const hasVisibleContent =
+        (el.textContent || "").trim().length > 0 ||
+        el.children.length > 0;
+
+      if (!hasVisibleContent) {
         el.setAttribute("aria-label", "Home");
         el.setAttribute("title", "Home");
       }
     });
+
+  /* --------------------------------------------------
+     2) Fix "Broken ARIA menu"
+     Remove incorrect role="menu" from navbar toggler
+  -------------------------------------------------- */
+  document.querySelectorAll("button.navbar-toggler")
+    .forEach(function (btn) {
+      if (btn.getAttribute("role") === "menu") {
+        btn.removeAttribute("role");
+      }
+    });
+
 });
 </script>
