@@ -173,32 +173,26 @@ ul.task-list li input[type="checkbox"] {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* --------------------------------------------------
-     1) Fix empty navbar logo link
-  -------------------------------------------------- */
-  document.querySelectorAll("a.navbar-brand.navbar-brand-logo")
-    .forEach(function (el) {
+  // 1) Empty navbar logo link: add an accessible name
+  document.querySelectorAll("a.navbar-brand.navbar-brand-logo").forEach(function (a) {
+    const hasVisibleContent = (a.textContent || "").trim().length > 0 || a.children.length > 0;
+    if (!hasVisibleContent) {
+      if (!a.getAttribute("aria-label")) a.setAttribute("aria-label", "Home");
+      if (!a.getAttribute("title")) a.setAttribute("title", "Home");
+    }
+  });
 
-      const hasVisibleContent =
-        (el.textContent || "").trim().length > 0 ||
-        el.children.length > 0;
+  // 2) Fix "Broken ARIA menu": remove role="menu" where it doesn't belong
+  // Most commonly on the mobile navbar toggler; sometimes on other injected controls.
+  document.querySelectorAll('[role="menu"]').forEach(function (el) {
+    // Only remove for known non-menu controls (keep if it's a real menu elsewhere)
+    const isNavbarToggler = el.matches("button.navbar-toggler");
+    const isInsideNavbar = el.closest("nav.navbar") !== null;
 
-      if (!hasVisibleContent) {
-        el.setAttribute("aria-label", "Home");
-        el.setAttribute("title", "Home");
-      }
-    });
-
-  /* --------------------------------------------------
-     2) Fix "Broken ARIA menu"
-     Remove incorrect role="menu" from navbar toggler
-  -------------------------------------------------- */
-  document.querySelectorAll("button.navbar-toggler")
-    .forEach(function (btn) {
-      if (btn.getAttribute("role") === "menu") {
-        btn.removeAttribute("role");
-      }
-    });
+    if (isNavbarToggler || isInsideNavbar) {
+      el.removeAttribute("role");
+    }
+  });
 
 });
 </script>

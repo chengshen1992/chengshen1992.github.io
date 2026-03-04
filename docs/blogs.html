@@ -214,7 +214,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dG9vbCUyQ2NvZGU=" data-listing-date-sort="1767333600000" data-listing-file-modified-sort="1771966030621" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="122" data-listing-word-count-sort="24315">
+<div class="quarto-post image-right" data-index="0" data-categories="dG9vbCUyQ2NvZGU=" data-listing-date-sort="1767337200000" data-listing-file-modified-sort="1771966030621" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="122" data-listing-word-count-sort="24315">
 <div class="thumbnail"><a href="./posts/basic_vpc/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/basic_vpc/pic/image.png" class="thumbnail-image" alt="Example VPC">
@@ -246,7 +246,7 @@ Shen Cheng
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="d29ya2Zsb3clMkNjb2Rl" data-listing-date-sort="1732773600000" data-listing-file-modified-sort="1772038725439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1605">
+<div class="quarto-post image-right" data-index="1" data-categories="d29ya2Zsb3clMkNjb2Rl" data-listing-date-sort="1732777200000" data-listing-file-modified-sort="1772038725439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1605">
 <div class="thumbnail"><a href="./posts/FinchStudio_msi/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/FinchStudio_msi/pic/image.png" class="thumbnail-image" alt="Finch Studio and MSI">
@@ -278,7 +278,7 @@ Shen Cheng and Mohamed Ismail
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="d29ya2Zsb3clMkNjb2Rl" data-listing-date-sort="1732600800000" data-listing-file-modified-sort="1771965950493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2264">
+<div class="quarto-post image-right" data-index="2" data-categories="d29ya2Zsb3clMkNjb2Rl" data-listing-date-sort="1732604400000" data-listing-file-modified-sort="1771965950493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2264">
 <div class="thumbnail"><a href="./posts/Reproducible_PMX_workflow/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/Reproducible_PMX_workflow/pic/image.png" class="thumbnail-image" alt="PMx workflow at MSI">
@@ -310,7 +310,7 @@ Shen Cheng and Mutaz Jaber
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="d29ya2Zsb3c=" data-listing-date-sort="1718427600000" data-listing-file-modified-sort="1771965917959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="379">
+<div class="quarto-post image-right" data-index="3" data-categories="d29ya2Zsb3c=" data-listing-date-sort="1718431200000" data-listing-file-modified-sort="1771965917959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="379">
 <div class="thumbnail"><a href="./posts/vscode_ssh/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/vscode_ssh/pic/image.png" class="thumbnail-image" alt="Visual Studio and MSI">
@@ -345,13 +345,28 @@ Shen Cheng
 </div></main> <!-- /main -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("a.navbar-brand.navbar-brand-logo")
-    .forEach(function (el) {
-      if (!el.textContent.trim() && !el.getAttribute("aria-label")) {
-        el.setAttribute("aria-label", "Home");
-        el.setAttribute("title", "Home");
-      }
-    });
+
+  // 1) Empty navbar logo link: add an accessible name
+  document.querySelectorAll("a.navbar-brand.navbar-brand-logo").forEach(function (a) {
+    const hasVisibleContent = (a.textContent || "").trim().length > 0 || a.children.length > 0;
+    if (!hasVisibleContent) {
+      if (!a.getAttribute("aria-label")) a.setAttribute("aria-label", "Home");
+      if (!a.getAttribute("title")) a.setAttribute("title", "Home");
+    }
+  });
+
+  // 2) Fix "Broken ARIA menu": remove role="menu" where it doesn't belong
+  // Most commonly on the mobile navbar toggler; sometimes on other injected controls.
+  document.querySelectorAll('[role="menu"]').forEach(function (el) {
+    // Only remove for known non-menu controls (keep if it's a real menu elsewhere)
+    const isNavbarToggler = el.matches("button.navbar-toggler");
+    const isInsideNavbar = el.closest("nav.navbar") !== null;
+
+    if (isNavbarToggler || isInsideNavbar) {
+      el.removeAttribute("role");
+    }
+  });
+
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

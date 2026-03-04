@@ -69,10 +69,10 @@ a.navbar-brand.navbar-brand-logo {
   display: none !important;
 }
 
-/* Hide common anchor-link icons if they render without label */
-.navbar a.anchor-link,
-.navbar .anchor-link,
-.navbar .header-anchor,
-.navbar .anchor {
+/* Hide Quarto heading anchor links site-wide (often flagged as empty links) */
+a.anchor-link,
+a.header-anchor,
+.header-anchor,
+.anchor-link {
   display: none !important;
 }

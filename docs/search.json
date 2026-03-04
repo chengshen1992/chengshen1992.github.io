@@ -1,66 +1,66 @@
 [
   {
+    "objectID": "people/postdoc/nikolaos_memmos.html",
+    "href": "people/postdoc/nikolaos_memmos.html",
+    "title": "Nikolaos Memmos",
+    "section": "",
+    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+  },
+  {
+    "objectID": "people/postdoc/nikolaos_memmos.html#bio",
+    "href": "people/postdoc/nikolaos_memmos.html#bio",
+    "title": "Nikolaos Memmos",
+    "section": "",
+    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+  },
+  {
+    "objectID": "people/gras/diqin_yan.html",
+    "href": "people/gras/diqin_yan.html",
+    "title": "Diqin Yan",
+    "section": "",
+    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+  },
+  {
+    "objectID": "people/gras/diqin_yan.html#bio",
+    "href": "people/gras/diqin_yan.html#bio",
+    "title": "Diqin Yan",
+    "section": "",
+    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
+    "section": "",
+    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#principal-investigator",
+    "href": "people.html#principal-investigator",
+    "title": "People",
+    "section": "",
+    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#postdoctoral-researcher",
+    "href": "people.html#postdoctoral-researcher",
+    "title": "People",
+    "section": "Postdoctoral Researcher",
+    "text": "Postdoctoral Researcher\n\n\n\n\n\n\n\n\n\n\nNikolaos Memmos\n\n\nPostdoc Researcher\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html#graduate-students",
+    "href": "people.html#graduate-students",
+    "title": "People",
+    "section": "Graduate Students",
+    "text": "Graduate Students\n\n\n\n\n\n\n\n\n\n\nDiqin Yan\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Quantitative Pharmacology and Pharmacometrics Research Lab",
     "section": "",
     "text": "Our research interest is in the field of pharmacometrics. Our aim is to use quantitative pharmacology methods to enhance precision therapeutics and facilitate efficient drug development. More specifically, we take advantage of modeling and simulation approaches to:\n\nElucidate the dose-exposure-response relationships of therapeutics, identifying and quantifying the sources of variability in pharmacokinetics and pharmacodynamics (PK/PD).\n\nUnderstand disease progression and mechanism of drug actions.\n\nStrategically guide the design of future studies that assess drug safety and efficacy, thereby facilitating more efficient drug development.\n\nOur lab is part of the Department of Experimental and Clinical Pharmacology (ECP) at the University of Minnesota College of Pharmacy.\n \n  \n   \n  \n    \n     Graduate Program\n  \n  \n    \n     Location\n  \n  \n    \n     Email"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "A few basics of visual predictive checks (VPCs)\n\n\n\ntool\n\ncode\n\n\n\n\n\n\n\n\n\nJan 2, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nUse Finch Studio on MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 28, 2024\n\n\nShen Cheng and Mohamed Ismail\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mutaz Jaber\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/Reproducible_PMX_workflow/index.html",
-    "href": "posts/Reproducible_PMX_workflow/index.html",
-    "title": "Create reproducible PMx workflow at MSI",
-    "section": "",
-    "text": "Pharmacometric (PMx) research usually involves computationally intensive modeling and simulation processes. High performance computing (HPC) systems provided by Minnesota Supercomputing Institute (MSI) serves as a valuable platform to perform PMx research. This blog post illustrates a strategy for constructing a collaborative, reproducible and manageable PMx workflow at MSI, leveraging several open-source tools in R."
-  },
-  {
-    "objectID": "posts/Reproducible_PMX_workflow/index.html#use-project-abc-as-a-template",
-    "href": "posts/Reproducible_PMX_workflow/index.html#use-project-abc-as-a-template",
-    "title": "Create reproducible PMx workflow at MSI",
-    "section": "3.1 Use project-abc as a template",
-    "text": "3.1 Use project-abc as a template\nStep 1: Navigating to template project workflow (project-abc). Click Use this template, and create a project directory with an appropriate owner and project name.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 2: git clone the repository into MSI Rstudio server. To do this:\n\nCopy the string as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).\n\n\n\n\n\n\n\nGo back to your workflow, navigate to the appropriate directory in the terminal.\nEnter git clone git@github.umn.edu:cheng423/project-xyz.git in the terminal. An output similar to what is shown below indicating the repository is cloned successfully.\n\n```{bash}\nCloning into 'project-xyz'...\nremote: Enumerating objects: 52, done.\nremote: Counting objects: 100% (52/52), done.\nremote: Compressing objects: 100% (43/43), done.\nremote: Total 52 (delta 4), reused 34 (delta 2), pack-reused 0\nReceiving objects: 100% (52/52), 2.92 MiB | 15.24 MiB/s, done.\nResolving deltas: 100% (4/4), done.\nUpdating files: 100% (43/43), done.\n```\nStep 3: navigate inside the newly cloned github repository, then rename the .Rproj file to make it consistent with the repository name. After renaming, open the .Rproj.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 4: install R packages. The R packages in the template project is managed by renv. Run renv::restore() in the R console to restore all R package installation according to renv.lock. This might take a few minutes to install all the packages.\nYou can directly jump to to explore how NONMEM is ran at MSI if a project template is used and successfully configured."
-  },
-  {
-    "objectID": "posts/Reproducible_PMX_workflow/index.html#build-a-project-directory-from-scratch",
-    "href": "posts/Reproducible_PMX_workflow/index.html#build-a-project-directory-from-scratch",
-    "title": "Create reproducible PMx workflow at MSI",
-    "section": "3.2 Build a project directory from scratch",
-    "text": "3.2 Build a project directory from scratch\n\n3.2.1. Build a Github repository\nGithub is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to GitHub Enterprise for all students and employees possessing an active Internet ID. Establishing a GitHub repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed GitHub tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this document for further information. Briefly,\nStep 1: Registering / signing in University of Minnesota GitHub Enterprise. Initialize a new GitHub repository (i.e, project-abc) by clicking “New repository” tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.\n\n\n\n\n\n\n\n\n\n\nStep 2: If you have already set up your GitHub SSH key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below. Other options such as HTTP and GITHUB CLI are also available but will not be covered in this blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: After git clone, the GitHub repository you created should appear in your MSI disk. You can now interact with your GitHub repository and replies on it to synchronize your work with your collaborators.\n\n\n3.2.2. Using renv for package version control\n\n\n\n\n\nrenv is a useful package to create reproducible environment for each R project. Instead of using library of R packages installed globally for every project. renv allows you to create project specific library to ensure the package version consistent across an R project.\n\n\nStep 1: Create an R project\nTo use renv, You need to create an R project (.Rproj) in the cloned GitHub repository.\n\n\n\n\n\n\nStep 2: Initialize renv\nIn your R console, type in renv::init() to initialize the structure of the R environment using renv.\n\n\n\n\n\n\n\nThe structure of the environment includes:\n\n.Rprofile: R session automatically runs this script every time you open this R project (i.e., project-abc.Rproj), this ensures the automatic activation of renv.\nrenv/library: the project specific R package library.\nrenv.lock: a record of R packages installed, including all the dependencies.\n\nStep 3: Install packages\nUsing renv, we can install R packages using renv::install(). For example:\n\nrenv::install(\"mrgsolve\") will install mrgsolve package from CRAN\n\nrenv::install(\"metrumresearchgroup/bbr\") will install latest bbr package from GitHub of metrumresearchgroup\n\nHere, I want to install 5 packages into my project folder:\n\nmrgsolve from CRAN.\ntidyverse from CRAN.\nnmrec from GitHub of metrumresearchgroup.\nbbr from GitHub of metrumresearchgroup.\nhere from CRAN.\n\nI can install them by running:\n```{r}\nrenv::install(\"mrgsolve\", \n              \"tidyverse\", \n              \"metrumresearchgroup/nmrec\",\n              \"metrumresearchgroup/bbr\", \n              \"here\")\n```\nWhen asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session. When the installation finishes, you should see all the requested packages installed in the renv/library directory.\nStep 4: Create a snapshot of the installed packages\nrenv::snapshot() allows you to create a snapshot of the installed packages, which enables your collaborators to use renv::restore() to restore the same R packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.\nTo accomplish this, we need to first create a new R script library.R in the project directory. This script does nothing but simply library all the packages installed.\nExample code for library.R:\n```{r}\nlibrary(mrgsolve)\nlibrary(tidyverse)\nlibrary(nmrec)\nlibrary(bbr)\nlibrary(here)\n```\nSubsequently, we can run renv::snapshot() in the R console. This will update the renv.lock file in the project folder.\nUsing GitHub to synchronize your renv.lock file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using renv::restore() according to the updated renv.lock. Similarly, if they update renv.lock on their end, you could also run renv::restore() to restore their installation."
-  },
-  {
-    "objectID": "posts/Reproducible_PMX_workflow/index.html#sec-projdir1",
-    "href": "posts/Reproducible_PMX_workflow/index.html#sec-projdir1",
-    "title": "Create reproducible PMx workflow at MSI",
-    "section": "3.1 Use project-abc as a template",
-    "text": "3.1 Use project-abc as a template\nStep 1: Navigate to template project workflow (project-abc). Click Use this template, and then create a project directory with an appropriate owner and user-defined project name.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 2: git clone the repository into MSI Rstudio server. To do this:\n\nCopy the string for repository cloning as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).\n\n\n\n\n\n\n\nGo back to your workflow, navigate to the desired directory in the terminal.\nClone the repository using the copied string (e.g., git clone git@github.umn.edu:cheng423/project-xyz.git) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.\n\n```{bash}\nCloning into 'project-xyz'...\nremote: Enumerating objects: 52, done.\nremote: Counting objects: 100% (52/52), done.\nremote: Compressing objects: 100% (43/43), done.\nremote: Total 52 (delta 4), reused 34 (delta 2), pack-reused 0\nReceiving objects: 100% (52/52), 2.92 MiB | 15.24 MiB/s, done.\nResolving deltas: 100% (4/4), done.\nUpdating files: 100% (43/43), done.\n```\nStep 3: navigate inside the newly cloned github repository, then rename the .Rproj file to make it consistent with the repository name. After renaming, open the .Rproj file. This will restart your R session and initialize the desired R project.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 4: install R packages. The R packages in the template project is managed by renv. Run renv::restore() in the R console to restore all the package installations according to renv.lock. The package installation might take a few minutes to finish.\nYou can directly jump to section 4. Run NONMEM using bbi to explore how to operate NONMEM at MSI following this step."
-  },
-  {
-    "objectID": "posts/Reproducible_PMX_workflow/index.html#sec-projdir2",
-    "href": "posts/Reproducible_PMX_workflow/index.html#sec-projdir2",
-    "title": "Create reproducible PMx workflow at MSI",
-    "section": "3.2 Build a project directory from scratch",
-    "text": "3.2 Build a project directory from scratch\n\n3.2.1. Build a Github repository\nGithub is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to GitHub Enterprise for all students and employees possessing an active Internet ID. Establishing a GitHub repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed GitHub tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this document for further information. Briefly,\nStep 1: Registering / signing in University of Minnesota GitHub Enterprise. Initialize a new GitHub repository (i.e, project-abc) by clicking “New repository” tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.\n\n\n\n\n\n\n\n\n\n\nStep 2: If you have already set up your GitHub SSH key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below. Other options such as HTTPS and GITHUB CLI are also available but will not be covered in this blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: After git clone, the GitHub repository you created should appear in your MSI disk. You can now interact with your GitHub repository and replies on it to synchronize your work with your collaborators.\n\n\n3.2.2. Using renv for package version control\n\n\n\n\n\nrenv is a useful package to create reproducible environment for each R project. Instead of using library of R packages installed globally for every project. renv allows you to create project specific library to ensure the package version consistent across the duration of an R project.\n\n\nStep 1: Create an R project\nTo use renv, You need to create an R project (.Rproj) in the cloned GitHub repository.\n\n\n\n\n\n\nStep 2: Initialize renv\nIn your R console, type in renv::init() to initialize the structure of the R environment using renv.\n\n\n\n\n\n\n\nThe structure of the environment includes:\n\n.Rprofile: R session automatically runs this script every time you open this R project (i.e., project-abc.Rproj), this ensures the automatic activation of renv.\nrenv/library: the project specific R package library.\nrenv.lock: a record of R packages installed, including all the dependencies.\n\nStep 3: Install packages\nUsing renv, we can install R packages using renv::install(). For example:\n\nrenv::install(\"mrgsolve\") will install mrgsolve package from CRAN\n\nrenv::install(\"metrumresearchgroup/bbr\") will install latest bbr package from GitHub of metrumresearchgroup\n\nHere, I want to install 5 packages into my project folder:\n\nmrgsolve from CRAN.\ntidyverse from CRAN.\nnmrec from GitHub of metrumresearchgroup.\nbbr from GitHub of metrumresearchgroup.\nhere from CRAN.\n\nI can install them by running:\n```{r}\nrenv::install(\"mrgsolve\", \n              \"tidyverse\", \n              \"metrumresearchgroup/nmrec\",\n              \"metrumresearchgroup/bbr\", \n              \"here\")\n```\nWhen asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session. When the installation finishes, you should see all the requested packages installed in the renv/library directory.\nStep 4: Create a snapshot of the installed packages\nrenv::snapshot() allows you to create a snapshot of the installed packages, which enables your collaborators to use renv::restore() to restore the same R packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.\nTo accomplish this, we need to first create a new R script library.R in the project directory. This script does nothing but simply library all the packages installed.\nExample code for library.R:\n```{r}\nlibrary(mrgsolve)\nlibrary(tidyverse)\nlibrary(nmrec)\nlibrary(bbr)\nlibrary(here)\n```\nSubsequently, we can run renv::snapshot() in the R console. This will update the renv.lock file in the project folder.\nUsing GitHub to synchronize your renv.lock file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using renv::restore() according to the updated renv.lock. Similarly, if they update renv.lock on their end, you could also run renv::restore() to restore their installation."
-  },
-  {
-    "objectID": "posts/vscode_ssh/index.html",
-    "href": "posts/vscode_ssh/index.html",
-    "title": "Connect MSI with Visual Studio Code over SSH",
-    "section": "",
-    "text": "Visual Studio Code (VScode) is a useful source code editor to interact with Minnesota Supercomputing Institute (MSI). This blog illustrate you how to connect VScode with MSI through Remote-SSH.\n\n1. Set up SSH key for the remote communication with MSI\nFollow the tutorial specified by MSI to setup SSH key in your local computer.\n\n\n2. Create ~/.ssh/config in the local machine\nRun this in terminal,\n```{bash}\ncd ~/.ssh\nls\n```\nIf you can see file config in the output, then it means config has already been created in your local machine.\nIf you cannot see config in the output, run this in terminal,\n```{bash}\ntouch ~/.ssh/config\n```\n\n\n3. Add MSI front-end server as a new SSH host\nOpen config, copy and paste the following scripts. Replace your.msi.username with your X500 and save it.\n```{bash}\nHost agate.msi.umn.edu\nHostName agate.msi.umn.edu\nUser your.msi.username\nIdentityFile ~/.ssh/id_rsa\n```\n\n\n4. Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”.\n\n\n\n\n\n\n\n\n5. Connect VScode with MSI\n\nUnder tab “Extension”, install extension “remote-ssh”\n\n\n\n\n\n\n\nOnce installed, you will be able to see this icon on the very bottom left corner of your VScode window.\n\n\n\n\n\n\n\nClick the icon, select “connect current window to host”. You should be able to see the agate.msi.umn.edu if MSI SSH was correctly added to the ~/.ssh/config file. Select agate.msi.umn.edu and wait for a few seconds.\n\n\n\n\n\n\n\nEntering your passphrase (set up in the SSH key in Step 1)\n\n\n\n\n\n\n\nGoing through the two-factor authentication as instructed.\n\n\n\n\n\n\n\nOnce connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname.\n\n\n\n\n\n\n\nYou can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing nonmem syntax highlighter through VScode can more efficiently visualize a NONMEM script."
   },
   {
     "objectID": "posts/FinchStudio_msi/index.html",
@@ -98,85 +98,36 @@
     "text": "1.4 Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”."
   },
   {
-    "objectID": "people/gras/diqin_yan.html",
-    "href": "people/gras/diqin_yan.html",
-    "title": "Diqin Yan",
+    "objectID": "posts/Reproducible_PMX_workflow/index.html",
+    "href": "posts/Reproducible_PMX_workflow/index.html",
+    "title": "Create reproducible PMx workflow at MSI",
     "section": "",
-    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+    "text": "Pharmacometric (PMx) research usually involves computationally intensive modeling and simulation processes. High performance computing (HPC) systems provided by Minnesota Supercomputing Institute (MSI) serves as a valuable platform to perform PMx research. This blog post illustrates a strategy for constructing a collaborative, reproducible and manageable PMx workflow at MSI, leveraging several open-source tools in R."
   },
   {
-    "objectID": "people/gras/diqin_yan.html#biography",
-    "href": "people/gras/diqin_yan.html#biography",
-    "title": "Diqin Yan",
-    "section": "",
-    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
+    "objectID": "posts/Reproducible_PMX_workflow/index.html#sec-projdir1",
+    "href": "posts/Reproducible_PMX_workflow/index.html#sec-projdir1",
+    "title": "Create reproducible PMx workflow at MSI",
+    "section": "3.1 Use project-abc as a template",
+    "text": "3.1 Use project-abc as a template\nStep 1: Navigate to template project workflow (project-abc). Click Use this template, and then create a project directory with an appropriate owner and user-defined project name.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 2: git clone the repository into MSI Rstudio server. To do this:\n\nCopy the string for repository cloning as indicated in the screenshot (if ssh has been configured for your account, use SSH option, otherwise, use HTTPS option).\n\n\n\n\n\n\n\nGo back to your workflow, navigate to the desired directory in the terminal.\nClone the repository using the copied string (e.g., git clone git@github.umn.edu:cheng423/project-xyz.git) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.\n\n```{bash}\nCloning into 'project-xyz'...\nremote: Enumerating objects: 52, done.\nremote: Counting objects: 100% (52/52), done.\nremote: Compressing objects: 100% (43/43), done.\nremote: Total 52 (delta 4), reused 34 (delta 2), pack-reused 0\nReceiving objects: 100% (52/52), 2.92 MiB | 15.24 MiB/s, done.\nResolving deltas: 100% (4/4), done.\nUpdating files: 100% (43/43), done.\n```\nStep 3: navigate inside the newly cloned github repository, then rename the .Rproj file to make it consistent with the repository name. After renaming, open the .Rproj file. This will restart your R session and initialize the desired R project.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 4: install R packages. The R packages in the template project is managed by renv. Run renv::restore() in the R console to restore all the package installations according to renv.lock. The package installation might take a few minutes to finish.\nYou can directly jump to section 4. Run NONMEM using bbi to explore how to operate NONMEM at MSI following this step."
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
-    "section": "",
-    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "people.html#graduate-students",
-    "href": "people.html#graduate-students",
-    "title": "People",
-    "section": "Graduate Students",
-    "text": "Graduate Students\n\n\n\n\n\n\n\n\n\n\nDiqin Yan\n\n\nPhD Student\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "people/pi/shen_cheng.html",
-    "href": "people/pi/shen_cheng.html",
-    "title": "Shen Cheng, Ph.D.",
-    "section": "",
-    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine.\n\n\n\n\nPh.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)\n\n\n \n  \n   \n  \n    \n     Email\n  \n  \n    \n     Github\n  \n  \n    \n     CV\n  \n  \n    \n     Linkedin\n  \n  \n    \n     Twitter"
-  },
-  {
-    "objectID": "people.html#principal-investigator",
-    "href": "people.html#principal-investigator",
-    "title": "People",
-    "section": "",
-    "text": "Principal Invesigator\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "people/gras/diqin_yan.html#bio",
-    "href": "people/gras/diqin_yan.html#bio",
-    "title": "Diqin Yan",
-    "section": "",
-    "text": "Diqin is a PhD student in Experimental and Clinical Pharmacology under the guidance of Dr. Cheng. She earned her Master’s and Bachelor’s degrees in Clinical Pharmacy from Peking University and Sichuan University, respectively. Her research interest focuses on mechanistic pharmacokinetic-pharmacodynamic (PK-PD) modeling and simulation to advance model-informed precise dosing in clinical drug use."
-  },
-  {
-    "objectID": "people/pi/shen_cheng.html#bio",
-    "href": "people/pi/shen_cheng.html#bio",
-    "title": "Shen Cheng, Ph.D.",
-    "section": "",
-    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine."
-  },
-  {
-    "objectID": "people/pi/shen_cheng.html#education",
-    "href": "people/pi/shen_cheng.html#education",
-    "title": "Shen Cheng, Ph.D.",
-    "section": "",
-    "text": "Ph.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)"
-  },
-  {
-    "objectID": "teaching/ecp8506.html",
-    "href": "teaching/ecp8506.html",
-    "title": "ECP8506 Clinical Trial Simulations",
-    "section": "",
-    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine.\nExtensively diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
-  },
-  {
-    "objectID": "teaching/ecp8506.html#course-overview",
-    "href": "teaching/ecp8506.html#course-overview",
-    "title": "ECP8506 Clinical Trial Simulations",
-    "section": "",
-    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine.\nExtensively diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
+    "objectID": "posts/Reproducible_PMX_workflow/index.html#sec-projdir2",
+    "href": "posts/Reproducible_PMX_workflow/index.html#sec-projdir2",
+    "title": "Create reproducible PMx workflow at MSI",
+    "section": "3.2 Build a project directory from scratch",
+    "text": "3.2 Build a project directory from scratch\n\n3.2.1. Build a Github repository\nGithub is a useful tool for collaborative coding, facilitating both code review and management. University of Minnesota provides complimentary access to GitHub Enterprise for all students and employees possessing an active Internet ID. Establishing a GitHub repository can significantly improve the efficiency and collaborative experience of a PMx project. While this blog post will not provide a detailed GitHub tutorial, those interested in a comprehensive exploration of its capabilities are encouraged to consult this document for further information. Briefly,\nStep 1: Registering / signing in University of Minnesota GitHub Enterprise. Initialize a new GitHub repository (i.e, project-abc) by clicking “New repository” tab. Then, specify the settings (e.g., name, visibility, etc) and create the repository.\n\n\n\n\n\n\n\n\n\n\nStep 2: If you have already set up your GitHub SSH key. Clone the repository into your MSI Rstudio Server session through “terminal” using the SSH option as shown below. Other options such as HTTPS and GITHUB CLI are also available but will not be covered in this blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: After git clone, the GitHub repository you created should appear in your MSI disk. You can now interact with your GitHub repository and replies on it to synchronize your work with your collaborators.\n\n\n3.2.2. Using renv for package version control\n\n\n\n\n\nrenv is a useful package to create reproducible environment for each R project. Instead of using library of R packages installed globally for every project. renv allows you to create project specific library to ensure the package version consistent across the duration of an R project.\n\n\nStep 1: Create an R project\nTo use renv, You need to create an R project (.Rproj) in the cloned GitHub repository.\n\n\n\n\n\n\nStep 2: Initialize renv\nIn your R console, type in renv::init() to initialize the structure of the R environment using renv.\n\n\n\n\n\n\n\nThe structure of the environment includes:\n\n.Rprofile: R session automatically runs this script every time you open this R project (i.e., project-abc.Rproj), this ensures the automatic activation of renv.\nrenv/library: the project specific R package library.\nrenv.lock: a record of R packages installed, including all the dependencies.\n\nStep 3: Install packages\nUsing renv, we can install R packages using renv::install(). For example:\n\nrenv::install(\"mrgsolve\") will install mrgsolve package from CRAN\n\nrenv::install(\"metrumresearchgroup/bbr\") will install latest bbr package from GitHub of metrumresearchgroup\n\nHere, I want to install 5 packages into my project folder:\n\nmrgsolve from CRAN.\ntidyverse from CRAN.\nnmrec from GitHub of metrumresearchgroup.\nbbr from GitHub of metrumresearchgroup.\nhere from CRAN.\n\nI can install them by running:\n```{r}\nrenv::install(\"mrgsolve\", \n              \"tidyverse\", \n              \"metrumresearchgroup/nmrec\",\n              \"metrumresearchgroup/bbr\", \n              \"here\")\n```\nWhen asked whether you want to proceed, simply answer Y (yes) to proceed to the next step. The installation might take a while depending on the size of the packages, whether these packages were cached and the configuration of the Rstudio session. When the installation finishes, you should see all the requested packages installed in the renv/library directory.\nStep 4: Create a snapshot of the installed packages\nrenv::snapshot() allows you to create a snapshot of the installed packages, which enables your collaborators to use renv::restore() to restore the same R packages with the same version from the same source in their Rstudio Server session This would ensure the project reproducibility.\nTo accomplish this, we need to first create a new R script library.R in the project directory. This script does nothing but simply library all the packages installed.\nExample code for library.R:\n```{r}\nlibrary(mrgsolve)\nlibrary(tidyverse)\nlibrary(nmrec)\nlibrary(bbr)\nlibrary(here)\n```\nSubsequently, we can run renv::snapshot() in the R console. This will update the renv.lock file in the project folder.\nUsing GitHub to synchronize your renv.lock file with your collaborators, they should now be able to install the same version of packages in their Rstudio Server session using renv::restore() according to the updated renv.lock. Similarly, if they update renv.lock on their end, you could also run renv::restore() to restore their installation."
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Course Overview\nThis course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis.\n\n2026 Spring"
+  },
+  {
+    "objectID": "teaching.html#ecp8503-intermediate-poppkpd",
+    "href": "teaching.html#ecp8503-intermediate-poppkpd",
     "title": "Teaching",
     "section": "",
     "text": "Course Overview\nThis course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis.\n\n2026 Spring"
@@ -189,32 +140,11 @@
     "text": "ECP8506 Clinical Trial Simulations\nCourse Overview\nPrecision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course explores how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics.\n\n\n2024 Fall"
   },
   {
-    "objectID": "teaching.html#course-overview",
-    "href": "teaching.html#course-overview",
+    "objectID": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
+    "href": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
     "title": "Teaching",
-    "section": "",
-    "text": "Precision medicine is an emerging field aiming to customize the patients’ treatment plans according to individual characteristics. Recently, the rapid growth of the discipline of quantitative pharmacology (i.e., pharmacometrics) facilitates the realization of precision medicine. Diving into the concepts of pharmacometric simulations, this course will explore how model-based strategies can drive quantitative decision-making in either clinical drug research or personalized therapeutics. Students will gain familiarity with contemporary pharmacometric tools, including various software suites and computational platforms. Throughout the course, participants will be asked to attend lecture series, perform hands-on simulation exercises based on hypothetical clinical scenarios, participate in small group discussions, and learn real-world case studies of model-informed drug development (MIDD) and model-informed precision dosing (MIPD)."
-  },
-  {
-    "objectID": "teaching.html#github-repository",
-    "href": "teaching.html#github-repository",
-    "title": "Teaching",
-    "section": "",
-    "text": "2024 Fall"
-  },
-  {
-    "objectID": "research.html#methdological",
-    "href": "research.html#methdological",
-    "title": "Research",
-    "section": "Methdological",
-    "text": "Methdological"
-  },
-  {
-    "objectID": "research.html#methdological-research",
-    "href": "research.html#methdological-research",
-    "title": "Research",
-    "section": "Methdological Research",
-    "text": "Methdological Research\nEvaluate and develop methodologies to incorporate high-dimensional covariates in pharmacometric analysis: The variability of drug exposure and response is hardly attributable to a single source, such as the presence of a single genetic mutant or a single type of bacteria. The complex nature of genomics and microbiome data (e.g., high-dimensionality) presents significant challenges for effective integration into pharmacometric analyses. In line with our clinical research interests in the field of pharmacogenomics and pharmacomicrobiome, our lab is interested in evaluating existing methodologies and developing new methodologies for the incorporation of high-dimensional data into pharmacometric frameworks."
+    "section": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)",
+    "text": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu). This course opens in the following semesters:\n\n2025 Spring\n2025 Fall\n2027 Spring (upcoming in January 2027)"
   },
   {
     "objectID": "research.html",
@@ -231,11 +161,18 @@
     "text": "Clinical and Translational Research\nCortisol PK-PD and exposure-response in pediatric patients with congenital adrenal hyperplasia (CAH): CAH is a rare endocrine disorder characterized by impaired cortisol synthesis. Hydrocortisone is commonly prescribed for managing CAH in pediatric patients. Collaborating with clinicians, we are actively developing integrated pharmacometric models to characterize the dispositions of hydrocortisone and associated biomarkers. These models are subsequently used as tools to explore the exposure-response relationships using clinically relevant endpoints. Ultimately, this research aims to tailor hydrocortisone dosing to the individual needs of pediatric patients, enhancing clinical outcomes.\nModel-based approaches to identify and quantify the impact of pharmacogenomics and pharmacomicrobiomes on drug exposures and drug-drug interactions (DDIs): Genomics and microbiome are crucial sources of variability in pharmacokinetics and pharmacodynamics. We aim to elucidate and quantify their effects under pharmacometric modeling frameworks, facilitating the clinical implementation of these biomarkers to guide precision therapeutics. We are also interested in exploiting disparate sources of real world data (e.g., electronic health records) to empower our analyses. In collaboration with several clinical pharmacologists, our ongoing projects focus on transplantation and infectious diseases."
   },
   {
-    "objectID": "teaching.html#pharmacometrics-coffee-break",
-    "href": "teaching.html#pharmacometrics-coffee-break",
-    "title": "Teaching",
-    "section": "Pharmacometrics Coffee Break",
-    "text": "Pharmacometrics Coffee Break\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu).\nTopic list\n\n\n\n\n\n\nNote2025 Spring\n\n\n\n\n\n\n\n\nDate\nTopic\nModerator\n\n\n\n\n03/14/2025\nBateman equation\nShen\n\n\n03/28/2025\nBispecific T cell engagers QSP\nYuhan\n\n\n04/11/2025\nStochastic simulations\nShen\n\n\n04/25/2025\nDose Titration\nMutaz/Kyle\n\n\n05/09/2025\nPBPK modeling and software\nAngela/Silvia\n\n\n\n\n\n\n\n\n\n\n\n\nNote2025 Fall\n\n\n\n\n\nComing soon."
+    "objectID": "research.html#methdological-research",
+    "href": "research.html#methdological-research",
+    "title": "Research",
+    "section": "Methdological Research",
+    "text": "Methdological Research\nEvaluate and develop methodologies to incorporate high-dimensional covariates in pharmacometric analysis: The variability of drug exposure and response is hardly attributable to a single source, such as the presence of a single genetic mutant or a single type of bacteria. The complex nature of genomics and microbiome data (e.g., high-dimensionality) presents significant challenges for effective integration into pharmacometric analyses. In line with our clinical research interests in the field of pharmacogenomics and pharmacomicrobiome, our lab is interested in evaluating existing methodologies and developing new methodologies for the incorporation of high-dimensional data into pharmacometric frameworks."
+  },
+  {
+    "objectID": "posts/vscode_ssh/index.html",
+    "href": "posts/vscode_ssh/index.html",
+    "title": "Connect MSI with Visual Studio Code over SSH",
+    "section": "",
+    "text": "Visual Studio Code (VScode) is a useful source code editor to interact with Minnesota Supercomputing Institute (MSI). This blog illustrate you how to connect VScode with MSI through Remote-SSH.\n\n1. Set up SSH key for the remote communication with MSI\nFollow the tutorial specified by MSI to setup SSH key in your local computer.\n\n\n2. Create ~/.ssh/config in the local machine\nRun this in terminal,\n```{bash}\ncd ~/.ssh\nls\n```\nIf you can see file config in the output, then it means config has already been created in your local machine.\nIf you cannot see config in the output, run this in terminal,\n```{bash}\ntouch ~/.ssh/config\n```\n\n\n3. Add MSI front-end server as a new SSH host\nOpen config, copy and paste the following scripts. Replace your.msi.username with your X500 and save it.\n```{bash}\nHost agate.msi.umn.edu\nHostName agate.msi.umn.edu\nUser your.msi.username\nIdentityFile ~/.ssh/id_rsa\n```\n\n\n4. Connect to VPN\nMSI can only be accessed when\n\nYou are connected to eduroam network on campus.\nYou are off campus but connecting to the University’s Virtual Private Network (VPN). Please make sure when selecting a channel for connection, do NOT select the channel named “UMN - Departmental Pools”.\n\n\n\n\n\n\n\n\n5. Connect VScode with MSI\n\nUnder tab “Extension”, install extension “remote-ssh”\n\n\n\n\n\n\n\nOnce installed, you will be able to see this icon on the very bottom left corner of your VScode window.\n\n\n\n\n\n\n\nClick the icon, select “connect current window to host”. You should be able to see the agate.msi.umn.edu if MSI SSH was correctly added to the ~/.ssh/config file. Select agate.msi.umn.edu and wait for a few seconds.\n\n\n\n\n\n\n\nEntering your passphrase (set up in the SSH key in Step 1)\n\n\n\n\n\n\n\nGoing through the two-factor authentication as instructed.\n\n\n\n\n\n\n\nOnce connection is established, you will be able to see the ssh connection icon on the very bottom left corner of your VScode window shows your MSI hostname.\n\n\n\n\n\n\n\nYou can now use VScode to navigate through the working directories on MSI, and use the MSI terminal. Installing relevant extensions in VScode can also make your work more efficient. For example, installing nonmem syntax highlighter through VScode can more efficiently visualize a NONMEM script."
   },
   {
     "objectID": "posts/basic_vpc/index.html",
@@ -266,90 +203,6 @@
     "text": "2.3 Check data\nLet’s take a look at the observed concentration-time profiles.\n\nfilter(data, EVID==0) %&gt;% \n  ggplot(aes(x=NTIME, y=DV, group=ID))+\n  geom_point()+geom_line(alpha=0.2)+\n  facet_grid(rows=vars(DOSE), labeller=label_both)+\n  scale_y_log10()\n\n\n\n\n\n\n\n\nThere are three dose group: the lower dose group 200 has relatively intensive sampling, and the higher dose group has relatively sparse sampling. Let’s check the number of subjects per dose group.\n\ndata %&gt;% distinct(ID, .keep_all=TRUE) %&gt;% count(DOSE)\n\n  DOSE  n\n1  200 50\n2  300 50\n3  400 50"
   },
   {
-    "objectID": "posts/basic_vpc/index.html#cut-bins",
-    "href": "posts/basic_vpc/index.html#cut-bins",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "5.1 Cut bins",
-    "text": "5.1 Cut bins\n\nbins &lt;- c(119, 120.15, 120.5, 122, 126, 130, 150)\n\nbins &lt;- sort(unique(as.numeric(bins)))\nticks &lt;- cut(bins, breaks = bins)[-1]\nmids  &lt;- (bins[-1] + bins[-length(bins)]) / 2 # Calculate midpoints for plotting\n\nfobs &lt;- obs %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(C, NUM, ID, TIME, .bin, .x_plot, NTIME, everything())\n\nfsim &lt;- sim %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(ID, TIME, .bin, .x_plot, everything())"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#summarise-using-the-usual-waybut-using-the-.bin-created-in-step-1-instead-of-ntime",
-    "href": "posts/basic_vpc/index.html#summarise-using-the-usual-waybut-using-the-.bin-created-in-step-1-instead-of-ntime",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "5.2 Summarise using the usual way…but using the .bin created in step (1) instead of NTIME",
-    "text": "5.2 Summarise using the usual way…but using the .bin created in step (1) instead of NTIME\n\npercentile &lt;- c(0.10, 0.50, 0.90) # Percentiles for visualization\nprob       &lt;- c(0.10, 0.50, 0.90) # %PI for percentiles\n  \n# Summarise observed percentiles\nsumm_obs &lt;- fobs %&gt;% \n  filter(BLQ==0) %&gt;% \n  group_by(.x_plot, DOSE) %&gt;% \n  summarise(\n    as_tibble_row(\n      quantile(DV, percentile,na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), .groups = \"drop\")\n  \n# Summarise simulated percentiles\nsumm_sim &lt;- fsim %&gt;% \n  filter(Y &gt; unique(fobs$LLOQ)) %&gt;% \n  group_by(.x_plot, DOSE, IREP) %&gt;% \n    summarise(\n      as_tibble_row(\n        quantile(Y, percentile,na.rm = TRUE),\n        .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), .groups = \"drop\") \n\n# Summarise prediction intervals of simulated percentiles\nsumm_sim &lt;- summ_sim %&gt;% group_by(.x_plot, DOSE) %&gt;% \n  summarise(\n    across(c(\"lo\", \"mi\", \"hi\"),\n           ~ list(setNames(\n             quantile(.x, prob, na.rm = TRUE),\n             c(\"lo\", \"mi\", \"hi\")\n             ))), .groups = \"drop\") %&gt;%\n    # widen each list-column (one per Y) into 3 numeric columns\n  unnest_wider(c(\"lo\", \"mi\", \"hi\"), names_sep = \"_\")"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#plot-vpcs-the-usual-way",
-    "href": "posts/basic_vpc/index.html#plot-vpcs-the-usual-way",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "5.3 Plot VPCs the usual way",
-    "text": "5.3 Plot VPCs the usual way\n\nvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=filter(obs, BLQ==0), aes(x=TIME, y=DV))+\n    facet_grid(vars(DOSE), labeller=label_both)+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"Visual Predictive Checks (VPC)\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\")\n    )\nvpc\n\n\n\n\n\n\n\n\nAgain, the above process can be wrapped in the helper function to save some codings.\n\nvpcplot(obs_df=filter(obs, BLQ==0), \n        sim_df=filter(sim, Y&gt;unique(obs$LLOQ)), \n        .x=TIME, show_obs = TRUE, \n        .xlab = \"Time\", .ylab = \"Concentrations\", \n        bins = c(119, 120.15, 120.5, 122, 126, 130, 150))"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#same-step-1-cut-bins",
-    "href": "posts/basic_vpc/index.html#same-step-1-cut-bins",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "6.1 Same step 1, cut bins",
-    "text": "6.1 Same step 1, cut bins\n\nbins &lt;- c(119, 120.15, 120.5, 122, 126, 130, 150)\n# bins &lt;- c(119, 120.15, 120.5, 122, 124, 126, 130, 150)\n\nbins &lt;- sort(unique(as.numeric(bins)))\nticks &lt;- cut(bins, breaks = bins)[-1]\nmids  &lt;- (bins[-1] + bins[-length(bins)]) / 2 # Calculate midpoints for plotting\n\nfobs &lt;- obs %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(C, NUM, ID, TIME, .bin, .x_plot, NTIME, everything())\n\nfsim &lt;- sim %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(ID, TIME, .bin, .x_plot, everything())"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-outcomes",
-    "href": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-outcomes",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "6.2 Summarise normalized observed and simulated outcomes",
-    "text": "6.2 Summarise normalized observed and simulated outcomes\n\\[\npcY_{ij}=lb_{ij}+(Y_{ij}-lb_{ij}) \\times \\frac{\\widetilde{PRED_{bin}}-lb_{ij}}{PRED_{ij}-lb_{ij}} \\\\\n\\]\nAssuming an outcome with lower bound of 0 (i.e., \\(lb_{ij}=0\\)), such as concentrations.\n\\[\npcY_{ij}=Y_{ij} \\times \\frac{\\widetilde{PRED_{bin}}}{PRED_{ij}} \\\\\n\\]\n\npercentile &lt;- c(0.10, 0.50, 0.90) # Percentiles for visualization\nprob       &lt;- c(0.10, 0.50, 0.90) # %PI for percentiles\n  \n# Summarise observed percentiles\nsumm_obs &lt;- fobs %&gt;% filter(BLQ==0) %&gt;% \n      mutate(.yobs = DV/PRED) %&gt;% \n      group_by(.bin, .x_plot) %&gt;% \n      mutate(pred_bin = median(PRED)) %&gt;% \n      mutate(.yobs = .yobs*pred_bin) %&gt;% \n      summarise(\n        as_tibble_row(\n          quantile(.yobs, percentile, na.rm = TRUE),\n          .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n        ), \n        .groups = \"drop\")\n  \n# Summarise simulated percentiles\nsumm_sim &lt;- fsim %&gt;% filter(Y&gt;unique(obs$LLOQ)) %&gt;% \n      mutate(.ysim = Y/PRED) %&gt;% \n      group_by(.bin, .x_plot, IREP) %&gt;% \n      mutate(pred_bin = median(PRED)) %&gt;% \n      mutate(.ysim = .ysim*pred_bin) %&gt;% \n      summarise(\n        as_tibble_row(\n          quantile(.ysim, percentile, na.rm = TRUE),\n          .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n        ), \n        .groups = \"drop\")\n\n# Summarise prediction intervals of simulated percentiles\nsumm_sim &lt;- summ_sim %&gt;% group_by(.x_plot) %&gt;% \n  summarise(\n    across(c(\"lo\", \"mi\", \"hi\"),\n           ~ list(setNames(\n             quantile(.x, prob, na.rm = TRUE),\n             c(\"lo\", \"mi\", \"hi\")\n             ))), .groups = \"drop\") %&gt;%\n    # widen each list-column (one per Y) into 3 numeric columns\n  unnest_wider(c(\"lo\", \"mi\", \"hi\"), names_sep = \"_\")"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#same-plotting-with-changing-in-obs-i.e.-prediction-corrected",
-    "href": "posts/basic_vpc/index.html#same-plotting-with-changing-in-obs-i.e.-prediction-corrected",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "6.3 Same plotting with changing in obs (i.e., prediction-corrected)",
-    "text": "6.3 Same plotting with changing in obs (i.e., prediction-corrected)\n\nobs_v &lt;- fobs %&gt;% filter(BLQ==0) %&gt;%\n      mutate(.yobs = DV/PRED) %&gt;% \n      group_by(.bin, .x_plot) %&gt;% \n      mutate(pred_bin = median(PRED)) %&gt;% \n      mutate(.yobs = .yobs*pred_bin)\n\npcvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=obs_v, aes(x=TIME, y=.yobs, color=DOSE))+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"pcVPC\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\"), \n      legend.position = \"bottom\"\n    )\npcvpc\n\n\n\n\n\n\n\n\nCompare VPC and pcVPC side by side.\n\nvpc   &lt;- vpc+scale_y_log10(limits=c(0.01, 200))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\npcvpc &lt;- pcvpc+scale_y_log10(limits=c(0.01, 200))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\ngrid.arrange(vpc, pcvpc, ncol=2)"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#build-a-reference-dataset-the-same-sizeshape-as-the-observed-one",
-    "href": "posts/basic_vpc/index.html#build-a-reference-dataset-the-same-sizeshape-as-the-observed-one",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.1 Build a reference dataset the same size/shape as the observed one",
-    "text": "7.1 Build a reference dataset the same size/shape as the observed one\nSimulate reference population predictions (PREDREF) based on arbitrarily selected reference covariates:\n\nDose=300.\nWT=70.\nAGE=35.\nALB=4.5.\nSEX=1\n\n\ndata_ref &lt;- data %&gt;% \n  dplyr::select(-all_of(c(\"DOSE\", \"AGE\", \"SEX\", \"RACE\",\n                          \"ALB\" , \"SCR\", \"WT\" , \"HT\"))) %&gt;% \n  mutate(AMT = ifelse(AMT != 0, 300, AMT))\n\nparam_tags(mod)\n\n  name   tag\n1   WT input\n2  SEX input\n3  AGE input\n4  ALB input\n\n\n\nrep &lt;- 100\nsim_ref  &lt;- mrgsim_df(zero_re(mod), data_ref, outvars=\"IPRED\", obsonly=TRUE) %&gt;% rename(PREDREF=IPRED) \nhead(sim_ref)\n\n  ID   TIME   PREDREF\n1 51 120.09  2.712769\n2 51 121.04 20.700633\n3 51 124.07 24.671124\n4 51 128.24 10.235147\n5 51 139.22  0.460132\n6 52 120.10  2.990299"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#calculate-rcy_ij-before-binning.",
-    "href": "posts/basic_vpc/index.html#calculate-rcy_ij-before-binning.",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.2 Calculate \\(rcY_{ij}^*\\) BEFORE binning.",
-    "text": "7.2 Calculate \\(rcY_{ij}^*\\) BEFORE binning.\n\\[\nrcY_{ij}^*=lb_{ij}+(Y_{ij}-lb_{ij}) \\times \\frac{PRED_{ij,ref}-lb_{ij}}{PRED_{ij}-lb_{ij}} \\\\\n\\]\nAssuming an outcome with lower bound of 0 (i.e., \\(lb_{ij}=0\\)), such as concentrations.\n\\[\nrcY_{ij}^*=Y_{ij} \\times \\frac{PRED_{ij,ref}}{PRED_{ij}} \\\\\n\\]\n\nobs_with_ref &lt;- left_join(obs, sim_ref) %&gt;% \n  mutate(RCDV_HAT = (DV / PRED) * PREDREF) %&gt;% \n  dplyr::select(C, NUM, ID, TIME, PRED, PREDREF, \n                RCDV_HAT, everything())\n\nJoining with `by = join_by(ID, TIME)`\n\nsim_with_ref &lt;- left_join(sim, sim_ref) %&gt;% \n  mutate(RCY_HAT  = (Y  / PRED) * PREDREF) %&gt;% \n  dplyr::select(ID, TIME, PRED, PREDREF, \n                RCY_HAT, everything())\n\nJoining with `by = join_by(ID, TIME)`\n\n\n\nhead(obs_with_ref)\n\n  C NUM ID   TIME      PRED   PREDREF  RCDV_HAT NTIME   TAD AMT CMT EVID II\n1 .   2 51 120.09  2.527803  2.712769  5.977572 120.1  0.09   0   2    0  0\n2 .   3 51 121.04 17.906666 20.700633 17.837535 121.0  1.04   0   2    0  0\n3 .   4 51 124.07 24.180457 24.671124 34.251198 124.0  4.07   0   2    0  0\n4 .   5 51 128.24 12.509704 10.235147 16.846256 128.0  8.24   0   2    0  0\n5 .   6 51 139.22  1.154850  0.460132  0.394450 140.0 19.22   0   2    0  0\n6 .   8 52 120.10  1.713551  2.990299  6.264869 120.1  0.10   0   2    0  0\n  ADDL    DV BLQ LLOQ DOSE AGE SEX RACE ALB  SCR   WT    HT\n1    0  5.57   0  0.1  200  18   2    3 4.4 0.72 56.9 160.7\n2    0 15.43   0  0.1  200  18   2    3 4.4 0.72 56.9 160.7\n3    0 33.57   0  0.1  200  18   2    3 4.4 0.72 56.9 160.7\n4    0 20.59   0  0.1  200  18   2    3 4.4 0.72 56.9 160.7\n5    0  0.99   0  0.1  200  18   2    3 4.4 0.72 56.9 160.7\n6    0  3.59   0  0.1  200  80   2    3 4.3 0.92 78.2 152.6\n\n\n\nhead(sim_with_ref)\n\n  ID   TIME      PRED   PREDREF    RCY_HAT        depot      cent       CL\n1 51 120.09  2.527803  2.712769  1.3337408 191.20067114  9.381783 1.950703\n2 51 121.04 17.906666 20.700633 12.2925218 118.90484010 70.492336 1.950703\n3 51 124.07 24.180457 24.671124  9.7640472  26.13625703 88.895122 1.950703\n4 51 128.24 12.509704 10.235147  3.3423261   3.24892283 40.622005 1.950703\n5 51 139.22  1.154850  0.460132  0.1443655   0.01341105  2.504090 1.950703\n6 52 120.10  1.713551  2.990299  3.6361966 190.24705382  9.429376 3.106647\n         V      IPRED         Y    DV NTIME DOSE IREP\n1 7.301553  1.2849025  1.242802  5.57 120.1  200    1\n2 7.301553  9.6544306 10.633398 15.43 121.0  200    1\n3 7.301553 12.1748240  9.569857 33.57 124.0  200    1\n4 7.301553  5.5634748  4.085091 20.59 128.0  200    1\n5 7.301553  0.3429531  0.362332  0.99 140.0  200    1\n6 4.554514  2.0703367  2.083674  3.59 120.1  200    1"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#same-method-to-cut-bins",
-    "href": "posts/basic_vpc/index.html#same-method-to-cut-bins",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.3 Same method to cut bins",
-    "text": "7.3 Same method to cut bins\n\nbins &lt;- c(119, 120.15, 120.5, 122, 126, 130, 150)\n\nbins &lt;- sort(unique(as.numeric(bins)))\nticks &lt;- cut(bins, breaks = bins)[-1]\nmids  &lt;- (bins[-1] + bins[-length(bins)]) / 2 # Calculate midpoints for plotting\n\nfobs &lt;- obs_with_ref %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(C, NUM, ID, TIME, .bin, .x_plot, NTIME, everything())\n\nfsim &lt;- sim_with_ref %&gt;% mutate(\n  .bin = cut(TIME, breaks = bins, include.lowest = TRUE, right = TRUE),\n  .x_plot = mids[as.integer(.bin)]) %&gt;% \n  dplyr::select(ID, TIME, .bin, .x_plot, everything())"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-outcomes-and-perform-variability-corrections.",
-    "href": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-outcomes-and-perform-variability-corrections.",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.4 Summarise normalized observed and simulated outcomes, and perform variability corrections.",
-    "text": "7.4 Summarise normalized observed and simulated outcomes, and perform variability corrections.\n\\[\nrcY_{ij}=lb_{ij}+exp(ln( PRED_{ij,ref}-lb_{ij} ) + ( ln(rcY_{ij}^*)-ln(PRED_{ij,ref}-lb_{ij}) ) \\times \\frac{sd(ln(Y_{ij,ref}-lb_{ij}))}{sd(ln(rcY_{ij}^*))})\n\\]\n\n# | warning: false \n\npercentile &lt;- c(0.10, 0.50, 0.90) # Percentiles for visualization\nprob       &lt;- c(0.10, 0.50, 0.90) # %PI for percentiles\n\nlb &lt;- 0\n  \n# Summarise observed percentiles\nsumm_obs &lt;- fobs %&gt;% filter(BLQ==0) %&gt;% group_by(.bin, .x_plot) %&gt;% \n  mutate(sd1 = sd(log(YREF-lb), na.rm=TRUE)) %&gt;% \n  mutate(sd2 = sd(log(RCDV_HAT), na.rm=TRUE)) %&gt;% \n  mutate(RCDV = lb + exp( log(PREDREF-lb) + ( log(RCDV_HAT) - log(PREDREF-lb) )*( sd1/sd2 ) )) %&gt;% \n  summarise(\n    as_tibble_row(\n      quantile(RCDV, percentile, na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), \n    .groups = \"drop\")\n\nWarning: There were 6 warnings in `mutate()`.\nThe first warning was:\nℹ In argument: `sd1 = sd(log(YREF - lb), na.rm = TRUE)`.\nℹ In group 1: `.bin = \"[119,120.2]\"` and `.x_plot = 119.575`.\nCaused by warning in `log()`:\n! NaNs produced\nℹ Run `dplyr::last_dplyr_warnings()` to see the 5 remaining warnings.\n\n# Summarise simulated percentiles\nsumm_sim &lt;- fsim %&gt;% filter(Y&gt;unique(obs$LLOQ)) %&gt;% group_by(.bin, .x_plot, IREP) %&gt;% \n  mutate(sd1 = sd(log(YREF-lb), na.rm=TRUE)) %&gt;% \n  mutate(sd2 = sd(log(RCY_HAT), na.rm=TRUE)) %&gt;% \n  mutate(RCY = lb + exp( log(PREDREF-lb) + ( log(RCY_HAT) - log(PREDREF-lb) )*( sd1/sd2 ) )) %&gt;%\n  summarise(\n    as_tibble_row(\n      quantile(RCY, percentile, na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), \n    .groups = \"drop\")\n\nWarning: There were 187 warnings in `mutate()`.\nThe first warning was:\nℹ In argument: `sd1 = sd(log(YREF - lb), na.rm = TRUE)`.\nℹ In group 10: `.bin = \"[119,120.2]\"`, `.x_plot = 119.575`, `IREP = 10`.\nCaused by warning in `log()`:\n! NaNs produced\nℹ Run `dplyr::last_dplyr_warnings()` to see the 186 remaining warnings.\n\n# Summarise prediction intervals of simulated percentiles\nsumm_sim &lt;- summ_sim %&gt;% group_by(.x_plot) %&gt;% \n  summarise(\n    across(c(\"lo\", \"mi\", \"hi\"),\n           ~ list(setNames(\n             quantile(.x, prob, na.rm = TRUE),\n             c(\"lo\", \"mi\", \"hi\")\n             ))), .groups = \"drop\") %&gt;%\n  # widen each list-column (one per Y) into 3 numeric columns\n  unnest_wider(c(\"lo\", \"mi\", \"hi\"), names_sep = \"_\")"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#same-plotting-with-changing-in-obs-i.e.-reference-corrected",
-    "href": "posts/basic_vpc/index.html#same-plotting-with-changing-in-obs-i.e.-reference-corrected",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.5 Same plotting with changing in obs (i.e., reference-corrected)",
-    "text": "7.5 Same plotting with changing in obs (i.e., reference-corrected)\n\nobs_v &lt;- fobs %&gt;% filter(BLQ==0) \n\nrcvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=obs_v, aes(x=TIME, y=RCDV_HAT, color=DOSE))+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"rcVPC\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\"), \n      legend.position = \"bottom\"\n    )\nrcvpc\n\n\n\n\n\n\n\n\nCompare VPC, pcVPC and rcVPC side by side. We can see reference-corrected VPCs have a more natural appearance similar to the shape of the original PK profiles despite the presence of multiple dose groups with different sampling schemes.\n\nrcvpc &lt;- rcvpc + scale_y_log10(limits=c(0.01, 200))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\ngrid.arrange(vpc, pcvpc, rcvpc, ncol=3)"
-  },
-  {
-    "objectID": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-concentrations.",
-    "href": "posts/basic_vpc/index.html#summarise-normalized-observed-and-simulated-concentrations.",
-    "title": "A few basics of visual predictive checks (VPCs)",
-    "section": "7.4 Summarise normalized observed and simulated concentrations.",
-    "text": "7.4 Summarise normalized observed and simulated concentrations.\n\n# | warning: false \n\npercentile &lt;- c(0.10, 0.50, 0.90) # Percentiles for visualization\nprob       &lt;- c(0.10, 0.50, 0.90) # %PI for percentiles\n  \n# Summarise observed percentiles\nsumm_obs &lt;- fobs %&gt;% filter(BLQ==0) %&gt;% \n  group_by(.bin, .x_plot) %&gt;% \n  summarise(\n    as_tibble_row(\n      quantile(RCDV_HAT, percentile, na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), \n    .groups = \"drop\")\n  \n# Summarise simulated percentiles\nsumm_sim &lt;- fsim %&gt;% filter(Y&gt;unique(obs$LLOQ)) %&gt;% \n  group_by(.bin, .x_plot, IREP) %&gt;% \n  summarise(\n    as_tibble_row(\n      quantile(RCY_HAT, percentile, na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), \n    .groups = \"drop\")\n\n# Summarise prediction intervals of simulated percentiles\nsumm_sim &lt;- summ_sim %&gt;% group_by(.x_plot) %&gt;% \n  summarise(\n    across(c(\"lo\", \"mi\", \"hi\"),\n           ~ list(setNames(\n             quantile(.x, prob, na.rm = TRUE),\n             c(\"lo\", \"mi\", \"hi\")\n             ))), .groups = \"drop\") %&gt;%\n  # widen each list-column (one per Y) into 3 numeric columns\n  unnest_wider(c(\"lo\", \"mi\", \"hi\"), names_sep = \"_\")"
-  },
-  {
     "objectID": "posts/basic_vpc/index.html#cut-bins-i.e.-.bin",
     "href": "posts/basic_vpc/index.html#cut-bins-i.e.-.bin",
     "title": "A few basics of visual predictive checks (VPCs)",
@@ -362,6 +215,13 @@
     "title": "A few basics of visual predictive checks (VPCs)",
     "section": "5.2 Summarise using .bin created in step 5.1, instead of NTIME",
     "text": "5.2 Summarise using .bin created in step 5.1, instead of NTIME\n\npercentile &lt;- c(0.10, 0.50, 0.90) # Percentiles for visualization\nprob       &lt;- c(0.10, 0.50, 0.90) # %PI for percentiles\n  \n# Summarise observed percentiles\nsumm_obs &lt;- fobs %&gt;% \n  filter(BLQ==0) %&gt;% \n  group_by(.x_plot, DOSE) %&gt;% \n  summarise(\n    as_tibble_row(\n      quantile(DV, percentile,na.rm = TRUE),\n      .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), .groups = \"drop\")\n  \n# Summarise simulated percentiles\nsumm_sim &lt;- fsim %&gt;% \n  filter(Y &gt; unique(fobs$LLOQ)) %&gt;% \n  group_by(.x_plot, DOSE, IREP) %&gt;% \n    summarise(\n      as_tibble_row(\n        quantile(Y, percentile,na.rm = TRUE),\n        .name_repair= ~ c(\"lo\", \"mi\", \"hi\")\n      ), .groups = \"drop\") \n\n# Summarise prediction intervals of simulated percentiles\nsumm_sim &lt;- summ_sim %&gt;% group_by(.x_plot, DOSE) %&gt;% \n  summarise(\n    across(c(\"lo\", \"mi\", \"hi\"),\n           ~ list(setNames(\n             quantile(.x, prob, na.rm = TRUE),\n             c(\"lo\", \"mi\", \"hi\")\n             ))), .groups = \"drop\") %&gt;%\n    # widen each list-column (one per Y) into 3 numeric columns\n  unnest_wider(c(\"lo\", \"mi\", \"hi\"), names_sep = \"_\")"
+  },
+  {
+    "objectID": "posts/basic_vpc/index.html#plot-vpcs-the-usual-way",
+    "href": "posts/basic_vpc/index.html#plot-vpcs-the-usual-way",
+    "title": "A few basics of visual predictive checks (VPCs)",
+    "section": "5.3 Plot VPCs the usual way",
+    "text": "5.3 Plot VPCs the usual way\n\nvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=filter(obs, BLQ==0), aes(x=TIME, y=DV))+\n    facet_grid(vars(DOSE), labeller=label_both)+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"Visual Predictive Checks (VPC)\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\")\n    )\nvpc\n\n\n\n\n\n\n\n\nAgain, the above process can be wrapped in the helper function to save some codings.\n\nvpcplot(obs_df=filter(obs, BLQ==0), \n        sim_df=filter(sim, Y&gt;unique(obs$LLOQ)), \n        .x=TIME, show_obs = TRUE, \n        .xlab = \"Time\", .ylab = \"Concentrations\", \n        bins = c(119, 120.15, 120.5, 122, 126, 130, 150))"
   },
   {
     "objectID": "posts/basic_vpc/index.html#same-as-step-5.1-cut-bins",
@@ -383,6 +243,13 @@
     "title": "A few basics of visual predictive checks (VPCs)",
     "section": "6.3 Plotting VPCs using prediction-corrected observed and simulated values derived in Step 6.2",
     "text": "6.3 Plotting VPCs using prediction-corrected observed and simulated values derived in Step 6.2\n\nobs_v &lt;- fobs %&gt;% filter(BLQ==0) %&gt;%\n      mutate(.yobs = DV/PRED) %&gt;% \n      group_by(.bin, .x_plot) %&gt;% \n      mutate(pred_bin = median(PRED)) %&gt;% \n      mutate(.yobs = .yobs*pred_bin)\n\npcvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=obs_v, aes(x=TIME, y=.yobs, color=DOSE))+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"pcVPC\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\"), \n      legend.position = \"bottom\"\n    )\npcvpc\n\n\n\n\n\n\n\n\nCompare VPC and pcVPC side by side.\n\nvpc   &lt;- vpc+scale_y_log10(limits=c(0.01, 200))\npcvpc &lt;- pcvpc+scale_y_log10(limits=c(0.01, 200))\n\ngrid.arrange(vpc, pcvpc, ncol=2)"
+  },
+  {
+    "objectID": "posts/basic_vpc/index.html#build-a-reference-dataset-the-same-sizeshape-as-the-observed-one",
+    "href": "posts/basic_vpc/index.html#build-a-reference-dataset-the-same-sizeshape-as-the-observed-one",
+    "title": "A few basics of visual predictive checks (VPCs)",
+    "section": "7.1 Build a reference dataset the same size/shape as the observed one",
+    "text": "7.1 Build a reference dataset the same size/shape as the observed one\nSimulate reference population predictions (PREDREF) based on arbitrarily selected reference covariates:\n\nDose=300.\nWT=70.\nAGE=35.\nALB=4.5.\nSEX=1\n\n\ndata_ref &lt;- data %&gt;% \n  dplyr::select(-all_of(c(\"DOSE\", \"AGE\", \"SEX\", \"RACE\",\n                          \"ALB\" , \"SCR\", \"WT\" , \"HT\"))) %&gt;% \n  mutate(AMT = ifelse(AMT != 0, 300, AMT))\n\nparam_tags(mod)\n\n  name   tag\n1   WT input\n2  SEX input\n3  AGE input\n4  ALB input\n\n\n\nrep &lt;- 100\nsim_ref  &lt;- mrgsim_df(zero_re(mod), data_ref, outvars=\"IPRED\", obsonly=TRUE) %&gt;% rename(PREDREF=IPRED) \nhead(sim_ref)\n\n  ID   TIME   PREDREF\n1 51 120.09  2.712769\n2 51 121.04 20.700633\n3 51 124.07 24.671124\n4 51 128.24 10.235147\n5 51 139.22  0.460132\n6 52 120.10  2.990299"
   },
   {
     "objectID": "posts/basic_vpc/index.html#calculate-rcy_ij-before-binning",
@@ -413,38 +280,38 @@
     "text": "7.5 Plotting VPCs using reference-corrected observed and simulated values derived in Step 7.4\n\nobs_v &lt;- fobs %&gt;% filter(BLQ==0) \n\nrcvpc &lt;- ggplot()+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=lo), linetype=2)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=mi), linetype=1)+\n    geom_line(data=summ_obs, aes(x=.x_plot, y=hi), linetype=2)+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=lo_lo, ymax=lo_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=mi_lo, ymax=mi_hi), alpha=0.25, fill=\"#7A0019\")+\n    geom_ribbon(data=summ_sim, aes(x=.x_plot, ymin=hi_lo, ymax=hi_hi), alpha=0.25, fill=\"#ffcc33\")+\n    geom_point(data=obs_v, aes(x=TIME, y=RCDV_HAT, color=DOSE))+\n  scale_y_log10()+\n  xlab(\"Time\")+\n  ylab(\"Concentrations\")+\n  ggtitle(\"rcVPC\")+\n  scale_x_continuous(\n    limits = range(bins),\n    expand = expansion(mult = c(0, 0.02)),\n    sec.axis = dup_axis(\n      name   = NULL,\n      breaks = bins,           # tick positions on top\n      labels = rep(\"\", length(bins))  # no labels, ticks only\n    )) + theme(\n      axis.ticks.x.top  = element_line(),\n      axis.ticks.length.x.top = unit(5, \"pt\"), \n      legend.position = \"bottom\"\n    )\nrcvpc\n\n\n\n\n\n\n\n\nCompare VPC, pcVPC and rcVPC side by side. We can see reference-corrected VPCs have a more natural appearance similar to the shape of the original PK profiles despite the presence of multiple dose groups with different sampling schemes.\n\nrcvpc &lt;- rcvpc + scale_y_log10(limits=c(0.01, 200))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\ngrid.arrange(vpc, pcvpc, rcvpc, ncol=3)"
   },
   {
-    "objectID": "people/postdoc/nikolaos_memmos.html",
-    "href": "people/postdoc/nikolaos_memmos.html",
-    "title": "Nikolaos Memmos",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "people/postdoc/nikolaos_memmos.html#bio",
-    "href": "people/postdoc/nikolaos_memmos.html#bio",
-    "title": "Nikolaos Memmos",
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
     "section": "",
-    "text": "Nikos is a postdoctoral fellow in Experimental and Clinical Pharmacology, working under the supervision of Dr. Cheng. He received his B.S. in Chemical Engineering from the National Technical University of Athens, Greece, in 2017, and earned his Ph.D. in Chemical Engineering from the University of Minnesota in 2025, where he conducted his doctoral research under the mentorship of Dr. Odde. His research interests focused on mechanistic modeling and model-informed precision dosing."
+    "text": "A few basics of visual predictive checks (VPCs)\n\n\n\ntool\n\ncode\n\n\n\n\n\n\n\n\n\nJan 2, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nUse Finch Studio on MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 28, 2024\n\n\nShen Cheng and Mohamed Ismail\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mutaz Jaber\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "people.html#postdoctoral-researcher",
-    "href": "people.html#postdoctoral-researcher",
-    "title": "People",
-    "section": "Postdoctoral Researcher",
-    "text": "Postdoctoral Researcher\n\n\n\n\n\n\n\n\n\n\nNikolaos Memmos\n\n\nPostdoc Researcher\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "teaching.html#ecp8503-intermediate-poppkpd",
-    "href": "teaching.html#ecp8503-intermediate-poppkpd",
-    "title": "Teaching",
+    "objectID": "people/pi/shen_cheng.html",
+    "href": "people/pi/shen_cheng.html",
+    "title": "Shen Cheng, Ph.D.",
     "section": "",
-    "text": "Course Overview\nThis course covers the theory and hands-on applications of using nonlinear mixed-effects models (NLME) at an intermediate-advanced level in a population PK/PD analysis.\n\n2026 Spring"
+    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine.\n\n\n\n\nPh.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)\n\n\n \n  \n   \n  \n    \n     Email\n  \n  \n    \n     Github\n  \n  \n    \n     CV\n  \n  \n    \n     Linkedin\n  \n  \n    \n     Twitter"
   },
   {
-    "objectID": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
-    "href": "teaching.html#ecp8500-advanced-pharmacometrics-aka.-pharmacometrics-coffee-break",
-    "title": "Teaching",
-    "section": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)",
-    "text": "ECP8500 Advanced Pharmacometrics (aka. Pharmacometrics Coffee Break)\nOverview\nAn informal pharmacometric discussion group involving a diverse group of moderators, presenters and audience.If you are interested in participating, please contact Shen Cheng (cheng423@umn.edu). This course opens in the following semesters:\n\n2025 Spring\n2025 Fall\n2027 Spring (upcoming in January 2027)"
+    "objectID": "people/pi/shen_cheng.html#bio",
+    "href": "people/pi/shen_cheng.html#bio",
+    "title": "Shen Cheng, Ph.D.",
+    "section": "",
+    "text": "I am a Research Scientist in the field of pharmacometrics. I am currently working as an Assistant Professor in Pharmacometrics at the Department of Experimental and Clinical Pharmacology (ECP), University of Minnesota College of Pharmacy. I am passionate about the development and implementation of innovative pharmacometric methodologies to address clinical needs for the accomplishment of precision medicine."
+  },
+  {
+    "objectID": "people/pi/shen_cheng.html#education",
+    "href": "people/pi/shen_cheng.html#education",
+    "title": "Shen Cheng, Ph.D.",
+    "section": "",
+    "text": "Ph.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)"
   }
 ]
