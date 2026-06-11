@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Create reproducible PMx workflow at MSI – Research Lab of Shen Cheng, Ph.D.</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,15 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ca5d354867c787591587e8931a8856e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a8d83a4c6667ff95eb0a5eb9916f6b57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -116,8 +118,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Research Lab of Shen Cheng, Ph.D.</span>
     </a>
@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div><div class="column" style="width:50%;">
 <section id="example-workflow" class="level1">
 <h1>Example workflow</h1>
-<p>The project workflow (<a href="https://github.umn.edu/cheng423/project-abc">project-abc</a>) illustrated in this blog was publicly available on University of Minnesota’s <code>Github Enterprise</code>.</p>
+<p>The project workflow (<a href="https://github.com/chengshen1992/project-abc">project-abc</a>) illustrated in this blog was publicly available on University of Minnesota’s <code>Github Enterprise</code>.</p>
 </section>
 </div>
 </div>
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="sec-projdir1" class="level2">
 <h2 class="anchored" data-anchor-id="sec-projdir1">3.1 Use <code>project-abc</code> as a template</h2>
-<p><strong>Step 1:</strong> Navigate to template project workflow (<a href="https://github.umn.edu/cheng423/project-abc">project-abc</a>). Click <code>Use this template</code>, and then create a project directory with an appropriate owner and user-defined project name.</p>
+<p><strong>Step 1:</strong> Navigate to template project workflow (<a href="https://github.com/chengshen1992/project-abc">project-abc</a>). Click <code>Use this template</code>, and then create a project directory with an appropriate owner and user-defined project name.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -314,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <ol start="2" type="1">
 <li>Go back to your workflow, navigate to the desired directory in the terminal.</li>
-<li>Clone the repository using the copied string (e.g., <code>git clone git@github.umn.edu:cheng423/project-xyz.git</code>) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.</li>
+<li>Clone the repository using the copied string (e.g., <code>git clone git@github.com:chengshen1992/project-abc.git</code>) in the terminal. An output similar to what is shown below indicates the repository has been cloned successfully.</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Cloning</span> into <span class="st">'project-xyz'</span>...</span>
@@ -583,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.3 (2025-02-28)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sequoia 15.7.3
+Running under: macOS Sequoia 15.7.5
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
