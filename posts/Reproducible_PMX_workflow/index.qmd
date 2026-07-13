@@ -2,7 +2,7 @@
 title: "Create reproducible PMx workflow at MSI"
 author: "Shen Cheng and Mutaz Jaber"
 date: 2024-11-26
-categories: [workflow, code]
+categories: [workflow, MSI]
 image: "pic/image.png"
 image-alt: "PMx workflow at MSI"
 format:

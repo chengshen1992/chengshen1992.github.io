@@ -2,7 +2,7 @@
 title: "Use Finch Studio on MSI"
 author: "Shen Cheng and Mohamed Ismail"
 date: 2024-11-28
-categories: [workflow, code]
+categories: [workflow, MSI]
 image: "pic/image.png"
 image-alt: "Finch Studio and MSI"
 filters:

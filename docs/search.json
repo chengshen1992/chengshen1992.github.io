@@ -291,7 +291,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "A few basics of visual predictive checks (VPCs)\n\n\n\ntool\n\ncode\n\n\n\n\n\n\n\n\n\nJan 2, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nUse Finch Studio on MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 28, 2024\n\n\nShen Cheng and Mohamed Ismail\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\nworkflow\n\ncode\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mutaz Jaber\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\nworkflow\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\nNo matching items"
+    "text": "Installing and Using rSharp on MSI\n\n\n\nworkflow\n\nPBPK\n\nMSI\n\n\n\n\n\n\n\n\n\nJul 13, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nUsing dos2unix for SLURM Scripts Created on Windows\n\n\n\nworkflow\n\nMSI\n\n\n\n\n\n\n\n\n\nJul 13, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nA few basics of visual predictive checks (VPCs)\n\n\n\ntool\n\ncode\n\n\n\n\n\n\n\n\n\nJan 2, 2026\n\n\nShen Cheng\n\n\n\n\n\n\n\n\n\n\n\n\nUse Finch Studio on MSI\n\n\n\nworkflow\n\nMSI\n\n\n\n\n\n\n\n\n\nNov 28, 2024\n\n\nShen Cheng and Mohamed Ismail\n\n\n\n\n\n\n\n\n\n\n\n\nCreate reproducible PMx workflow at MSI\n\n\n\nworkflow\n\nMSI\n\n\n\n\n\n\n\n\n\nNov 26, 2024\n\n\nShen Cheng and Mutaz Jaber\n\n\n\n\n\n\n\n\n\n\n\n\nConnect MSI with Visual Studio Code over SSH\n\n\n\nworkflow\n\nMSI\n\n\n\n\n\n\n\n\n\nJun 15, 2024\n\n\nShen Cheng\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "people/pi/shen_cheng.html",
@@ -313,5 +313,138 @@
     "title": "Shen Cheng, Ph.D.",
     "section": "",
     "text": "Ph.D. in Experimental and Clinical Pharmacology (minor in Biostatistics) University of Minnesota, MN (2017-2021)\nM.S. in Pharmacology University of Michigan, MI (2015-2017)\nB.S. in Biology Soochow University, China (2010-2014)"
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "",
+    "text": "rSharp is an Open Systems Pharmacology R package used by {ospsuite} for communication with .NET. The {ospsuite} package requires {rSharp} and external dependencies, including .NET 8.\nOn MSI, the default Open OnDemand RStudio environment uses an older system runtime, so the validated approach is to run R inside an Apptainer container with .NET 8 available from a project-local installation.\n\nDisclaimer: This workflow was created and refined with the help of AI. Users should verify paths, software versions, and MSI policies before applying it to their own projects."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#purpose",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#purpose",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "",
+    "text": "rSharp is an Open Systems Pharmacology R package used by {ospsuite} for communication with .NET. The {ospsuite} package requires {rSharp} and external dependencies, including .NET 8.\nOn MSI, the default Open OnDemand RStudio environment uses an older system runtime, so the validated approach is to run R inside an Apptainer container with .NET 8 available from a project-local installation.\n\nDisclaimer: This workflow was created and refined with the help of AI. Users should verify paths, software versions, and MSI policies before applying it to their own projects."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#key-point",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#key-point",
+    "title": "Using rSharp on MSI with Apptainer",
+    "section": "Key Point",
+    "text": "Key Point\nDo not assume that the normal Open OnDemand RStudio Console can load rSharp. It uses the host R environment unless RStudio Server is explicitly configured to use the containerized R.\nThe working path is:\n\nSSH to MSI.\nStart Apptainer.\nExport the .NET environment variables.\nStart R inside the container.\nLoad rSharp."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#one-time-.net-8-setup",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#one-time-.net-8-setup",
+    "title": "Using rSharp on MSI with Apptainer",
+    "section": "One-Time .NET 8 Setup",
+    "text": "One-Time .NET 8 Setup\nRun this from the MSI host shell, not from the Apptainer&gt; prompt.\nBASE=/projects/standard/cheng423/cheng423/old_emergence_backup/learning\n\ncd $BASE\nmkdir -p software.source\nmkdir -p software.install/dotnet/8.0\n\ncd software.source\ncurl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh\nchmod +x dotnet-install.sh\n\n./dotnet-install.sh \\\n  --channel 8.0 \\\n  --runtime dotnet \\\n  --install-dir $BASE/software.install/dotnet/8.0"
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#daily-workflow",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#daily-workflow",
+    "title": "Using rSharp on MSI with Apptainer",
+    "section": "Daily Workflow",
+    "text": "Daily Workflow\nStart the container:\nmodule load apptainer/current\n\nBASE=/projects/standard/cheng423/cheng423/old_emergence_backup/learning\nPROJECT=$BASE/test-ospsuite-package-install\n\ncd $PROJECT\n\napptainer shell \\\n  --bind /projects/standard/cheng423/cheng423 \\\n  rocker-r-4.4.1.sif\nInside Apptainer:\nBASE=/projects/standard/cheng423/cheng423/old_emergence_backup/learning\n\nexport DOTNET_ROOT=$BASE/software.install/dotnet/8.0\nexport PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH\n\nR\nInside R:\nlibrary(rSharp)"
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#validation",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#validation",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "Validation",
+    "text": "Validation\nRun these inside R:\nSys.getenv(\"DOTNET_ROOT\")\nSys.which(\"dotnet\")\nsystem(\"dotnet --list-runtimes\")\nlibrary(rSharp)\nExpected result:\n\nDOTNET_ROOT points to software.install/dotnet/8.0.\nSys.which(\"dotnet\") finds the project-local dotnet binary.\n.NET lists Microsoft.NETCore.App 8.0.28 or another .NET 8 runtime.\nlibrary(rSharp) loads without error."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#optional-launcher-script",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#optional-launcher-script",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "Optional Launcher Script",
+    "text": "Optional Launcher Script\nTo reduce repeated typing, save a launcher script such as start-rsharp-r.sh in the R project directory.\nImplementation steps:\n\nOpen the project directory on MSI.\nCreate a new text file named start-rsharp-r.sh.\nPaste the script below into the file.\nReplace PROJECT_ROOT, PROJECT_DIR, and BIND_DIR with paths for the current project.\nRun the script from the MSI shell.\n\n#!/usr/bin/env bash\nset -euo pipefail\n\nmodule load apptainer/current\n\nPROJECT_ROOT=/path/to/your/msi/project/root\nPROJECT_DIR=$PROJECT_ROOT/your-r-project\nBIND_DIR=/path/to/your/msi/project/root\nIMAGE=$PROJECT_DIR/rocker-r-4.4.1.sif\nDOTNET=$PROJECT_ROOT/software.install/dotnet/8.0\n\ncd \"$PROJECT_DIR\"\n\napptainer exec \\\n  --bind \"$BIND_DIR\" \\\n  \"$IMAGE\" \\\n  bash -lc \"export DOTNET_ROOT='$DOTNET'; export PATH=\\\"\\$DOTNET_ROOT:\\$DOTNET_ROOT/tools:\\$PATH\\\"; R\"\nMake it executable:\nchmod +x start-rsharp-r.sh\nThen run it:\n./start-rsharp-r.sh\nThe script loads Apptainer, enters the project directory, exposes the project filesystem to the container, sets the .NET 8 environment variables, and starts R inside the container. After R opens, use library(rSharp) as usual."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#notes-for-students",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#notes-for-students",
+    "title": "Using rSharp on MSI with Apptainer",
+    "section": "Notes for Students",
+    "text": "Notes for Students\n\nUse VS Code Remote-SSH as the interface for editing scripts on MSI.\nUse terminal R inside Apptainer for rSharp.\nThe pak warning about dotnet-runtime-8.0 can be non-blocking if the validation checks pass.\nUse login nodes only for editing, installation, and light testing. Submit heavy analyses through the MSI scheduler or use an appropriate interactive allocation."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#one-time-setup",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#one-time-setup",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "One-Time Setup",
+    "text": "One-Time Setup\nChoose paths for the installation and project directory:\nPROJECT_ROOT=/path/to/your/msi/project/root\nPROJECT_DIR=$PROJECT_ROOT/your-r-project\nBIND_DIR=/path/to/your/msi/project/root\nUse PROJECT_ROOT for shared software installations, PROJECT_DIR for the R project where rSharp will be used, and BIND_DIR for the filesystem location that should be visible inside Apptainer. In many cases, BIND_DIR can be the same as PROJECT_ROOT.\nPull the R container if it is not already present:\nmodule load apptainer/current\ncd $PROJECT_DIR\napptainer pull rocker-r-4.4.1.sif docker://rocker/r-ver:4.4.1\nInstall .NET 8 from the MSI host shell, not from inside Apptainer&gt;:\ncd $PROJECT_ROOT\nmkdir -p software.source software.install/dotnet/8.0\n\ncd software.source\ncurl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh\nchmod +x dotnet-install.sh\n\n./dotnet-install.sh \\\n  --channel 8.0 \\\n  --runtime dotnet \\\n  --install-dir $PROJECT_ROOT/software.install/dotnet/8.0"
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#install-rsharp",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#install-rsharp",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "Install rSharp",
+    "text": "Install rSharp\nStart Apptainer:\nmodule load apptainer/current\ncd $PROJECT_DIR\n\napptainer shell \\\n  --bind $BIND_DIR \\\n  rocker-r-4.4.1.sif\nInside Apptainer, expose .NET 8 and start R:\nexport DOTNET_ROOT=$PROJECT_ROOT/software.install/dotnet/8.0\nexport PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH\n\nR\nInside R, install rSharp:\ninstall.packages(\"pak\")\npak::pak(\"Open-Systems-Pharmacology/rSharp@*release\")\npak may warn that dotnet-runtime-8.0 is missing. This can be non-blocking if the validation checks below pass."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#daily-use",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#daily-use",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "Daily Use",
+    "text": "Daily Use\nEach time you need rSharp, start the same Apptainer container:\nmodule load apptainer/current\n\nPROJECT_ROOT=/path/to/your/msi/project/root\nPROJECT_DIR=$PROJECT_ROOT/your-r-project\nBIND_DIR=/path/to/your/msi/project/root\n\ncd $PROJECT_DIR\n\napptainer shell \\\n  --bind $BIND_DIR \\\n  rocker-r-4.4.1.sif\nInside Apptainer:\nexport DOTNET_ROOT=$PROJECT_ROOT/software.install/dotnet/8.0\nexport PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH\n\nR\nInside R:\nlibrary(rSharp)"
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#editing-interface",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#editing-interface",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "Editing Interface",
+    "text": "Editing Interface\nFor writing scripts, VS Code Remote-SSH can be used as an interface to the MSI filesystem. Open the project folder in VS Code, edit .R or .qmd files there, and use the integrated terminal to run the Apptainer workflow above.\nThe R process still needs to run inside Apptainer. VS Code improves editing and file navigation, but it does not remove the need for the container."
+  },
+  {
+    "objectID": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#references",
+    "href": "posts/ospsuite/Using rSharp on MSI with Apptainer.html#references",
+    "title": "Installing and Using rSharp on MSI",
+    "section": "References",
+    "text": "References\n\nOpen-Systems-Pharmacology/OSPSuite-R\nOpen-Systems-Pharmacology/rSharp\n.NET 8 runtime"
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "",
+    "text": "SLURM scripts created or edited on Windows may use Windows line endings. MSI runs Linux, which expects Unix line endings in shell scripts. Before submitting a Windows-edited .sh file to MSI, convert it with dos2unix.\nThis issue usually does not affect SLURM scripts created or edited on macOS, because macOS normally uses Unix-style line endings."
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#purpose",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#purpose",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "",
+    "text": "SLURM scripts created or edited on Windows may use Windows line endings. MSI runs Linux, which expects Unix line endings in shell scripts. Before submitting a Windows-edited .sh file to MSI, convert it with dos2unix.\nThis issue usually does not affect SLURM scripts created or edited on macOS, because macOS normally uses Unix-style line endings."
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#install-dos2unix-on-windows",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#install-dos2unix-on-windows",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "Install dos2unix on Windows",
+    "text": "Install dos2unix on Windows\nThis installation is a one-time setup on the Windows machine.\nOpen Terminal or PowerShell and run:\nwinget install waterlan.dos2unix\nClose the terminal, then open a new Terminal or PowerShell window so the command is available."
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#convert-a-slurm-script",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#convert-a-slurm-script",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "Convert a SLURM Script",
+    "text": "Convert a SLURM Script\nGo to the local course or project repository:\ncd path/to/your/local/repository\nConvert the script:\ndos2unix runmod.sh\nReplace runmod.sh with the name of the SLURM script you edited."
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#when-to-run-it",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#when-to-run-it",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "When to Run It",
+    "text": "When to Run It\nRun dos2unix every time a .sh file is edited and saved on Windows before submitting it to MSI.\nExample:\ndos2unix my_slurm_script.sh\nsbatch my_slurm_script.sh"
+  },
+  {
+    "objectID": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#quick-check",
+    "href": "posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html#quick-check",
+    "title": "Using dos2unix for SLURM Scripts Created on Windows",
+    "section": "Quick Check",
+    "text": "Quick Check\nIf a Linux submission fails with unexpected shell-script errors, hidden Windows line endings may be the cause. Re-run dos2unix on the .sh file, then submit again."
   }
 ]

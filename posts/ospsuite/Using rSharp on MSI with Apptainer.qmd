@@ -1,0 +1,199 @@
+---
+title: "Installing and Using rSharp on MSI"
+author: "Shen Cheng"
+date: "2026-07-13"
+categories: [workflow, PBPK, MSI]
+filters:
+  - highlight-text
+format:
+  html:
+    grid:
+      sidebar-width: 200px
+      body-width: 1000px
+      margin-width: 300px
+      gutter-width: 1.5rem
+---
+
+## Purpose
+
+`rSharp` is an Open Systems Pharmacology R package used by `{ospsuite}` for communication with .NET. The `{ospsuite}` package requires `{rSharp}` and external dependencies, including .NET 8.
+
+On MSI, the default Open OnDemand RStudio environment uses an older system runtime, so the validated approach is to run R inside an Apptainer container with .NET 8 available from a project-local installation.
+
+> Disclaimer: This workflow was created and refined with the help of AI. Users should verify paths, software versions, and MSI policies before applying it to their own projects.
+
+## One-Time Setup
+
+Choose paths for the installation and project directory:
+
+```bash
+PROJECT_ROOT=/path/to/your/msi/project/root
+PROJECT_DIR=$PROJECT_ROOT/your-r-project
+BIND_DIR=/path/to/your/msi/project/root
+```
+
+Use `PROJECT_ROOT` for shared software installations, `PROJECT_DIR` for the R project where `rSharp` will be used, and `BIND_DIR` for the filesystem location that should be visible inside Apptainer. In many cases, `BIND_DIR` can be the same as `PROJECT_ROOT`.
+
+Pull the R container if it is not already present:
+
+```bash
+module load apptainer/current
+cd $PROJECT_DIR
+apptainer pull rocker-r-4.4.1.sif docker://rocker/r-ver:4.4.1
+```
+
+Install .NET 8 from the MSI host shell, not from inside `Apptainer>`:
+
+```bash
+cd $PROJECT_ROOT
+mkdir -p software.source software.install/dotnet/8.0
+
+cd software.source
+curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
+chmod +x dotnet-install.sh
+
+./dotnet-install.sh \
+  --channel 8.0 \
+  --runtime dotnet \
+  --install-dir $PROJECT_ROOT/software.install/dotnet/8.0
+```
+
+## Install rSharp
+
+Start Apptainer:
+
+```bash
+module load apptainer/current
+cd $PROJECT_DIR
+
+apptainer shell \
+  --bind $BIND_DIR \
+  rocker-r-4.4.1.sif
+```
+
+Inside Apptainer, expose .NET 8 and start R:
+
+```bash
+export DOTNET_ROOT=$PROJECT_ROOT/software.install/dotnet/8.0
+export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
+
+R
+```
+
+Inside R, install `rSharp`:
+
+```r
+install.packages("pak")
+pak::pak("Open-Systems-Pharmacology/rSharp@*release")
+```
+
+`pak` may warn that `dotnet-runtime-8.0` is missing. This can be non-blocking if the validation checks below pass.
+
+## Daily Use
+
+Each time you need `rSharp`, start the same Apptainer container:
+
+```bash
+module load apptainer/current
+
+PROJECT_ROOT=/path/to/your/msi/project/root
+PROJECT_DIR=$PROJECT_ROOT/your-r-project
+BIND_DIR=/path/to/your/msi/project/root
+
+cd $PROJECT_DIR
+
+apptainer shell \
+  --bind $BIND_DIR \
+  rocker-r-4.4.1.sif
+```
+
+Inside Apptainer:
+
+```bash
+export DOTNET_ROOT=$PROJECT_ROOT/software.install/dotnet/8.0
+export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
+
+R
+```
+
+Inside R:
+
+```r
+library(rSharp)
+```
+
+## Validation
+
+Run these inside R:
+
+```r
+Sys.getenv("DOTNET_ROOT")
+Sys.which("dotnet")
+system("dotnet --list-runtimes")
+library(rSharp)
+```
+
+Expected result:
+
+- `DOTNET_ROOT` points to `software.install/dotnet/8.0`.
+- `Sys.which("dotnet")` finds the project-local `dotnet` binary.
+- `.NET` lists `Microsoft.NETCore.App 8.0.28` or another .NET 8 runtime.
+- `library(rSharp)` loads without error.
+
+## Optional Launcher Script
+
+To reduce repeated typing, save a launcher script such as `start-rsharp-r.sh` in the R project directory.
+
+Implementation steps:
+
+1. Open the project directory on MSI.
+2. Create a new text file named `start-rsharp-r.sh`.
+3. Paste the script below into the file.
+4. Replace `PROJECT_ROOT`, `PROJECT_DIR`, and `BIND_DIR` with paths for the current project.
+5. Run the script from the MSI shell.
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+module load apptainer/current
+
+PROJECT_ROOT=/path/to/your/msi/project/root
+PROJECT_DIR=$PROJECT_ROOT/your-r-project
+BIND_DIR=/path/to/your/msi/project/root
+IMAGE=$PROJECT_DIR/rocker-r-4.4.1.sif
+DOTNET=$PROJECT_ROOT/software.install/dotnet/8.0
+
+cd "$PROJECT_DIR"
+
+apptainer exec \
+  --bind "$BIND_DIR" \
+  "$IMAGE" \
+  bash -lc "export DOTNET_ROOT='$DOTNET'; export PATH=\"\$DOTNET_ROOT:\$DOTNET_ROOT/tools:\$PATH\"; R"
+```
+
+Make it executable:
+
+```bash
+chmod +x start-rsharp-r.sh
+```
+
+Then run it:
+
+```bash
+./start-rsharp-r.sh
+```
+
+The script loads Apptainer, enters the project directory, exposes the project filesystem to the container, sets the .NET 8 environment variables, and starts R inside the container. After R opens, use `library(rSharp)` as usual.
+
+## Editing Interface
+
+For writing scripts, VS Code Remote-SSH can be used as an interface to the MSI filesystem. Open the project folder in VS Code, edit `.R` or `.qmd` files there, and use the integrated terminal to run the Apptainer workflow above.
+
+The R process still needs to run inside Apptainer. VS Code improves editing and file navigation, but it does not remove the need for the container.
+
+## References
+
+- [`Open-Systems-Pharmacology/OSPSuite-R`](https://github.com/Open-Systems-Pharmacology/OSPSuite-R)
+- [`Open-Systems-Pharmacology/rSharp`](https://github.com/Open-Systems-Pharmacology/rSharp)
+- [.NET 8 runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime)

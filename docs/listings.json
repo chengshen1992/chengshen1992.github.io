@@ -10,6 +10,8 @@
   {
     "listing": "/blogs.html",
     "items": [
+      "/posts/ospsuite/Using rSharp on MSI with Apptainer.html",
+      "/posts/dos2unix/Using dos2unix for SLURM Scripts Created on Windows.html",
       "/posts/basic_vpc/index.html",
       "/posts/FinchStudio_msi/index.html",
       "/posts/Reproducible_PMX_workflow/index.html",

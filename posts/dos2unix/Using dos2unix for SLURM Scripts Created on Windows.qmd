@@ -1,0 +1,62 @@
+---
+title: "Using dos2unix for SLURM Scripts Created on Windows"
+author: "Shen Cheng"
+date: "2026-07-13"
+categories: [workflow, MSI]
+format:
+  html:
+    grid:
+      sidebar-width: 200px
+      body-width: 1000px
+      margin-width: 300px
+      gutter-width: 1.5rem
+---
+
+## Purpose
+
+SLURM scripts created or edited on Windows may use Windows line endings. MSI runs Linux, which expects Unix line endings in shell scripts. Before submitting a Windows-edited `.sh` file to MSI, convert it with `dos2unix`.
+
+This issue usually does not affect SLURM scripts created or edited on macOS, because macOS normally uses Unix-style line endings.
+
+## Install dos2unix on Windows
+
+This installation is a one-time setup on the Windows machine.
+
+Open Terminal or PowerShell and run:
+
+```bash
+winget install waterlan.dos2unix
+```
+
+Close the terminal, then open a new Terminal or PowerShell window so the command is available.
+
+## Convert a SLURM Script
+
+Go to the local course or project repository:
+
+```bash
+cd path/to/your/local/repository
+```
+
+Convert the script:
+
+```bash
+dos2unix runmod.sh
+```
+
+Replace `runmod.sh` with the name of the SLURM script you edited.
+
+## When to Run It
+
+Run `dos2unix` every time a `.sh` file is edited and saved on Windows before submitting it to MSI.
+
+Example:
+
+```bash
+dos2unix my_slurm_script.sh
+sbatch my_slurm_script.sh
+```
+
+## Quick Check
+
+If a Linux submission fails with unexpected shell-script errors, hidden Windows line endings may be the cause. Re-run `dos2unix` on the `.sh` file, then submit again.

@@ -2,7 +2,7 @@
 title: "Connect MSI with Visual Studio Code over SSH"
 author: "Shen Cheng"
 date: 2024-06-15
-categories: [workflow]
+categories: [workflow, MSI]
 image: "pic/image.png"
 image-alt: "Visual Studio and MSI"
 format:
