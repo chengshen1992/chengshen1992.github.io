@@ -4,7 +4,7 @@ subtitle: "Principal Invesigator"
 image: Shen_Cheng.jpg
 image-alt: "Shen Cheng portrait"
 toc: false
-resources: shen-cheng-cv-qmd.pdf
+resources: shen-cheng-cv-qmd-short.pdf
 about: 
   id: person-profile
   template: jolla
